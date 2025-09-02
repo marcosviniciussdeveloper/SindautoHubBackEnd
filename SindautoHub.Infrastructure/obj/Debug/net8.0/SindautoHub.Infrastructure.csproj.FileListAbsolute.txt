@@ -37,3 +37,4 @@ C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Infrastru
 C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Infrastructure\obj\Debug\net8.0\SindautoHub.Infrastructure.pdb
 C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Infrastructure\obj\Debug\net8.0\SindautoHub.Infrastructure.genruntimeconfig.cache
 C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Infrastructure\obj\Debug\net8.0\ref\SindautoHub.Infrastructure.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Infrastructure\obj\Debug\net8.0\SindautoHub.Infrastructure.sourcelink.json

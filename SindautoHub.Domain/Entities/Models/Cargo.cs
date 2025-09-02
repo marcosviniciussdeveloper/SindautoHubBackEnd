@@ -13,7 +13,6 @@ namespace SindautoHub.Domain.Entities.Models
 
 
     public class Cargo
-
     {
 
         public Guid Id { get; set; } = Guid.NewGuid();
@@ -22,7 +21,7 @@ namespace SindautoHub.Domain.Entities.Models
 
         public string DescricaoAtribuicoes { get; set; }
 
-    
+
         public ICollection<Funcionario> Funcionarios { get; set; } = new List<Funcionario>();
     }
 

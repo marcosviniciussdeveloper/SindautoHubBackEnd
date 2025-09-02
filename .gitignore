@@ -1,0 +1,49 @@
+# Arquivos de dependências e pacotes NuGet
+# Geralmente gerenciados pelo NuGet e não precisam estar no repositório.
+[Bb]in/
+[Oo]bj/
+packages/
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# Arquivos de configuração do usuário e builds
+# Contêm configurações específicas da sua máquina ou builds temporários.
+*.user
+*.suo
+*.sln.docstates
+*.vs/
+.vs/
+project.lock.json
+project.assets.json
+*.csproj.nuget.*
+
+# Arquivos de segredos do usuário (USER SECRETS)
+# ESSENCIAL PARA ESCONDER SUAS SENHAS E CHAVES SECRETAS
+secrets.json
+**/secrets.json
+
+# Arquivos de log e temporários
+# Arquivos gerados durante a execução que não são parte do código-fonte.
+*.log
+*.tmp
+*.temp
+
+# Arquivos do sistema operacional
+# Lixo do Windows, macOS, etc.
+[Tt]humbs.db
+*.DS_Store
+
+# Diretórios de publicação
+# Pastas geradas quando você publica a aplicação.
+[Pp]ublish/
+[Rr]elease/
+
+# Ferramentas de IDE
+.idea/
+.vscode/
+
+# Arquivos gerados pelo Entity Framework
+# Opcional, mas às vezes é bom não subir. As migrations sim, devem subir.
+*.dbmdl
+*.efmodel

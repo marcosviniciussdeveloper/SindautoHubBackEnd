@@ -51,6 +51,11 @@ namespace SindautoHub.Infrastructure.Migrations
                     b.Property<Guid>("CargoId")
                         .HasColumnType("uuid");
 
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("character varying(14)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("text");
@@ -78,6 +83,9 @@ namespace SindautoHub.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CargoId");
+
+                    b.HasIndex("Cpf")
+                        .IsUnique();
 
                     b.HasIndex("SetorId");
 

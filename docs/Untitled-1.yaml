@@ -1,0 +1,273 @@
+openapi: 3.0.0
+info:
+  title: SindautoHub API
+  version: "1.0.0"
+  description: API REST para a plataforma de comunicação interna SindautoHub.
+
+servers:
+  - url: http://localhost:7001/api
+    description: Servidor de Desenvolvimento Local
+
+security:
+  - bearerAuth: []
+
+paths:
+  # ====== Auth ======
+  /auth/login:
+    post:
+      tags: [Auth]
+      summary: Realiza o login do usuário com CPF e senha
+      requestBody:
+        $ref: '#/components/requestBodies/LoginRequest'
+      responses:
+        '200':
+          description: Login bem-sucedido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+
+  # ====== Funcionarios ======
+  /funcionarios:
+    get:
+      tags: [Funcionarios]
+      summary: Lista todos os funcionários
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { type: array, items: { $ref: '#/components/schemas/FuncionarioResponse' } }
+  
+  /funcionarios/{id}:
+    get:
+      tags: [Funcionarios]
+      summary: Busca um funcionário pelo seu ID
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FuncionarioResponse'
+  
+  # ====== Cargos ======
+  /cargos:
+    get:
+      tags: [Cargos]
+      summary: Lista todos os cargos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { type: array, items: { $ref: '#/components/schemas/CargoResponse' } }
+    post:
+      tags: [Cargos]
+      summary: Cria um novo cargo (Admin)
+      requestBody:
+        $ref: '#/components/requestBodies/CreateCargoRequest'
+      responses:
+        '201':
+          description: Criado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CargoResponse'
+  
+  /cargos/{id}:
+    put:
+      tags: [Cargos]
+      summary: Atualiza um cargo existente (Admin)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCargoRequest'
+      responses:
+        '204':
+          description: Atualizado com sucesso
+    delete:
+      tags: [Cargos]
+      summary: Deleta um cargo (Admin)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+      responses:
+        '204':
+          description: Deletado com sucesso
+          
+  # ====== Setores ======
+  /setores:
+    get:
+      tags: [Setores]
+      summary: Lista todos os setores
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { type: array, items: { $ref: '#/components/schemas/SetorResponse' } }
+    post:
+      tags: [Setores]
+      summary: Cria um novo setor (Admin)
+      requestBody:
+        $ref: '#/components/requestBodies/CreateSetorRequest'
+      responses:
+        '201':
+          description: Criado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SetorResponse'
+
+  # ====== Postagens ======
+  /postagens:
+    get:
+      tags: [Postagens]
+      summary: Lista todas as postagens do mural
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { type: array, items: { $ref: '#/components/schemas/PostagemResponse' } }
+    post:
+      tags: [Postagens]
+      summary: Cria uma nova postagem (Requer permissão)
+      requestBody:
+        $ref: '#/components/requestBodies/CreatePostagemRequest'
+      responses:
+        '201':
+          description: Criado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostagemResponse'
+                
+  # ====== Notificações ======
+  /notificacoes/minhas:
+    get:
+      tags: [Notificacoes]
+      summary: Busca as notificações do usuário logado
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { type: array, items: { $ref: '#/components/schemas/NotificacaoResponse' } }
+
+  /notificacoes/marcar-todas-como-lidas:
+    post:
+      tags: [Notificacoes]
+      summary: Marca todas as notificações do usuário como lidas
+      responses:
+        '204':
+          description: Atualizado com sucesso
+          
+  /notificacoes/{id}/marcar-como-lida:
+    post:
+      tags: [Notificacoes]
+      summary: Marca uma notificação específica como lida
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+      responses:
+        '204':
+          description: Atualizado com sucesso
+
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT }
+    
+  requestBodies:
+    LoginRequest:
+      required: true
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/LoginRequest' }
+    CreateCargoRequest:
+      required: true
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/CreateCargoRequest' }
+    UpdateCargoRequest:
+      required: true
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/UpdateCargoRequest' }
+    CreateSetorRequest:
+      required: true
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/CreateSetorRequest' }
+    CreatePostagemRequest:
+      required: true
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/CreatePostagemRequest' }
+  
+  schemas:
+    LoginRequest:
+      type: object
+      properties:
+        cpf: { type: string, example: "123.456.789-00" }
+        senha: { type: string, example: "senha123" }
+    LoginResponse:
+      type: object
+      properties:
+        token: { type: string }
+    FuncionarioResponse:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        nome: { type: string }
+        email: { type: string, format: email }
+        nomeDoCargo: { type: string }
+        nomeDoSetor: { type: string }
+    CreateCargoRequest:
+      type: object
+      properties:
+        nome: { type: string }
+        descricaoAtribuicoes: { type: string }
+    UpdateCargoRequest:
+      type: object
+      properties:
+        nome: { type: string }
+        descricaoAtribuicoes: { type: string }
+    CargoResponse:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        nome: { type: string }
+        descricaoAtribuicoes: { type: string }
+    CreateSetorRequest:
+      type: object
+      properties:
+        nome: { type: string }
+        descricao: { type: string }
+        horarioFuncionamento: { type: string }
+    SetorResponse:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        nome: { type: string }
+        descricao: { type: string }
+        horarioFuncionamento: { type: string }
+        numeroDeMembros: { type: integer }
+    CreatePostagemRequest:
+      type: object
+      properties:
+        titulo: { type: string }
+        conteudo: { type: string }
+    PostagemResponse:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        titulo: { type: string }
+        conteudo: { type: string }
+        dataPublicacao: { type: string, format: date-time }
+        autorId: { type: string, format: uuid }
+        autorNome: { type: string }
+    NotificacaoResponse:
+      type: object
+      properties:

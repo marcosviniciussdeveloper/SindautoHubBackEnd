@@ -31,6 +31,17 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
 
 
             builder
+                .Property(p => p.Cpf)
+                .HasMaxLength(14)
+                .IsRequired();
+
+
+            builder
+                .HasIndex(f => f.Cpf)
+                .IsUnique();
+
+
+            builder
                 .HasOne(f => f.cargo)
                 .WithMany(c => c.Funcionarios)
                 .HasForeignKey(f => f.CargoId)

@@ -17,10 +17,10 @@ namespace SindautoHub.Domain.Entities.Models
 
         public string? FotoUrl { get; set; }
 
-
+        public string Cpf { get; set; }
         public TimeOnly? HorarioInicio { get; set; }
 
-        
+       
         public TimeOnly? HorarioFim { get; set; }
 
         public TipoContratacao TipoContratacao { get; set; }
