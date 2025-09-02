@@ -34,6 +34,6 @@ namespace SindautoHub.Domain.Entities.Models
         public Cargo cargo  { get; set; }
 
         public ICollection<Notificacao> Notificacoes { get; set; } = new List<Notificacao>();
-        public ICollection<Postagens> postagens { get; set; } = new List<Postagens>();
+        public ICollection<Postagem> Postagens { get; set; } = new List<Postagem>();
      }
 }

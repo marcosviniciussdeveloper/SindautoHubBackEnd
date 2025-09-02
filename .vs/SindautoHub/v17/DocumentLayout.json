@@ -1,96 +1,115 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\",
+  "WorkspaceRootPath": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|solutionrelative:sindautohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{880AB178-1B96-4EF6-905F-C0F31FE132AA}|SindautoHub.Application\\SindautoHub.Application.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.application\\sindautohub.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{880AB178-1B96-4EF6-905F-C0F31FE132AA}|SindautoHub.Application\\SindautoHub.Application.csproj|solutionrelative:sindautohub.application\\sindautohub.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\persistance\\database\\sindautohubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\database\\sindautohubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\persistance\\repository\\cargosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\repository\\cargosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.domain\\entities\\models\\notificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\notificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\persistance\\configuration\\notificacaoconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\notificacaoconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\persistance\\configuration\\funcionarioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\funcionarioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.domain\\entities\\models\\setor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\setor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.domain\\entities\\models\\postagens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\postagens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.domain\\entities\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.domain\\entities\\models\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\persistance\\configuration\\setorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\setorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\persistance\\configuration\\postagemconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\postagemconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\persistance\\configuration\\cargoconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\cargoconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\sindautohub.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\sindautohub.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|solutionrelative:sindautohub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.api\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|solutionrelative:sindautohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\persistance\\configuration\\postagemconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\postagemconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.api\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|solutionrelative:sindautohub.api\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880AB178-1B96-4EF6-905F-C0F31FE132AA}|SindautoHub.Application\\SindautoHub.Application.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.application\\assemblyreference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{880AB178-1B96-4EF6-905F-C0F31FE132AA}|SindautoHub.Application\\SindautoHub.Application.csproj|solutionrelative:sindautohub.application\\assemblyreference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.api\\sindautohub.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|solutionrelative:sindautohub.api\\sindautohub.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\migrations\\20250902022314_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\migrations\\20250902022314_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\persistance\\database\\sindautohubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\database\\sindautohubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\persistance\\configuration\\cargoconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\cargoconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\persistance\\configuration\\funcionarioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\funcionarioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\persistance\\configuration\\setorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\setorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.domain\\entities\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.domain\\entities\\models\\postagens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\postagens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\NuGet.Build.Tasks.Pack\\build\\NuGet.Build.Tasks.Pack.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.api\\sindautohub.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|solutionrelative:sindautohub.api\\sindautohub.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\persistance\\configuration\\notificacaoconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\configuration\\notificacaoconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\persistance\\repository\\cargosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\persistance\\repository\\cargosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.domain\\entities\\models\\notificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\notificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.domain\\entities\\models\\setor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\setor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.domain\\entities\\models\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\models\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\sindautohub.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\sindautohub.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Sindauto\\Desktop\\MeuCombustivel Copia\\GestaoDeCombustivelApp\\WebApplication1\\appsettings.Development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.domain\\entities\\enums\\tipocontratacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.domain\\entities\\enums\\tipocontratacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\entities\\enums\\tipocontratacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.domain\\interface\\icargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.domain\\interface\\icargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\interface\\icargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{880AB178-1B96-4EF6-905F-C0F31FE132AA}|SindautoHub.Application\\SindautoHub.Application.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.application\\sindautohub.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{880AB178-1B96-4EF6-905F-C0F31FE132AA}|SindautoHub.Application\\SindautoHub.Application.csproj|solutionrelative:sindautohub.application\\sindautohub.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|solutionrelative:sindautohub.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{880AB178-1B96-4EF6-905F-C0F31FE132AA}|SindautoHub.Application\\SindautoHub.Application.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{880AB178-1B96-4EF6-905F-C0F31FE132AA}|SindautoHub.Application\\SindautoHub.Application.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{880AB178-1B96-4EF6-905F-C0F31FE132AA}|SindautoHub.Application\\SindautoHub.Application.csproj|solutionrelative:sindautohub.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|c:\\users\\mv834\\desktop\\sindautohubclone\\sindautohubbackend\\sindautohub.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA866A8B-8383-40F6-8ACC-018CCE679BAB}|SindautoHub.Domain\\SindautoHub.Domain.csproj|solutionrelative:sindautohub.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -100,8 +119,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 11,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 113,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -116,35 +135,79 @@
               "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\Program.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\Program.cs",
+              "RelativeToolTip": "SindautoHub.Api\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAkwDgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T01:23:07.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\secrets.json",
+              "RelativeDocumentMoniker": "SindautoHub.Api\\secrets.json",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\secrets.json",
+              "RelativeToolTip": "SindautoHub.Api\\secrets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-02T02:47:19.2Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AssemblyReference.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\AssemblyReference.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Application\\AssemblyReference.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\AssemblyReference.cs",
+              "RelativeToolTip": "SindautoHub.Application\\AssemblyReference.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T02:05:04.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SindautoHub.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj",
+              "RelativeDocumentMoniker": "SindautoHub.Api\\SindautoHub.Api.csproj",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj",
+              "RelativeToolTip": "SindautoHub.Api\\SindautoHub.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-02T01:18:03.133Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 380,
-          "SelectedChildIndex": 26,
+          "DockedWidth": 456,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "PostagemConfigurations.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\PostagemConfigurations.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\PostagemConfigurations.cs",
               "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Configuration\\PostagemConfigurations.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\PostagemConfigurations.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\PostagemConfigurations.cs",
               "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Configuration\\PostagemConfigurations.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-01T23:09:26.502Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:8:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -152,15 +215,77 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "SindautoHub.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\appsettings.json",
+              "RelativeToolTip": "SindautoHub.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-01T22:06:38.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SindautoHub.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj",
+              "RelativeDocumentMoniker": "SindautoHub.Application\\SindautoHub.Application.csproj",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj",
+              "RelativeToolTip": "SindautoHub.Application\\SindautoHub.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-01T17:34:59.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20250902022314_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Migrations\\20250902022314_InitialCreate.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Migrations\\20250902022314_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Migrations\\20250902022314_InitialCreate.cs",
+              "RelativeToolTip": "SindautoHub.Infrastructure\\Migrations\\20250902022314_InitialCreate.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T02:23:15.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SindautoHubContext.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Database\\SindautoHubContext.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Database\\SindautoHubContext.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Database\\SindautoHubContext.cs",
+              "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Database\\SindautoHubContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T18:01:17.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CargoConfigurations.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\CargoConfigurations.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Configuration\\CargoConfigurations.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\CargoConfigurations.cs",
+              "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Configuration\\CargoConfigurations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T22:29:08.68Z"
             },
             {
               "$type": "Bookmark",
@@ -168,23 +293,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NotificacaoConfigurations.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\NotificacaoConfigurations.cs",
-              "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Configuration\\NotificacaoConfigurations.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\NotificacaoConfigurations.cs",
-              "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Configuration\\NotificacaoConfigurations.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:55:39.124Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "FuncionarioConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\FuncionarioConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\FuncionarioConfiguration.cs",
               "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Configuration\\FuncionarioConfiguration.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\FuncionarioConfiguration.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\FuncionarioConfiguration.cs",
               "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Configuration\\FuncionarioConfiguration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -192,120 +305,83 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "SetorConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\SetorConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\SetorConfiguration.cs",
               "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Configuration\\SetorConfiguration.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\SetorConfiguration.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\SetorConfiguration.cs",
               "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Configuration\\SetorConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-01T22:46:41.519Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "CargoConfigurations.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\CargoConfigurations.cs",
-              "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Configuration\\CargoConfigurations.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Configuration\\CargoConfigurations.cs",
-              "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Configuration\\CargoConfigurations.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAeAAAAAAAAAA==",
+              "Title": "Funcionario.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Funcionario.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Domain\\Entities\\Models\\Funcionario.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Funcionario.cs",
+              "RelativeToolTip": "SindautoHub.Domain\\Entities\\Models\\Funcionario.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T22:29:08.68Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\secrets.json",
-              "RelativeDocumentMoniker": "SindautoHub.Api\\secrets.json",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\secrets.json",
-              "RelativeToolTip": "SindautoHub.Api\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-01T22:19:31.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuCombustivel Copia\\GestaoDeCombustivelApp\\WebApplication1\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "..\\..\\MeuCombustivel Copia\\GestaoDeCombustivelApp\\WebApplication1\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuCombustivel Copia\\GestaoDeCombustivelApp\\WebApplication1\\appsettings.Development.json",
-              "RelativeToolTip": "..\\..\\MeuCombustivel Copia\\GestaoDeCombustivelApp\\WebApplication1\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-01T22:07:26.946Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "SindautoHub.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\appsettings.json",
-              "RelativeToolTip": "SindautoHub.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-01T22:06:38.695Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "TipoContratacao.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Enums\\TipoContratacao.cs",
-              "RelativeDocumentMoniker": "SindautoHub.Domain\\Entities\\Enums\\TipoContratacao.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Enums\\TipoContratacao.cs",
-              "RelativeToolTip": "SindautoHub.Domain\\Entities\\Enums\\TipoContratacao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T21:43:17.681Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SindautoHubContext.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Database\\SindautoHubContext.cs",
-              "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Database\\SindautoHubContext.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Database\\SindautoHubContext.cs",
-              "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Database\\SindautoHubContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T18:01:17.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-01T17:01:34.597Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "SindautoHub.Infrastructure.csproj",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
-              "RelativeToolTip": "SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-01T17:58:56.882Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ICargo.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Interface\\ICargo.cs",
-              "RelativeDocumentMoniker": "SindautoHub.Domain\\Interface\\ICargo.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Interface\\ICargo.cs",
-              "RelativeToolTip": "SindautoHub.Domain\\Interface\\ICargo.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
+              "Title": "Postagens.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Postagens.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Domain\\Entities\\Models\\Postagens.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Postagens.cs",
+              "RelativeToolTip": "SindautoHub.Domain\\Entities\\Models\\Postagens.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T17:43:36.406Z"
+              "WhenOpened": "2025-09-01T17:02:48.951Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 14,
+              "Title": "NuGet.Build.Tasks.Pack.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\NuGet.Build.Tasks.Pack\\build\\NuGet.Build.Tasks.Pack.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\NuGet.Build.Tasks.Pack\\build\\NuGet.Build.Tasks.Pack.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\NuGet.Build.Tasks.Pack\\build\\NuGet.Build.Tasks.Pack.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\NuGet.Build.Tasks.Pack\\build\\NuGet.Build.Tasks.Pack.targets",
+              "ViewState": "AgIAALIAAAAAAAAAAAAMwMsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-09-02T01:53:46.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SindautoHub.Api",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj",
+              "RelativeDocumentMoniker": "SindautoHub.Api\\SindautoHub.Api.csproj",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj",
+              "RelativeToolTip": "SindautoHub.Api\\SindautoHub.Api.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-02T01:29:19.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NotificacaoConfigurations.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\NotificacaoConfigurations.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Configuration\\NotificacaoConfigurations.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Configuration\\NotificacaoConfigurations.cs",
+              "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Configuration\\NotificacaoConfigurations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T22:55:39.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "CargosRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Repository\\CargosRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Repository\\CargosRepository.cs",
               "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Persistance\\Repository\\CargosRepository.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Persistance\\Repository\\CargosRepository.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Persistance\\Repository\\CargosRepository.cs",
               "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Repository\\CargosRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -313,23 +389,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "SindautoHub.Application.csproj",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj",
-              "RelativeDocumentMoniker": "SindautoHub.Application\\SindautoHub.Application.csproj",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj",
-              "RelativeToolTip": "SindautoHub.Application\\SindautoHub.Application.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-01T17:34:59.808Z"
+              "DocumentIndex": 22,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuCombustivel Copia\\GestaoDeCombustivelApp\\WebApplication1\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Sindauto\\Desktop\\MeuCombustivel Copia\\GestaoDeCombustivelApp\\WebApplication1\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuCombustivel Copia\\GestaoDeCombustivelApp\\WebApplication1\\appsettings.Development.json",
+              "RelativeToolTip": "..\\..\\..\\..\\Sindauto\\Desktop\\MeuCombustivel Copia\\GestaoDeCombustivelApp\\WebApplication1\\appsettings.Development.json",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-01T22:07:26.946Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 23,
+              "Title": "TipoContratacao.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Enums\\TipoContratacao.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Domain\\Entities\\Enums\\TipoContratacao.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Enums\\TipoContratacao.cs",
+              "RelativeToolTip": "SindautoHub.Domain\\Entities\\Enums\\TipoContratacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T21:43:17.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SindautoHub.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
+              "RelativeToolTip": "SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-01T17:58:56.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ICargo.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Interface\\ICargo.cs",
+              "RelativeDocumentMoniker": "SindautoHub.Domain\\Interface\\ICargo.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Interface\\ICargo.cs",
+              "RelativeToolTip": "SindautoHub.Domain\\Interface\\ICargo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwA4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T17:43:36.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "Notificacao.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Notificacao.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Notificacao.cs",
               "RelativeDocumentMoniker": "SindautoHub.Domain\\Entities\\Models\\Notificacao.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Notificacao.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Notificacao.cs",
               "RelativeToolTip": "SindautoHub.Domain\\Entities\\Models\\Notificacao.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -337,23 +449,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Postagens.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Postagens.cs",
-              "RelativeDocumentMoniker": "SindautoHub.Domain\\Entities\\Models\\Postagens.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Postagens.cs",
-              "RelativeToolTip": "SindautoHub.Domain\\Entities\\Models\\Postagens.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T17:02:48.951Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 20,
               "Title": "Cargo.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Cargo.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Cargo.cs",
               "RelativeDocumentMoniker": "SindautoHub.Domain\\Entities\\Models\\Cargo.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Cargo.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Cargo.cs",
               "RelativeToolTip": "SindautoHub.Domain\\Entities\\Models\\Cargo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -361,11 +461,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "Setor.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Setor.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Setor.cs",
               "RelativeDocumentMoniker": "SindautoHub.Domain\\Entities\\Models\\Setor.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Setor.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Entities\\Models\\Setor.cs",
               "RelativeToolTip": "SindautoHub.Domain\\Entities\\Models\\Setor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -373,36 +473,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Funcionario.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Funcionario.cs",
-              "RelativeDocumentMoniker": "SindautoHub.Domain\\Entities\\Models\\Funcionario.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Entities\\Models\\Funcionario.cs",
-              "RelativeToolTip": "SindautoHub.Domain\\Entities\\Models\\Funcionario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T17:01:34.597Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\Program.cs",
-              "RelativeDocumentMoniker": "SindautoHub.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\Program.cs",
-              "RelativeToolTip": "SindautoHub.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T16:45:47.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Class1.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Class1.cs",
               "RelativeDocumentMoniker": "SindautoHub.Infrastructure\\Class1.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\Class1.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\Class1.cs",
               "RelativeToolTip": "SindautoHub.Infrastructure\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -410,11 +485,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\Class1.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\Class1.cs",
               "RelativeDocumentMoniker": "SindautoHub.Application\\Class1.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\Class1.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\Class1.cs",
               "RelativeToolTip": "SindautoHub.Application\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -422,11 +497,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 27,
               "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Class1.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Class1.cs",
               "RelativeDocumentMoniker": "SindautoHub.Domain\\Class1.cs",
-              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\Class1.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\Class1.cs",
               "RelativeToolTip": "SindautoHub.Domain\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -434,7 +509,23 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }

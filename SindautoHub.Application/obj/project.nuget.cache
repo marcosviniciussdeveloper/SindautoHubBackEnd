@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "axErlHUzivI=",
+  "dgSpecHash": "7GQdGZxZPEc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj",
+  "projectFilePath": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Sindauto\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
-    "C:\\Users\\Sindauto\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
-    "C:\\Users\\Sindauto\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.8\\microsoft.extensions.dependencyinjection.abstractions.9.0.8.nupkg.sha512"
+    "C:\\Users\\mv834\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
+    "C:\\Users\\mv834\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
+    "C:\\Users\\mv834\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.8\\microsoft.extensions.dependencyinjection.abstractions.9.0.8.nupkg.sha512"
   ],
   "logs": []
 }

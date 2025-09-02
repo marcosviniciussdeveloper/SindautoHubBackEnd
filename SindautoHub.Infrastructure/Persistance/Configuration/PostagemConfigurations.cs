@@ -10,9 +10,9 @@ using SindautoHub.Domain.Entities.Models;
 
 namespace SindautoHub.Infrastructure.Persistance.Configuration
 {
-    internal class PostagemConfigurations : IEntityTypeConfiguration<Postagens>
+    internal class PostagemConfigurations : IEntityTypeConfiguration<Postagem>
     {
-        public void Configure(EntityTypeBuilder<Postagens> builder)
+        public void Configure(EntityTypeBuilder<Postagem> builder)
         {
             builder
                  .ToTable("postagens");
@@ -27,7 +27,7 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
 
             builder
                 .HasOne(f => f.Autor)
-               .WithMany(s => s.postagens)
+               .WithMany(s => s.Postagens)
                .HasForeignKey(f => f.AutorId)
                .IsRequired();
 

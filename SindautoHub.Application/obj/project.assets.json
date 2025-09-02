@@ -135,23 +135,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sindauto\\.nuget\\packages\\": {},
+    "C:\\Users\\mv834\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj",
+      "projectUniqueName": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj",
       "projectName": "SindautoHub.Application",
-      "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj",
-      "packagesPath": "C:\\Users\\Sindauto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\obj\\",
+      "projectPath": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj",
+      "packagesPath": "C:\\Users\\mv834\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Sindauto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mv834\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -167,8 +167,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\SindautoHub.Domain.csproj": {
-              "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\SindautoHub.Domain.csproj"
+            "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\SindautoHub.Domain.csproj": {
+              "projectPath": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Domain\\SindautoHub.Domain.csproj"
             }
           }
         }

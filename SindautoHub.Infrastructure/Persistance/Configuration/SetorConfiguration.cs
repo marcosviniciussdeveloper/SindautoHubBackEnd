@@ -15,7 +15,7 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
         public void Configure(EntityTypeBuilder<Setor> builder)
         {
             builder
-                .ToTable("setor");
+                .ToTable("setores");
             builder
                 .HasKey(c => c.Id);
             builder

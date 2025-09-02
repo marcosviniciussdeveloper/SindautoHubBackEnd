@@ -9,3 +9,15 @@ C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Domain\obj\Debug\n
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Domain\obj\Debug\net8.0\refint\SindautoHub.Domain.dll
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Domain\obj\Debug\net8.0\SindautoHub.Domain.pdb
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Domain\obj\Debug\net8.0\ref\SindautoHub.Domain.dll
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\bin\Debug\net8.0\SindautoHub.Domain.deps.json
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\bin\Debug\net8.0\SindautoHub.Domain.dll
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\bin\Debug\net8.0\SindautoHub.Domain.pdb
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\obj\Debug\net8.0\SindautoHub.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\obj\Debug\net8.0\SindautoHub.Domain.AssemblyInfoInputs.cache
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\obj\Debug\net8.0\SindautoHub.Domain.AssemblyInfo.cs
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\obj\Debug\net8.0\SindautoHub.Domain.csproj.CoreCompileInputs.cache
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\obj\Debug\net8.0\SindautoHub.Domain.sourcelink.json
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\obj\Debug\net8.0\SindautoHub.Domain.dll
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\obj\Debug\net8.0\refint\SindautoHub.Domain.dll
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\obj\Debug\net8.0\SindautoHub.Domain.pdb
+C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Domain\obj\Debug\net8.0\ref\SindautoHub.Domain.dll

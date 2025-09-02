@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SindautoHub.Domain.Entities.Models
 {
-    public  class Postagens
+    public  class Postagem
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 

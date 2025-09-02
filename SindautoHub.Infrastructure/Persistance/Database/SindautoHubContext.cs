@@ -11,7 +11,7 @@ namespace SindautoHub.Infrastructure.Persistance.Database
 {
     public class SindautoHubContext : DbContext
     {
-        public SindautoHubContext(DbContextOptions<SindautoHubContext> options) { }
+        public SindautoHubContext(DbContextOptions<SindautoHubContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,15 +19,10 @@ namespace SindautoHub.Infrastructure.Persistance.Database
             base.OnModelCreating(modelBuilder);
         }
 
-
-        public DbSet <Cargo>  Cargo { get; set; }
-
-        public DbSet<Funcionario> Funcionario { get; set; }
-
-        public DbSet<Notificacao> Notificacao { get; set; }
-
-        public DbSet<Postagens> Postagens { get; set; }
-
-        public DbSet<Setor>  Setor { get; set; }
+            public DbSet<Cargo> Cargos { get; set; }
+             public DbSet<Funcionario> Funcionarios { get; set; }
+            public DbSet<Notificacao> Notificacoes { get; set; }
+            public DbSet<Postagem> Postagens { get; set; }
+            public DbSet<Setor> Setores { get; set; }
     }
 }
