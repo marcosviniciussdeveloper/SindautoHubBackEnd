@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +19,8 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
             builder .HasKey(x => x.Id);
 
             builder
+             .Property(f => f.Id).ValueGeneratedOnAdd();
+            builder
              .Property(p => p.Nome)
              .HasMaxLength(100)
                .IsRequired();
@@ -29,6 +31,8 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
                .HasForeignKey(f => f.SetorId)
                .IsRequired();
 
+
+            
 
             builder
                 .Property(p => p.Cpf)

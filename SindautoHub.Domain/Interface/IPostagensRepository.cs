@@ -16,7 +16,7 @@ namespace SindautoHub.Domain.Interface
 
         Task <Postagem > GetByIdAsync (Guid postagemId);
 
-        Task <Postagem> UpdateAsync (Postagem postagem);    
+        Task <Postagem> UpdateAsync (Postagem postagemId);    
 
         Task<bool> DeleteAsync(Postagem postagemId);
     }

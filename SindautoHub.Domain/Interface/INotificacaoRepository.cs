@@ -14,7 +14,7 @@ namespace SindautoHub.Domain.Interface
 
         Task<bool> DeleteAsync(Guid notificacaoId);
 
-        Task<Notificacao> UpdateAsync (Notificacao notificacao);
+        Task<Notificacao> UpdateAsync (Notificacao notificacaoId);
 
 
         Task<Notificacao> GetByIdAsync (Guid notificacaoId);

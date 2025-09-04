@@ -17,6 +17,8 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
             builder
                  .ToTable("postagens");
             builder
+            .Property(f => f.Id).ValueGeneratedOnAdd();
+            builder
                 .HasKey(x => x.Id);
             builder
                .Property(x => x.Id)

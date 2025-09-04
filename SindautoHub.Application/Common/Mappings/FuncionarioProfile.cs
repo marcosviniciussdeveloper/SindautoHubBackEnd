@@ -1,7 +1,7 @@
-﻿using System.Xml.Serialization;
-using AutoMapper;
-using SindautoHub.Application.Dtos;
-using SindautoHub.Domain.Entities.Models;
+﻿using AutoMapper;
+using SindautoHub.Application.Dtos; // Ou o namespace dos seus DTOs
+using SindautoHub.Domain.Entities;
+using SindautoHub.Domain.Entities.Models; // Ou o namespace das suas Entidades
 
 namespace SindautoHub.Application.Common.Mappings;
 
@@ -9,33 +9,24 @@ public class FuncionarioProfile : Profile
 {
     public FuncionarioProfile()
     {
-        // Mapeamento de ENTRADA: De DTO para Entidade
-        // Usado para criar um novo funcionário.
+        // Mapa de ENTRADA: De DTO para Entidade (Para Criar um novo Funcionário)
         CreateMap<CreateFuncionarioRequest, Funcionario>();
 
-        // Mapeamento de ATUALIZAÇÃO: De DTO para Entidade
-        // Usado para atualizar um funcionário existente.
-        // O .ForAllMembers(opts => opts.Condition(...)) garante que apenas
-        // os valores não nulos do DTO de requisição irão sobrescrever os da entidade.
-        CreateMap<CreateUpdateFuncionarioRequest, Funcionario>()
+        // Mapa de ATUALIZAÇÃO: De DTO para Entidade
+        CreateMap<UpdateFuncionarioRequest, Funcionario>()
             .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
 
-
-    
-        CreateMap<Funcionario, FuncionarioResponseDto>()
+        // Mapa de SAÍDA: De Entidade para DTO (Para enviar ao Front-end)
+        CreateMap<Funcionario, FuncionarioResponseDto>() // Usando o DTO de resposta correto
             .ForMember(
                 dest => dest.NomeDoCargo,
-                opt => opt.MapFrom(src => src.cargo.Nome)
-
+                opt => opt.MapFrom(src => src.cargo.Nome) // Correção: 'C' maiúsculo
             )
-
             .ForMember(
-
                 dest => dest.NomeDoSetor,
-                opt => opt.MapFrom(src => src.setor.NomeSetor)
+                opt => opt.MapFrom(src => src.setor.NomeSetor) // Correção: 'S' maiúsculo e a propriedade 'Nome'
             )
-
-        .ForMember(
+            .ForMember(
                 dest => dest.TipoContratacao,
                 opt => opt.MapFrom(src => src.TipoContratacao.ToString())
             );

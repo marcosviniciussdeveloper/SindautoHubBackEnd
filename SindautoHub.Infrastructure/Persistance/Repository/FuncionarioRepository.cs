@@ -11,11 +11,11 @@ namespace SindautoHub.Infrastructure.Persistance.Repository
         private readonly SindautoHubContext _context;
 
 
-        public  FuncionarioRepository(SindautoHubContext _context)
+        public  FuncionarioRepository(SindautoHubContext context)
         {
 
-          
-            _context = _context ?? throw new ArgumentNullException(nameof(_context));
+
+            _context = context;
 
 
         }
@@ -44,16 +44,36 @@ namespace SindautoHub.Infrastructure.Persistance.Repository
 
         }
 
+        public async Task<Funcionario> GetByCpfAsync(string cpf)
+        {
+            return await _context.Funcionarios.FirstOrDefaultAsync(f => f.Cpf == cpf);
+          
+        }
+
+        public async Task<Funcionario> GetByEmailAsync(string email)
+        {
+           return await _context.Funcionarios.FirstOrDefaultAsync(f => f.Email == email);
+        }
+
         public async Task<Funcionario> GetByIdAsync(Guid funcionarioId)
         {
             return await _context.Funcionarios.FindAsync(funcionarioId);
         }
 
-        public Task<Funcionario> UpdateAsync(Funcionario FuncionarioId)
+        public async Task<Funcionario?> GetByIdWithincludesAsync(Guid id)
         {
-           _context.Update(FuncionarioId);
-            return Task.FromResult(FuncionarioId);
+            return await _context.Funcionarios
+                .Include(f => f.cargo)
+                .Include(f => f.setor)
+                .FirstOrDefaultAsync(f => f.Id == id);
         }
 
+        public async Task<Funcionario> UpdateAsync(Funcionario FuncionarioId)
+        {
+            _context.Update(FuncionarioId);
+            return await Task.FromResult(FuncionarioId);
+        }
+
+       
     }
 }

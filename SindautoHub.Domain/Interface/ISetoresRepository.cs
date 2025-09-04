@@ -13,7 +13,7 @@ namespace SindautoHub.Domain.Interface
         Task<bool> DeleteAsync(Guid setoresId);
         Task <Setor> GetByIdAsync (Guid setoresId);
         Task<IEnumerable<Setor>> GetAllAsync(Guid setoresId);
-        Task <Setor> UpdateAsync (Guid SetorId );
+        Task <Setor> UpdateAsync (Setor  SetorId );
 
     }
 }

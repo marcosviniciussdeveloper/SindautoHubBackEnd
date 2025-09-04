@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"pru7J94gJkvho0odVBFPqtpShOcgG7Wr9eE4gDgohXc=","Source":"SindautoHub.Api","BasePath":"_content/SindautoHub.Api","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "EBHzzsWW03koVDtQChZ5lRBRhG4JuQ9SnXjUshSm47g=",
+  "Source": "SindautoHub.Api",
+  "BasePath": "_content/SindautoHub.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

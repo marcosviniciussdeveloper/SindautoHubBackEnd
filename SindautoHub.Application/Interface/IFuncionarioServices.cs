@@ -4,9 +4,9 @@ using SindautoHub.Domain.Entities.Models;
 
 namespace SindautoHub.Domain.Interface
 {
-    public interface IFuncionarioServices_cs
+    public interface IFuncionarioServices
     {
-        Task<Funcionario> CreateAsync (CreateFuncionarioRequest createRequest);
+        Task<FuncionarioResponseDto> CreateAsync (CreateFuncionarioRequest createRequest);
 
         Task<bool> DeleteAsync(Guid FuncionarioId);
         Task<IEnumerable<Funcionario>> GetAllAsync(Guid FuncionarioId);

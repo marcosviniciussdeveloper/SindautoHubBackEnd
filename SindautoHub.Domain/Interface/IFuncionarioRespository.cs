@@ -14,6 +14,9 @@ namespace SindautoHub.Domain.Interface
         Task<IEnumerable<Funcionario>> GetAllAsync(Guid FuncionarioId);
 
         Task <Funcionario> UpdateAsync (Funcionario FuncionarioId);
+         Task<Funcionario> GetByCpfAsync(string cpf);
+        Task <Funcionario?> GetByEmailAsync (string email);
 
+        Task<Funcionario?> GetByIdWithincludesAsync(Guid id);
     }
 }

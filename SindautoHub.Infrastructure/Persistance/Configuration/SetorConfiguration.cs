@@ -17,12 +17,18 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
             builder
                 .ToTable("setores");
             builder
+            .Property(f => f.Id).ValueGeneratedOnAdd();
+            builder
                 .HasKey(c => c.Id);
             builder
                   .Property(c => c.NomeSetor)
-                  .HasMaxLength(100)
+                  .HasMaxLength(200)
                 .IsRequired();
 
+            builder
+                .Property(s => s.HorarioFuncionamento)
+                .HasMaxLength(120)
+                .IsRequired();
         }
     }
 }

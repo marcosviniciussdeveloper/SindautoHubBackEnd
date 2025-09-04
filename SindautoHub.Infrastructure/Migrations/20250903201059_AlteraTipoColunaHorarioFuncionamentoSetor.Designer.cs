@@ -12,15 +12,15 @@ using SindautoHub.Infrastructure.Persistance.Database;
 namespace SindautoHub.Infrastructure.Migrations
 {
     [DbContext(typeof(SindautoHubContext))]
-    [Migration("20250902022314_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250903201059_AlteraTipoColunaHorarioFuncionamentoSetor")]
+    partial class AlteraTipoColunaHorarioFuncionamentoSetor
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.8")
+                .HasAnnotation("ProductVersion", "8.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -54,6 +54,11 @@ namespace SindautoHub.Infrastructure.Migrations
                     b.Property<Guid>("CargoId")
                         .HasColumnType("uuid");
 
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("character varying(14)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("text");
@@ -81,6 +86,9 @@ namespace SindautoHub.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CargoId");
+
+                    b.HasIndex("Cpf")
+                        .IsUnique();
 
                     b.HasIndex("SetorId");
 
@@ -160,13 +168,15 @@ namespace SindautoHub.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("HorarioFuncionamento")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("HorarioFuncionamento")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
 
                     b.Property<string>("NomeSetor")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.HasKey("Id");
 

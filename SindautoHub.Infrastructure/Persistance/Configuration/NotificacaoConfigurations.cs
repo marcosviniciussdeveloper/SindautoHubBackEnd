@@ -15,6 +15,8 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
         {
             builder
                 .ToTable("notificacoes");
+            builder
+            .Property(f => f.Id).ValueGeneratedOnAdd();
 
             builder
                 .HasKey(c => c.Id);
