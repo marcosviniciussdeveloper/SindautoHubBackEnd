@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SindautoHub.Application.Dtos;
-using SindautoHub.Application.Service;
-using SindautoHub.Domain.Entities.Models;
+using SindautoHub.Domain.Interface;
 
 namespace SindautoHub.Api.Controllers
 {
@@ -11,11 +10,11 @@ namespace SindautoHub.Api.Controllers
 
     public class FuncionarioController : ControllerBase
     {
-        private readonly FuncionarioService _funcionarioService;
+        private readonly IFuncionarioServices _funcionarioService;
 
-        public FuncionarioController(FuncionarioService funcionarioService)
+        public FuncionarioController(IFuncionarioServices funcionarioService)
         {
-            _funcionarioService = funcionarioService ?? throw new ArgumentNullException(nameof(funcionarioService));
+            _funcionarioService = funcionarioService;
         }
 
         [HttpPost]
@@ -23,7 +22,7 @@ namespace SindautoHub.Api.Controllers
         public async Task<IActionResult> Create([FromBody] CreateFuncionarioRequest createRequest)
         {
             var novoFuncionario = await _funcionarioService.CreateAsync(createRequest);
-            return CreatedAtAction(nameof(Create), new { id = novoFuncionario.Id }, novoFuncionario);
+            return CreatedAtAction(nameof(Create), new  {  id = novoFuncionario.Id  , message = "Funcionario cadastrado com Sucesso!"},  novoFuncionario);
 
         }
 
@@ -43,7 +42,7 @@ namespace SindautoHub.Api.Controllers
             {
                 return NotFound();
             }
-            return Ok(funcionarioAtualizado);
+            return  CreatedAtAction(nameof(Update), new {funcionarioAtualizado , message = "Funcionario Atualizado com sucesso" });
 
 
         }

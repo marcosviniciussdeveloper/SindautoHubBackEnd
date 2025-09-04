@@ -7,12 +7,10 @@ namespace SindautoHub.Domain.Interface
     {
         Task <Cargo> CreateAsync (Cargo cargo);
         Task<bool> DeleteAsync(Guid CargoId);
-
         Task <Cargo> GetByIdAsync (Guid CargoId );
         Task<IEnumerable<Cargo>> GetAllAsync(Guid  CargosId );
 
         Task <Cargo> UpdateAsync (Guid CargoId);
-
-
+        Task <Cargo> GetByNameAsync(string? nome);
     }
 }

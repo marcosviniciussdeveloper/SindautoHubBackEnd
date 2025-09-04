@@ -45,7 +45,7 @@ namespace SindautoHub.Infrastructure.Persistance.Repository
             return true;
         }
 
-        public async Task<IEnumerable<Cargo>> GetAllAsync(Guid  CargoId)
+        public async Task<IEnumerable<Cargo>> GetAllAsync(Guid CargoId)
         {
             return await _context.Set<Cargo>().ToListAsync();
         }
@@ -55,10 +55,20 @@ namespace SindautoHub.Infrastructure.Persistance.Repository
             return await _context.Cargos.FindAsync(CargoId);
         }
 
-        public Task<Cargo> UpdateAsync(Guid CargoId)
+    
+
+        public async Task<Cargo> UpdateAsync(Guid CargoId)
         {
             _context.Update(CargoId);
-            return (Task<Cargo>)Task.CompletedTask;
+            return await (Task<Cargo>)Task.CompletedTask;
         }
+
+        public async Task<Cargo?> GetByNameAsync(string? nome)
+        {
+
+            return await _context.Cargos
+                .FirstOrDefaultAsync(c => c.Nome.ToLower() == nome.ToLower());
+        }
+     
     }
 }

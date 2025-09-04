@@ -9,7 +9,7 @@
       "SindautoHub.Api/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
           "SindautoHub.Application": "1.0.0",
           "SindautoHub.Infrastructure": "1.0.0",
@@ -58,14 +58,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.8": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.6": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.1.2"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
-            "assemblyVersion": "8.0.8.0",
-            "fileVersion": "8.0.824.36908"
+            "assemblyVersion": "8.0.6.0",
+            "fileVersion": "8.0.624.26909"
           }
         }
       },
@@ -520,28 +520,28 @@
           }
         }
       },
-      "Npgsql/8.0.4": {
+      "Npgsql/8.0.6": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
         },
         "runtime": {
           "lib/net8.0/Npgsql.dll": {
-            "assemblyVersion": "8.0.4.0",
-            "fileVersion": "8.0.4.0"
+            "assemblyVersion": "8.0.6.0",
+            "fileVersion": "8.0.6.0"
           }
         }
       },
-      "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.8": {
+      "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.Abstractions": "8.0.8",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.8",
-          "Npgsql": "8.0.4"
+          "Npgsql": "8.0.6"
         },
         "runtime": {
           "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
-            "assemblyVersion": "8.0.8.0",
-            "fileVersion": "8.0.8.0"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
           }
         }
       },
@@ -824,8 +824,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.8",
-          "Npgsql": "8.0.4",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.8",
+          "Npgsql": "8.0.6",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.0",
           "SindautoHub.Application": "1.0.0",
           "Supabase": "1.1.1",
           "Supabase.Postgrest": "4.1.0"
@@ -873,12 +873,12 @@
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.8": {
+    "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-J145j2LgD4kkkNkrf5DW/pKzithZRKN5EFY+KAO3SqweMyDfv4cgKgtOIsv2bhrOLGqPJixuZkZte7LfK1seYQ==",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/8.0.8",
-      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512"
+      "sha512": "sha512-devoUZd8YqikCheBVYpIyvp9psM2Y2ZhOvq1zL2YSjIoq3FUQH8LpLkGak+8oAi/5DGqX8KWyLpZJSUXtOAVCw==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/8.0.6",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.8.0.6.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "type": "package",
@@ -1111,19 +1111,19 @@
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
-    "Npgsql/8.0.4": {
+    "Npgsql/8.0.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vaYEUlF/pB9m8bs21wQv3Da0kMHT4A9USe47VfY/L2BO97xz5KfIxhEu22QS9d68ZrLxvtL3wQDfDLPr2OjbjA==",
-      "path": "npgsql/8.0.4",
-      "hashPath": "npgsql.8.0.4.nupkg.sha512"
+      "sha512": "sha512-KaS6CY5kY2Sd0P00MSeFcOI3t2DiQ4UWG8AuRpVOUeDWITOKfoEEG91DP3cmT6aerixPkjwKgXxnpDxIkDpO6g==",
+      "path": "npgsql/8.0.6",
+      "hashPath": "npgsql.8.0.6.nupkg.sha512"
     },
-    "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.8": {
+    "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-D5WWJZJTgZYUmGv66BARXbTlinp2a5f5RueJqGYoHuWJw02J0i2va/RA+8N4A5hLORK5YKMRqXhFWtKsZdrksw==",
-      "path": "npgsql.entityframeworkcore.postgresql/8.0.8",
-      "hashPath": "npgsql.entityframeworkcore.postgresql.8.0.8.nupkg.sha512"
+      "sha512": "sha512-GDXiMS9peEdjSCU/rfgyHruio7q6tYuywGaktqEi6UPQ6ILechp3fVVX+dHXkIXt4nklCBzYVWkzFrSL9ubKUA==",
+      "path": "npgsql.entityframeworkcore.postgresql/8.0.0",
+      "hashPath": "npgsql.entityframeworkcore.postgresql.8.0.0.nupkg.sha512"
     },
     "Supabase/1.1.1": {
       "type": "package",

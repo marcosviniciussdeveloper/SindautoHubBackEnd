@@ -17,9 +17,15 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 // --- Adicionar serviços ao container ---
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
+    });
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 builder.Services.AddCors(options =>
 {
