@@ -15,7 +15,7 @@ public class TokenService : ITokenService
         _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
     }
 
-    public string GenerateToken(Funcionario funcionario)
+    public string GenerateToken(User funcionario)
     {
         var jwtSecret = _configuration["Supabase:JwtSecret"];
         var projectRef = _configuration["Supabase:ProjectRef"];

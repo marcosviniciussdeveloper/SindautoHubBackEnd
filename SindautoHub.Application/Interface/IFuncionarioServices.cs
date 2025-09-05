@@ -9,9 +9,9 @@ namespace SindautoHub.Domain.Interface
         Task<FuncionarioResponseDto> CreateAsync (CreateFuncionarioRequest createRequest);
 
         Task<bool> DeleteAsync(Guid FuncionarioId);
-        Task<IEnumerable<Funcionario>> GetAllAsync(Guid FuncionarioId);
+        Task<IEnumerable<User>> GetAllAsync(Guid FuncionarioId);
 
-        Task<Funcionario> UpdateAsync (Guid id , UpdateFuncionarioRequest updateRequest);
-        Task<Funcionario> GetByIdAsync (Guid FuncionarioId );
+        Task<bool> UpdateAsync (Guid FuncionarioID , UpdateFuncionarioRequest updateRequest);
+        Task<FuncionarioResponseDto> GetByIdAsync (Guid FuncionarioId );
     }
 }

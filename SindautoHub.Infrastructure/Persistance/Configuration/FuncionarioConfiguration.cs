@@ -10,9 +10,9 @@ using SindautoHub.Domain.Entities.Models;
 
 namespace SindautoHub.Infrastructure.Persistance.Configuration
 {
-    internal class FuncionarioConfiguration : IEntityTypeConfiguration<Funcionario>
+    internal class FuncionarioConfiguration : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<Funcionario> builder)
+        public void Configure(EntityTypeBuilder<User> builder)
         {
             builder
                 .ToTable("funcionarios");

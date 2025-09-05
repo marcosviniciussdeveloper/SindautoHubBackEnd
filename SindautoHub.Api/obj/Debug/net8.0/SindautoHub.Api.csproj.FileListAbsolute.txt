@@ -268,3 +268,5 @@ C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Api\obj\D
 C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Api\obj\Debug\net8.0\SindautoHub.Api.pdb
 C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Api\obj\Debug\net8.0\SindautoHub.Api.genruntimeconfig.cache
 C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Api\obj\Debug\net8.0\ref\SindautoHub.Api.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\SendGrid.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\StarkbankEcdsa.dll

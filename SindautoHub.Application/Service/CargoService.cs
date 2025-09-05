@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using AutoMapper.Features;
 using SindautoHub.Application.Common.Mappings;
 using SindautoHub.Application.Dtos;
 using SindautoHub.Application.Interface;
@@ -15,10 +16,10 @@ namespace SindautoHub.Application.Service
     public class CargoServices : ICargoServices
     {
         private readonly ICargoRepository _cargoRepository;
-        private readonly IFuncionarioRespository _funcionarioRespository;
+        private readonly IUsersRespository _funcionarioRespository;
         private readonly IunitOfwork _unitOfWork;
         private readonly IMapper _mapper;
-        public CargoServices(IFuncionarioRespository funcionario, IunitOfwork iunitOfwork, IMapper mapper, ICargoRepository cargoRepository)
+        public CargoServices(IUsersRespository funcionario, IunitOfwork iunitOfwork, IMapper mapper, ICargoRepository cargoRepository)
         {
             _funcionarioRespository = funcionario;
             _unitOfWork = iunitOfwork;
@@ -39,17 +40,40 @@ namespace SindautoHub.Application.Service
             await _cargoRepository.CreateAsync(cargoProfile);
             await _unitOfWork.SaveChangesAsync();
 
-           return cargoProfile;
+            return cargoProfile;
         }
 
-        public Task<bool> DeleteAsync(Guid cargoId)
+        public async Task<bool> DeleteAsync(Guid cargoId)
         {
-            throw new NotImplementedException();
+            var existingCargo = await _cargoRepository.GetByIdAsync(cargoId);
+            if (existingCargo == null)
+            {
+                throw new Exception("Cargo não encontrado.");   
+            }
+
+            var funncionariosnocargo = await _funcionarioRespository.GetByIdAsync(cargoId);
+
+            if (funncionariosnocargo != null)
+            {
+                throw new Exception("Não é possível deletar o cargo, pois existem funcionários associados a ele.");
+            }
+            
+                await _cargoRepository.DeleteAsync(cargoId);
+                await _unitOfWork.SaveChangesAsync();
+                return true;
+            
         }
 
-        public Task<IEnumerable<CargoResponse>> GetAllAsync()
+        public async Task<IEnumerable<Cargo>> GetAllAsync(Guid cargoId)
         {
-            throw new NotImplementedException();
+            var cargos = _cargoRepository.GetAllAsync(cargoId);
+            if (cargos == null)
+            {
+                throw new Exception("Nenhum cargo encontrado.");
+            }
+
+            await _unitOfWork.SaveChangesAsync();
+            return await cargos;
         }
 
         public async Task<CargoResponse?> GetByIdAsync(Guid cargoId)

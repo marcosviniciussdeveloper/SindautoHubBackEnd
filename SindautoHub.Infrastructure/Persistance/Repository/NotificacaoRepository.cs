@@ -10,42 +10,38 @@ using SindautoHub.Infrastructure.Persistance.Database;
 
 namespace SindautoHub.Infrastructure.Persistance.Repository
 {
-    public class NotificacaoRepository : INotificacaoRepository
+    public class NotificacaoRepository : IAnnouncementsRepository
     {
         private readonly SindautoHubContext _context;
         public NotificacaoRepository(SindautoHubContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-        public async Task<Notificacao> CreateAsync(Notificacao notificacao)
+        public async Task<announcements> CreateAsync(announcements notificacao)
         {
-            await _context.Set<Notificacao>().AddAsync(notificacao);
-                return new Notificacao();
+            await _context.Set<announcements>().AddAsync(notificacao);
+                return new announcements();
         }
 
-        public Task<bool> DeleteAsync(Guid notificacaoId)
+        public async Task<bool> DeleteAsync(announcements notificacao)
         {
-            var notificacaoToDelete = _context.Notificacoes.Find(notificacaoId);
-            if (notificacaoToDelete is null)
-            {
-                return Task.FromResult(false);
-            }
-
-            _context.Notificacoes.Remove(notificacaoToDelete);
-            return Task.FromResult(true);
+             _context.Notificacoes.Remove(notificacao);
+            return await Task.FromResult(true);
         }
 
-        public async Task<IEnumerable<Notificacao>> GetAllAsync(Guid FuncionarioId)
+        
+
+        public async Task<IEnumerable<announcements>> GetAllAsync(Guid FuncionarioId)
         {
-            return await _context.Set<Notificacao>().ToListAsync();
+            return await _context.Set<announcements>().ToListAsync();
         }
 
-        public async Task<Notificacao> GetByIdAsync(Guid notificacaoId)
+        public async Task<announcements> GetByIdAsync(Guid notificacaoId)
         {
             return await _context.Notificacoes.FindAsync(notificacaoId);
         }
 
-        public Task<Notificacao> UpdateAsync(Notificacao NotificacaoId)
+        public Task<announcements> UpdateAsync(announcements NotificacaoId)
         {
             _context.Update(NotificacaoId);
             return Task.FromResult(NotificacaoId);

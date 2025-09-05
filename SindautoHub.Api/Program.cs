@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using SindautoHub.Application;
 using SindautoHub.Application.Interface;
 using SindautoHub.Application.Service;
+using SindautoHub.Application.Services;
 using SindautoHub.Domain.Interface;
 
 using SindautoHub.Infrastructure.Persistance.Database;
@@ -31,7 +32,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
     {
-        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        policy.WithOrigins("http://localhost:5173" )
+        .AllowAnyHeader()
+        .AllowCredentials()
+        .AllowAnyMethod();
     });
 });
 
@@ -51,11 +55,11 @@ builder.Services.AddValidatorsFromAssembly(typeof(AssemblyReference).Assembly);
 // --- REGISTRO DAS SUAS INTERFACES E CLASSES ---
 builder.Services.AddScoped<IunitOfwork, UnitOfwork>();
 builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddScoped<IFuncionarioRespository, FuncionarioRepository>();
+builder.Services.AddScoped<IUsersRespository, UsersRepository>();
 builder.Services.AddScoped<ICargoRepository, CargosRepository>();
 builder.Services.AddScoped<ISetoresRepository, SetorRepository>();
-builder.Services.AddScoped<PostagemRepository, PostagemRepository>();
-builder.Services.AddScoped<INotificacaoRepository, NotificacaoRepository>();
+builder.Services.AddScoped<IPostagensRepository, PostagemRepository>();
+builder.Services.AddScoped<IAnnouncementsRepository, NotificacaoRepository>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IFuncionarioServices, FuncionarioService>();

@@ -9,16 +9,11 @@ public class CreatePostagemRequest
     public string Conteudo { get; set; }
   
 }
-
-
-
 public class UpdatePostagemRequest
 {
     public string? Titulo { get; set; }
     public string? Conteudo { get; set; }
 }
-
-
 
 public class PostagemResponse
 {

@@ -22,7 +22,7 @@ namespace SindautoHub.Api.Controllers
         public async Task<IActionResult> Create([FromBody] CreateFuncionarioRequest createRequest)
         {
             var novoFuncionario = await _funcionarioService.CreateAsync(createRequest);
-            return CreatedAtAction(nameof(Create), new  {  id = novoFuncionario.Id  , message = "Funcionario cadastrado com Sucesso!"},  novoFuncionario);
+            return CreatedAtAction(nameof(Create), new  {  id =  novoFuncionario  , message = "Funcionario cadastrado com Sucesso!"},  novoFuncionario);
 
         }
 
@@ -34,16 +34,17 @@ namespace SindautoHub.Api.Controllers
         }
 
 
-        [HttpPut]
-        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateFuncionarioRequest updateRequest)
+        [HttpPatch]
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateFuncionarioRequest  request)
         {
-            var funcionarioAtualizado = await _funcionarioService.UpdateAsync(id, updateRequest);
-            if (funcionarioAtualizado == null)
+            var success = await _funcionarioService.UpdateAsync(id, request);
+            if (!success)
             {
-                return NotFound();
+                return NotFound("Funcionário não encontrado.");
             }
-            return  CreatedAtAction(nameof(Update), new {funcionarioAtualizado , message = "Funcionario Atualizado com sucesso" });
 
+           
+            return NoContent();
 
         }
 

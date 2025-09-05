@@ -11,13 +11,13 @@ public class NotificacaoProfile : Profile
     public NotificacaoProfile()
     {
         
-        CreateMap<CreateNotificacaoRequest, Notificacao>()  
+        CreateMap<CreateNotificacaoRequest, announcements>()  
             .ForMember(dest => dest.Lida, opt => opt.MapFrom(src => false)) 
             .ForMember(dest => dest.DataCriacao, opt => opt.MapFrom(src => DateTime.UtcNow)); 
 
 
        
-        CreateMap<Notificacao, NotificacaoResponse>();
+        CreateMap<announcements, NotificacaoResponse>();
 
     }
 }

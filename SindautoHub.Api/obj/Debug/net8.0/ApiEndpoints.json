@@ -35,7 +35,7 @@
     "ContainingType": "SindautoHub.Api.Controllers.FuncionarioController",
     "Method": "Update",
     "RelativePath": "api/Funcionario",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -45,7 +45,7 @@
         "IsRequired": false
       },
       {
-        "Name": "updateRequest",
+        "Name": "request",
         "Type": "SindautoHub.Application.Dtos.UpdateFuncionarioRequest",
         "IsRequired": true
       }
@@ -66,6 +66,90 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.NotificacoesController",
+    "Method": "Create",
+    "RelativePath": "api/Notificacoes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createRequest",
+        "Type": "SindautoHub.Application.Dtos.CreateNotificacaoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.NotificacoesController",
+    "Method": "GetById",
+    "RelativePath": "api/Notificacoes/{notificacaoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificacaoId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.NotificacoesController",
+    "Method": "Delete",
+    "RelativePath": "api/Notificacoes/{notificacaoId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificacaoId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.NotificacoesController",
+    "Method": "MarkAsRead",
+    "RelativePath": "api/Notificacoes/marcar-como-lida/{notificacaoId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificacaoId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.NotificacoesController",
+    "Method": "MarkAllAsRead",
+    "RelativePath": "api/Notificacoes/marcar-todas-como-lidas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.NotificacoesController",
+    "Method": "GetMinhasNotificacoes",
+    "RelativePath": "api/Notificacoes/minhas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

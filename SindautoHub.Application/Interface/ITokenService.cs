@@ -9,7 +9,7 @@ namespace SindautoHub.Application.Interface
 {
     public interface ITokenService
     {
-        string  GenerateToken(Funcionario funcionario);
+        string  GenerateToken(User funcionario);
 
     }
 }

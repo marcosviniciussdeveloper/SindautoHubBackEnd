@@ -9,9 +9,9 @@ using SindautoHub.Domain.Entities.Models;
 
 namespace SindautoHub.Infrastructure.Persistance.Configuration
 {
-    internal class NotificacaoConfigurations : IEntityTypeConfiguration<Notificacao>
+    internal class NotificacaoConfigurations : IEntityTypeConfiguration<announcements>
     {
-        public void Configure(EntityTypeBuilder<Notificacao> builder)
+        public void Configure(EntityTypeBuilder<announcements> builder)
         {
             builder
                 .ToTable("notificacoes");

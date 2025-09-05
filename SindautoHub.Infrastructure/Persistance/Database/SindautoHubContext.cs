@@ -19,10 +19,16 @@ namespace SindautoHub.Infrastructure.Persistance.Database
             base.OnModelCreating(modelBuilder);
         }
 
-            public DbSet<Cargo> Cargos { get; set; }
-             public DbSet<Funcionario> Funcionarios { get; set; }
-            public DbSet<Notificacao> Notificacoes { get; set; }
-            public DbSet<Postagem> Postagens { get; set; }
-            public DbSet<Setor> Setores { get; set; }
+        public DbSet<Cargo> Cargos { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Announcements> Announcements { get; set; }
+        public DbSet<Tickets> Tickets { get; set; }
+
+        public DbSet<ChatMessages> ChatMessages { get; set; }
+
+        public DbSet<TicketMessages> TicketMessages { get; set; }
+
+        public DbSet<Chats> Chats { get; set; }
+        public DbSet<Setor> Setores { get; set; }
     }
 }

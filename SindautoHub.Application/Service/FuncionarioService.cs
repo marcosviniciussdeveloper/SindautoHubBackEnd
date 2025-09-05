@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.VisualBasic;
+using SendGrid.Helpers.Errors.Model;
 using SindautoHub.Application.Common.Mappings;
 using SindautoHub.Application.Dtos;
 using SindautoHub.Application.Interface;
@@ -15,17 +16,19 @@ namespace SindautoHub.Application.Service
     /// sumary>
     public class FuncionarioService : IFuncionarioServices
     {
-        private readonly IFuncionarioRespository _funcionarioRespository;
-
+        private readonly IUsersRespository _funcionarioRespository;
+        private readonly ICargoRepository _cargoRepository;
+        private readonly ISetoresRepository _setoresRepository;
         private readonly IMapper _mapper;
         private readonly IunitOfwork _unitOfWork;
 
-        public FuncionarioService(IunitOfwork iunit0Fwork, IMapper mapper, IFuncionarioRespository funcionarioRespository)
+        public FuncionarioService(ISetoresRepository setoresRepository, ICargoRepository cargoRepository, IunitOfwork iunit0Fwork, IMapper mapper, IUsersRespository funcionarioRespository)
         {
-            _unitOfWork = iunit0Fwork ?? throw new ArgumentNullException(nameof(iunit0Fwork));
-
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-            _funcionarioRespository = funcionarioRespository ?? throw new ArgumentNullException(nameof(funcionarioRespository));
+            _setoresRepository = setoresRepository;
+            _unitOfWork = iunit0Fwork;
+            _cargoRepository = cargoRepository;
+            _mapper = mapper;
+            _funcionarioRespository = funcionarioRespository;
         }
 
         public async Task<FuncionarioResponseDto> CreateAsync(CreateFuncionarioRequest createRequest)
@@ -44,7 +47,7 @@ namespace SindautoHub.Application.Service
                 throw new Exception("Funcionario com esse Email já existe.");
             }
 
-            var funcionarioProfile = _mapper.Map<Funcionario>(createRequest);
+            var funcionarioProfile = _mapper.Map<User>(createRequest);
 
             await _funcionarioRespository.CreateAsync(funcionarioProfile);
             await _unitOfWork.SaveChangesAsync();
@@ -71,7 +74,7 @@ namespace SindautoHub.Application.Service
 
         }
 
-        public Task<IEnumerable<Funcionario>> GetAllAsync(Guid FuncionarioId)
+        public async Task<IEnumerable<User>> GetAllAsync(Guid FuncionarioId)
         {
             var funcionarios = _funcionarioRespository.GetAllAsync(FuncionarioId);
             if (funcionarios == null)
@@ -79,11 +82,12 @@ namespace SindautoHub.Application.Service
                 throw new Exception("Nenhum funcionario encontrado.");
             }
 
-            return funcionarios;
+            await _unitOfWork.SaveChangesAsync();
+            return await funcionarios;
 
         }
 
-        public async Task<Funcionario> GetByIdAsync(Guid FuncionarioId)
+        public async Task<FuncionarioResponseDto?> GetByIdAsync(Guid FuncionarioId)
         {
             var funcionario = await _funcionarioRespository.GetByIdAsync(FuncionarioId);
             if (funcionario == null)
@@ -92,23 +96,31 @@ namespace SindautoHub.Application.Service
             }
 
             await _unitOfWork.SaveChangesAsync();
-            return funcionario;
+            return _mapper.Map<FuncionarioResponseDto>(funcionario);
         }
 
-        public async Task<Funcionario> UpdateAsync(Guid id, UpdateFuncionarioRequest updateRequest)
+        public async Task<bool> UpdateAsync(Guid funcionarioId, UpdateFuncionarioRequest updateRequest)
         {
-            var existingFuncionario = _funcionarioRespository.GetByIdAsync(id);
-            if (existingFuncionario == null)
+            var funcionarioEntity = await _funcionarioRespository.GetByIdAsync(funcionarioId);
+
+            if (funcionarioEntity is null)
+                throw new NotFoundException("Funcionário não encontrado.");
+
+            if (updateRequest.CargoId.HasValue && updateRequest.CargoId.Value != Guid.Empty)
             {
-                throw new Exception("Funcionario não encontrado.");
+                var cargoExiste = await _cargoRepository.GetByIdAsync(updateRequest.CargoId.Value);
+                if (cargoExiste is null)
+                    throw new NotFoundException("O Cargo informado não existe.");
+
+                funcionarioEntity.CargoId = updateRequest.CargoId.Value;
             }
 
-            var funcionarioProfile = _mapper.Map<Funcionario>(updateRequest);
-            await _funcionarioRespository.UpdateAsync(funcionarioProfile);
+            _mapper.Map(updateRequest, funcionarioEntity);
 
             await _unitOfWork.SaveChangesAsync();
-
-            return funcionarioProfile;
+            return true;
         }
+
+
     }
 }

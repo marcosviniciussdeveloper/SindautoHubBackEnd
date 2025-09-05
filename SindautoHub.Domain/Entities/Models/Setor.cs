@@ -19,6 +19,6 @@ namespace SindautoHub.Domain.Entities.Models
         public string HorarioFuncionamento { get; set; }
 
 
-        public ICollection<Funcionario> Funcionarios { get; set; } = new List<Funcionario>();
+        public ICollection<User> Funcionarios { get; set; } = new List<User>();
     }
 }

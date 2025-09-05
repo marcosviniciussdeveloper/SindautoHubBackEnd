@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace SindautoHub.Domain.Entities.Models
 {
-    public class Notificacao
+    public class Announcements
     {
         public Guid Id { get; set; } = new Guid();
 
-        public Guid UsuarioId { get; set; }
-        public Funcionario Usuario { get; set; }
-        public bool Lida { get; set; }
+        public Guid UsersId { get; set; }
+
+        public Guid PostedBy { get; set; }
+        public DateTime Created { get; set; }
 
         public string Mensagem { get; set; }
 
@@ -20,6 +21,5 @@ namespace SindautoHub.Domain.Entities.Models
 
         public TimeOnly DataCriacao { get; set; }
 
-        public ICollection<Notificacao> Notificacoes { get; set; } = new List<Notificacao>();
     }
 }

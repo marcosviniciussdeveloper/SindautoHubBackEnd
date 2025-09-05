@@ -820,6 +820,32 @@
           }
         }
       },
+      "SendGrid/9.29.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "starkbank-ecdsa": "[1.3.3, 2.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "starkbank-ecdsa/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        }
+      },
       "Supabase/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -1333,6 +1359,7 @@
           "AutoMapper": "13.0.1",
           "FluentValidation.DependencyInjectionExtensions": "12.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
+          "SendGrid": "9.29.3",
           "SindautoHub.Domain": "1.0.0"
         },
         "compile": {
@@ -2844,6 +2871,45 @@
         "postgresql.png"
       ]
     },
+    "SendGrid/9.29.3": {
+      "sha512": "nb/zHePecN9U4/Bmct+O+lpgK994JklbCCNMIgGPOone/DngjQoMCHeTvkl+m0Nglvm0dqMEshmvB4fO8eF3dA==",
+      "type": "package",
+      "path": "sendgrid/9.29.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SendGrid.dll",
+        "lib/net40/SendGrid.pdb",
+        "lib/net40/SendGrid.xml",
+        "lib/net452/SendGrid.dll",
+        "lib/net452/SendGrid.pdb",
+        "lib/net452/SendGrid.xml",
+        "lib/netstandard1.3/SendGrid.dll",
+        "lib/netstandard1.3/SendGrid.pdb",
+        "lib/netstandard1.3/SendGrid.xml",
+        "lib/netstandard2.0/SendGrid.dll",
+        "lib/netstandard2.0/SendGrid.pdb",
+        "lib/netstandard2.0/SendGrid.xml",
+        "sendgrid.9.29.3.nupkg.sha512",
+        "sendgrid.nuspec"
+      ]
+    },
+    "starkbank-ecdsa/1.3.3": {
+      "sha512": "OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
+      "type": "package",
+      "path": "starkbank-ecdsa/1.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/StarkbankEcdsa.dll",
+        "lib/net452/StarkbankEcdsa.dll",
+        "lib/netstandard1.3/StarkbankEcdsa.dll",
+        "lib/netstandard2.0/StarkbankEcdsa.dll",
+        "lib/netstandard2.1/StarkbankEcdsa.dll",
+        "starkbank-ecdsa.1.3.3.nupkg.sha512",
+        "starkbank-ecdsa.nuspec"
+      ]
+    },
     "Supabase/1.1.1": {
       "sha512": "LW9O05IiZBW3YUDT/gndPKvzT3I7PVgx0j87+AdJu7mT42m7oh2nOnjuDR9pU0E9FE2Ke/QGovrH/u5OjGn7lg==",
       "type": "package",
@@ -3581,23 +3647,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mv834\\.nuget\\packages\\": {},
+    "C:\\Users\\Sindauto\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\SindautoHub.Api.csproj",
       "projectName": "SindautoHub.Api",
-      "projectPath": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj",
-      "packagesPath": "C:\\Users\\mv834\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Api\\obj\\",
+      "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\SindautoHub.Api.csproj",
+      "packagesPath": "C:\\Users\\Sindauto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\mv834\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sindauto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3613,11 +3679,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj": {
-              "projectPath": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj"
+            "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj": {
+              "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj"
             },
-            "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\mv834\\Desktop\\SindautoHubClone\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj"
+            "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj"
             }
           }
         }

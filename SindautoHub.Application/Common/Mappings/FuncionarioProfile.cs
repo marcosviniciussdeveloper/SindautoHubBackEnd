@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using SindautoHub.Application.Dtos; // Ou o namespace dos seus DTOs
+using SindautoHub.Application.Dtos; 
 using SindautoHub.Domain.Entities;
-using SindautoHub.Domain.Entities.Models; // Ou o namespace das suas Entidades
+using SindautoHub.Domain.Entities.Models;
 
 namespace SindautoHub.Application.Common.Mappings;
 
@@ -9,22 +9,21 @@ public class FuncionarioProfile : Profile
 {
     public FuncionarioProfile()
     {
-        // Mapa de ENTRADA: De DTO para Entidade (Para Criar um novo Funcionário)
-        CreateMap<CreateFuncionarioRequest, Funcionario>();
+        CreateMap<CreateFuncionarioRequest, User>();
 
-        // Mapa de ATUALIZAÇÃO: De DTO para Entidade
-        CreateMap<UpdateFuncionarioRequest, Funcionario>()
-            .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
 
-        // Mapa de SAÍDA: De Entidade para DTO (Para enviar ao Front-end)
-        CreateMap<Funcionario, FuncionarioResponseDto>() // Usando o DTO de resposta correto
+        CreateMap<UpdateFuncionarioRequest, User>()
+     .ForMember(dest => dest.CargoId, opt => opt.Ignore()) // IGNORA O MAPEAMENTO AUTOMÁTICO DE CargoId
+     .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+
+        CreateMap<User, FuncionarioResponseDto>() 
             .ForMember(
                 dest => dest.NomeDoCargo,
-                opt => opt.MapFrom(src => src.cargo.Nome) // Correção: 'C' maiúsculo
+                opt => opt.MapFrom(src => src.cargo.Nome) 
             )
             .ForMember(
                 dest => dest.NomeDoSetor,
-                opt => opt.MapFrom(src => src.setor.NomeSetor) // Correção: 'S' maiúsculo e a propriedade 'Nome'
+                opt => opt.MapFrom(src => src.setor.NomeSetor) 
             )
             .ForMember(
                 dest => dest.TipoContratacao,
