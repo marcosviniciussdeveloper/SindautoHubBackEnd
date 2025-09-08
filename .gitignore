@@ -22,6 +22,8 @@ project.assets.json
 # ESSENCIAL PARA ESCONDER SUAS SENHAS E CHAVES SECRETAS
 secrets.json
 **/secrets.json
+appsettings.Development.json
+
 
 # Arquivos de log e temporários
 # Arquivos gerados durante a execução que não são parte do código-fonte.
@@ -46,4 +48,4 @@ secrets.json
 # Arquivos gerados pelo Entity Framework
 # Opcional, mas às vezes é bom não subir. As migrations sim, devem subir.
 *.dbmdl
-*.efmodel
+*.efmodelSindautoHub.Api/appsettings.Development.json
