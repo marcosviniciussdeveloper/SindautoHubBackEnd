@@ -90,11 +90,13 @@ builder.Services
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "SindautoHub API V1");
+    c.RoutePrefix = ""; // <- Deixa o Swagger acessível na raiz "/"
+});
 
 app.UseHttpsRedirection();
 app.UseCors(MyAllowSpecificOrigins);
