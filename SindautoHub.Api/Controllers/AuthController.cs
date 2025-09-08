@@ -16,6 +16,7 @@ namespace SindautoHub.Api.Controllers
         }
 
         [HttpPost("login")]
+        
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             if (!ModelState.IsValid)

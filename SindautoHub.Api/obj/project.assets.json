@@ -3864,7 +3864,6 @@
       "AutoMapper >= 13.0.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.8",
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.22.1",
       "SindautoHub.Application >= 1.0.0",
       "SindautoHub.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
@@ -3941,10 +3940,6 @@
             "target": "Package",
             "version": "[8.0.8, )"
           },
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
-            "target": "Package",
-            "version": "[1.22.1, )"
-          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.6.2, )"
@@ -3972,16 +3967,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1100",
-      "level": "Error",
-      "message": "Não foi possível resolver 'Microsoft.VisualStudio.Azure.Containers.Tools.Targets (>= 1.22.1)' para 'net8.0'. O PackageSourceMapping está habilitado, as seguintes fontes não foram consideradas: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org.",
-      "libraryId": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

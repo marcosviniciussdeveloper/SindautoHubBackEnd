@@ -78,7 +78,7 @@ namespace SindautoHub.Api.Controllers
 
         // DELETE: api/User/{id}
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(Guid id)
         {
             await _userService.DeleteAsync(id);
