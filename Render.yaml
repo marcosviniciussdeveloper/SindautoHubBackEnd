@@ -13,6 +13,8 @@ services:
         fromDatabase:
           name: sindautohub-db
           property: connectionString
+      - key: ConnectionStrings__RedisConnection
+        value: rediss://default:AU4lAAIncDE5ZDRhZGM1ZTE2YjI0YmE4OGUwODcxMjFmODQ0ZTU0MXAxMjAwMDU@estourando-husky-20005.upstash.io:6379
 
 databases:
   - name: sindautohub-db

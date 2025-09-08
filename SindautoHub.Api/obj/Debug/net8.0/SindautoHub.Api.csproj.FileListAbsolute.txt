@@ -1,4 +1,3 @@
-C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\appsettings.json
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\SindautoHub.Api.exe
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\SindautoHub.Api.deps.json
@@ -268,8 +267,6 @@ C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Api\obj\D
 C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Api\obj\Debug\net8.0\SindautoHub.Api.pdb
 C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Api\obj\Debug\net8.0\SindautoHub.Api.genruntimeconfig.cache
 C:\Users\mv834\Desktop\SindautoHubClone\SindautoHubBackEnd\SindautoHub.Api\obj\Debug\net8.0\ref\SindautoHub.Api.dll
-C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\SendGrid.dll
-C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\StarkbankEcdsa.dll
 C:\Users\mv834\Desktop\SindHub\SindautoHubBackEnd\SindautoHub.Api\obj\Debug\net8.0\SindautoHub.Api.csproj.AssemblyReference.cache
 C:\Users\mv834\Desktop\SindHub\SindautoHubBackEnd\SindautoHub.Api\obj\Debug\net8.0\SindautoHub.Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\mv834\Desktop\SindHub\SindautoHubBackEnd\SindautoHub.Api\obj\Debug\net8.0\SindautoHub.Api.AssemblyInfoInputs.cache
@@ -417,3 +414,23 @@ C:\Users\mv834\Desktop\SindHub\SindautoHubBackEnd\SindautoHub.Api\bin\Debug\net8
 C:\Users\mv834\Desktop\SindHub\SindautoHubBackEnd\SindautoHub.Api\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Users\mv834\Desktop\SindHub\SindautoHubBackEnd\SindautoHub.Api\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\mv834\Desktop\SindHub\SindautoHubBackEnd\SindautoHub.Api\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\StackExchange.Redis.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll

@@ -55,11 +55,8 @@ namespace SindautoHub.Api.Controllers
             if (user == null)
                 return NotFound(new { message = "Usuário não encontrado." });
 
-            return Ok(new
-            {
-                message = "Usuário encontrado com sucesso.",
-                data = user
-            });
+            return Ok(user);
+            
         }
 
         // PUT: api/User/{id}

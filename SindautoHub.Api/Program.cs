@@ -8,6 +8,7 @@ using SindautoHub.Application.Interface;
 using SindautoHub.Application.Service;
 using SindautoHub.Domain.Interface;
 using SindautoHub.Domain.Interfaces;
+
 using SindautoHub.Infrastructure.Persistance.Database;
 using SindautoHub.Infrastructure.Persistance.Repository;
 using SindautoHub.Infrastructure.Persistence.Repository;
@@ -58,13 +59,19 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPositionRepository, PositionRepository>();
 builder.Services.AddScoped<ISectorRepository, SectorRepository>();
 builder.Services.AddScoped<IAnnouncementsRepository, AnnouncementsRepository>();
-
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserServices, UserService>();
-builder.Services.AddScoped<IPositionServices, PositionServices>();
-builder.Services.AddScoped<ISectorService, SectorService>();
+builder.Services.AddScoped<IPositionServices, PositionServices>();builder.Services.AddScoped<ISectorService, SectorService>();
 builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
+// Em Api/Program.cs
 
+// Configuração do Cache Distribuído (Redis)
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    // A Connection String do seu serviço de Redis (pode vir do appsettings ou Render)
+    options.Configuration = builder.Configuration.GetConnectionString("RedisConnection");
+    options.InstanceName = "SindautoHub_";
+});
 
 // --- CONFIGURAÇÃO DA AUTENTICAÇÃO JWT ---
 var jwtKey = builder.Configuration["Jwt:Key"];

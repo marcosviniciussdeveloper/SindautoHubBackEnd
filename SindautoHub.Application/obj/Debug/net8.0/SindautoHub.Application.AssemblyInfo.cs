@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SindautoHub.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+728789bb6d140c195dadcb4fe2253d878a09e139")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+945adfb8e9b38374b4faffe6e0e97843f592fb5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SindautoHub.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SindautoHub.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
