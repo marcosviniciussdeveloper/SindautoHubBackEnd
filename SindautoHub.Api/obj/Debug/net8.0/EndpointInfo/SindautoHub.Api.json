@@ -36,26 +36,26 @@
         }
       }
     },
-    "/api/Funcionario": {
+    "/api/User": {
       "post": {
         "tags": [
-          "Funcionario"
+          "User"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateFuncionarioRequest"
+                "$ref": "#/components/schemas/CreateUserRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateFuncionarioRequest"
+                "$ref": "#/components/schemas/CreateUserRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateFuncionarioRequest"
+                "$ref": "#/components/schemas/CreateUserRequest"
               }
             }
           }
@@ -66,39 +66,10 @@
           }
         }
       },
-      "patch": {
+      "get": {
         "tags": [
-          "Funcionario"
+          "User"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateFuncionarioRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateFuncionarioRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateFuncionarioRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -106,10 +77,10 @@
         }
       }
     },
-    "/api/Funcionario/{id}": {
+    "/api/User/{id}": {
       "get": {
         "tags": [
-          "Funcionario"
+          "User"
         ],
         "parameters": [
           {
@@ -127,47 +98,14 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Notificacoes": {
-      "post": {
+      },
+      "put": {
         "tags": [
-          "Notificacoes"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateNotificacaoRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateNotificacaoRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateNotificacaoRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Notificacoes/{notificacaoId}": {
-      "get": {
-        "tags": [
-          "Notificacoes"
+          "User"
         ],
         "parameters": [
           {
-            "name": "notificacaoId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -176,6 +114,25 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -184,11 +141,11 @@
       },
       "delete": {
         "tags": [
-          "Notificacoes"
+          "User"
         ],
         "parameters": [
           {
-            "name": "notificacaoId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -196,53 +153,6 @@
               "format": "uuid"
             }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Notificacoes/minhas": {
-      "get": {
-        "tags": [
-          "Notificacoes"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Notificacoes/marcar-como-lida/{notificacaoId}": {
-      "post": {
-        "tags": [
-          "Notificacoes"
-        ],
-        "parameters": [
-          {
-            "name": "notificacaoId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Notificacoes/marcar-todas-como-lidas": {
-      "post": {
-        "tags": [
-          "Notificacoes"
         ],
         "responses": {
           "200": {
@@ -254,18 +164,14 @@
   },
   "components": {
     "schemas": {
-      "CreateFuncionarioRequest": {
+      "CreateUserRequest": {
         "type": "object",
         "properties": {
-          "nome": {
+          "name": {
             "type": "string",
             "nullable": true
           },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "fotoUrl": {
+          "userName": {
             "type": "string",
             "nullable": true
           },
@@ -273,44 +179,27 @@
             "type": "string",
             "nullable": true
           },
-          "horarioInicio": {
-            "type": "string",
-            "format": "time",
-            "nullable": true
-          },
-          "horarioFim": {
-            "type": "string",
-            "format": "time",
-            "nullable": true
-          },
-          "setorId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "cargoId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "tipoContratacao": {
-            "$ref": "#/components/schemas/TipoContratacao"
-          }
-        },
-        "additionalProperties": false
-      },
-      "CreateNotificacaoRequest": {
-        "type": "object",
-        "properties": {
-          "mensagem": {
+          "email": {
             "type": "string",
             "nullable": true
           },
-          "linkDestino": {
+          "password": {
             "type": "string",
             "nullable": true
           },
-          "usuarioId": {
+          "role": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
+          },
+          "positionId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "sectorId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -318,26 +207,21 @@
       "LoginRequest": {
         "type": "object",
         "properties": {
-          "cpf": {
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
             "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "TipoContratacao": {
-        "enum": [
-          1,
-          2,
-          3
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "UpdateFuncionarioRequest": {
+      "UpdateUserRequest": {
         "type": "object",
         "properties": {
-          "nome": {
+          "name": {
             "type": "string",
             "nullable": true
           },
@@ -345,36 +229,17 @@
             "type": "string",
             "nullable": true
           },
-          "fotoUrl": {
+          "password": {
             "type": "string",
             "nullable": true
           },
-          "cpf": {
+          "username": {
             "type": "string",
             "nullable": true
           },
-          "horarioInicio": {
+          "role": {
             "type": "string",
-            "format": "time",
             "nullable": true
-          },
-          "horarioFim": {
-            "type": "string",
-            "format": "time",
-            "nullable": true
-          },
-          "setorId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "cargoId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "tipoContratacao": {
-            "$ref": "#/components/schemas/TipoContratacao"
           }
         },
         "additionalProperties": false

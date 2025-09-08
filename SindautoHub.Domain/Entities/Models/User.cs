@@ -1,49 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SindautoHub.Domain.Entities.Enums;
-using SindautoHub.Domain.Interface;
+﻿using SindautoHub.Domain.Entities;
+using SindautoHub.Domain.Entities.Models;
 
-namespace SindautoHub.Domain.Entities.Models
+public class User
 {
-    public class User
-    {
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public string Name { get; set; }
+    public Guid Id { get; set; }
+    public string Name { get; set; }
+    public string UserName { get; set; }
+    public string Email { get; set; }
+    public string? WhatsappNumber { get; set; }
+    public string Cpf { get; set; }
+    public string Password { get; set; } // Guardará o Hash da senha
+    public string Role { get; set; }     // "Admin", "Agent", "Client", etc.
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
+    public Guid? PositionId { get; set; }
+    public Position? Position { get; set; }
 
-        public DateTime DataNascimento { get; set; }
+    public Guid? SectorId { get; set; }
+    public Sector? Sector { get; set; }
 
-        public string? FotoUrl { get; set; }
+    public ICollection<Announcement> Announcements { get; set; } = new List<Announcement>();
+    public ICollection<Ticket> TicketsAsCliente { get; set; } = new List<Ticket>();
+    public ICollection<Ticket> TicketsAsAgente { get; set; } = new List<Ticket>();
+    public ICollection<TicketMessage> TicketMessages { get; set; } = new List<TicketMessage>();
+    public ICollection<ChatMessage> ChatMessages { get; set; } = new List<ChatMessage>();
 
-        public string Cpf { get; set; }
-
-
-        // public TimeOnly? HorarioInicio { get; set; }
-
-
-        // public TimeOnly? HorarioFim { get; set; }
-
-        public TipoContratacao TipoContratacao { get; set; }
-
-        public Guid SetorId { get; set; }
-
-        public Guid CargoId { get; set; }
-
-        public Setor Setor { get; set; }
-
-        public string Password { get; set; }
-
-        public Cargo Cargo { get; set; }
-
-        public ICollection<TicketMessages> TicketMessages { get; set; } = new List<TicketMessages>();
-
-        public ICollection<ChatMessages> ChatMessages { get; set; } = new List<ChatMessages>();
-
-        public ICollection<Chats> Chats { get; set; } = new List<Chats>();
-        public ICollection<Tickets> Tickets { get; set; } = new List<Tickets>();
-
-        public ICollection<Announcements> Announcements { get; set; } = new List<Announcements>();
-    }
+    public ICollection<ChatUser> ChatUsers { get; set; } = new List<ChatUser>();
 }

@@ -1,46 +1,62 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using SindautoHub.Application.Dtos;
+﻿using SindautoHub.Application.Dtos;
 using SindautoHub.Application.Interface;
-using SindautoHub.Domain.Interface;
+using SindautoHub.Domain.Entities;
+using SindautoHub.Domain.Entities.Enums;
+using SindautoHub.Domain.Interfaces;
 
-namespace SindautoHub.Application.Service
+public class AuthService : IAuthService
 {
-    public class AuthService : IAuthService
+
+    private readonly IUserRepository _userRepository;
+    private readonly IunitOfwork _unitOfWork;
+    private readonly ITokenService _tokenService;
+
+    public AuthService(ITokenService tokenService, IUserRepository userRepository, IunitOfwork iunitOfwork)
     {
-        private readonly IunitOfwork _unitOfWork;
-        private readonly IUsersRespository _funcionarioRespository;
-        private readonly ITokenService _tokenService;
+        _tokenService = tokenService;
+        _unitOfWork = iunitOfwork;
+        _userRepository = userRepository;
 
+    }
 
-        public AuthService(IunitOfwork unitOfWork, IUsersRespository funcionarioRespository, ITokenService tokenService)
+    private string HashPassword(string password)
+    {
+        using var sha = System.Security.Cryptography.SHA256.Create();
+        var bytes = System.Text.Encoding.UTF8.GetBytes(password);
+        var hash = sha.ComputeHash(bytes);
+        return Convert.ToBase64String(hash);
+    }
+
+    public async Task<LoginResponse> LoginAsync(LoginRequest request)
+    {
+        var user = await _userRepository.GetByNameAsync(request.UserName);
+        if (user == null)
         {
-            _unitOfWork = unitOfWork;
-            _funcionarioRespository = funcionarioRespository;
-            _tokenService = tokenService;
+            throw new Exception("Usuario não encontrado");
         }
-        public async Task<LoginResponse> LoginAsync(LoginRequest loginRequest)
+
+        var inputPasswordHash = HashPassword(request.Password);
+        if (inputPasswordHash == null)
         {
-
-            var cpf = Regex.Replace(loginRequest.Cpf ?? string.Empty, @"\D", "");
-
-            if (cpf.Length != 11)
-            {
-                throw new Exception("Cpf deve ter 11 dígitos");
-            }
-
-            var funcionario = await _funcionarioRespository.GetByCpfAsync(cpf);
-            if (funcionario is null)
-                throw new Exception("Cpf incorreto ou funcionario não existe");
-
-            var token = _tokenService.GenerateToken(funcionario);
-
-            return new LoginResponse { Token = token };
+            throw new Exception("Senha incorreta");
         }
+
+
+        var permissions = RolePermissions.GetPermissions(user.Role)
+            .Select(x => x.ToString())
+            .ToList();
+
+        var token = _tokenService.GenerateToken(user);
+
+        return new LoginResponse
+        {
+            Token = token,
+            Permissions = permissions
+
+        };
+
+
+
+
     }
 }

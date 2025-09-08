@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Npgsql.Replication;
+﻿using Microsoft.EntityFrameworkCore;
+using SindautoHub.Domain.Entities;
 using SindautoHub.Domain.Entities.Models;
+using SindautoHub.Infrastructure.Persistance.Configuration;
 
 namespace SindautoHub.Infrastructure.Persistance.Database
 {
@@ -14,21 +10,25 @@ namespace SindautoHub.Infrastructure.Persistance.Database
         public SindautoHubContext(DbContextOptions<SindautoHubContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
+
         {
+            modelBuilder.ApplyConfiguration(new ChatUserConfiguration());
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SindautoHubContext).Assembly);
+
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Cargo> Cargos { get; set; }
+
+        public DbSet<Position> Positions { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Announcements> Announcements { get; set; }
-        public DbSet<Tickets> Tickets { get; set; }
+        public DbSet<Announcement> Announcements { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
 
-        public DbSet<ChatMessages> ChatMessages { get; set; }
+        public DbSet<ChatMessage> ChatMessages { get; set; }
+        public DbSet<ChatUser> ChatUsers { get; set; }
+        public DbSet<TicketMessage> TicketMessages { get; set; }
 
-        public DbSet<TicketMessages> TicketMessages { get; set; }
-
-        public DbSet<Chats> Chats { get; set; }
-        public DbSet<Setor> Setores { get; set; }
+        public DbSet<Chat> Chats { get; set; }
+        public DbSet<Sector> Sectors { get; set; }
     }
 }

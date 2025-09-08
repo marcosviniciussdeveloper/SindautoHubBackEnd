@@ -6,12 +6,11 @@ using Microsoft.IdentityModel.Tokens;
 using SindautoHub.Application;
 using SindautoHub.Application.Interface;
 using SindautoHub.Application.Service;
-using SindautoHub.Application.Services;
 using SindautoHub.Domain.Interface;
-
+using SindautoHub.Domain.Interfaces;
 using SindautoHub.Infrastructure.Persistance.Database;
 using SindautoHub.Infrastructure.Persistance.Repository;
-
+using SindautoHub.Infrastructure.Persistence.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -32,7 +31,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
     {
-        policy.WithOrigins("http://localhost:5173" )
+        policy.WithOrigins("" )
         .AllowAnyHeader()
         .AllowCredentials()
         .AllowAnyMethod();
@@ -53,20 +52,19 @@ builder.Services.AddValidatorsFromAssembly(typeof(AssemblyReference).Assembly);
 
 
 // --- REGISTRO DAS SUAS INTERFACES E CLASSES ---
-builder.Services.AddScoped<IunitOfwork, UnitOfwork>();
+builder.Services.AddScoped<IunitOfwork, UnitOfWork>();
 builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddScoped<IUsersRespository, UsersRepository>();
-builder.Services.AddScoped<ICargoRepository, CargosRepository>();
-builder.Services.AddScoped<ISetoresRepository, SetorRepository>();
-builder.Services.AddScoped<IPostagensRepository, PostagemRepository>();
-builder.Services.AddScoped<IAnnouncementsRepository, NotificacaoRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPositionRepository, PositionRepository>();
+builder.Services.AddScoped<ISectorRepository, SectorRepository>();
+builder.Services.AddScoped<IAnnouncementsRepository, AnnouncementsRepository>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IFuncionarioServices, FuncionarioService>();
-builder.Services.AddScoped<ICargoServices, CargoServices>();
-builder.Services.AddScoped<ISetorService, SetorService>();
-builder.Services.AddScoped<IPostagemService, PostagemService>();
-builder.Services.AddScoped<INotificacaoServices, NotificacaoService>();
+builder.Services.AddScoped<IUserServices, UserService>();
+builder.Services.AddScoped<IPositionServices, PositionServices>();
+builder.Services.AddScoped<ISectorService, SectorService>();
+builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
+
 
 // --- CONFIGURAÇÃO DA AUTENTICAÇÃO JWT ---
 var jwtKey = builder.Configuration["Jwt:Key"];

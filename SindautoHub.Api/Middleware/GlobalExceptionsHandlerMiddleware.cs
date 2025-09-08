@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Text.Json;
-
+using SindautoHub.Application.Exceptions;
 namespace SindautoHub.Api.Middleware
 {
     public class GlobalExceptionsHandlerMiddleware
@@ -11,7 +11,6 @@ namespace SindautoHub.Api.Middleware
         {
             _next = next;
         }
-
 
         public async Task InvokeAsync(HttpContext context)
         {
@@ -28,14 +27,27 @@ namespace SindautoHub.Api.Middleware
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
+            int statusCode;
+            string message;
 
+            if (exception is BadRequestException badRequest)
+            {
+                statusCode = (int)HttpStatusCode.BadRequest; // 400
+                message = badRequest.Message;
+            }
+            else
+            {
+                statusCode = (int)HttpStatusCode.InternalServerError; // 500
+                message = "Ocorreu um erro inesperado: " + exception.Message;
+            }
+
+            context.Response.StatusCode = statusCode;
 
             var response = new
             {
-                statusCode = context.Response.StatusCode,
-                message = "Ocorreu um erro inesperado. " + exception.Message,
+                statusCode = statusCode,
+                message = message
             };
 
             return context.Response.WriteAsync(JsonSerializer.Serialize(response));

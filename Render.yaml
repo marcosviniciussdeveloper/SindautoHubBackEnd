@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: sindautohub-api
+    env: docker
+    repo: https://github.com/marcosviniciussdeveloper/SindautoHubBackEnd.git
+    branch: main
+    dockerfilePath: ./SindautoHub.Api/Dockerfile
+    plan: free
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Development
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: sindautohub-db
+          property: connectionString
+
+databases:
+  - name: sindautohub-db
+    plan: free

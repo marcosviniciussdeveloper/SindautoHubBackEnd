@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using SindautoHub.Application.Interface;
-using SindautoHub.Domain.Entities.Models;
+using SindautoHub.Domain.Entities;
 
 public class TokenService : ITokenService
 {
@@ -15,7 +15,7 @@ public class TokenService : ITokenService
         _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
     }
 
-    public string GenerateToken(User funcionario)
+    public string GenerateToken(User user)
     {
         var jwtSecret = _configuration["Supabase:JwtSecret"];
         var projectRef = _configuration["Supabase:ProjectRef"];
@@ -28,17 +28,18 @@ public class TokenService : ITokenService
 
         var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Sub, funcionario.Id.ToString()),
-            new Claim(JwtRegisteredClaimNames.Email, funcionario.Email ?? $"{funcionario.Cpf}@example.com"),
-            new Claim("cpf", funcionario.Cpf),
-            new Claim("role", "authenticated") 
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.Email, user.Email ?? $"{user.Cpf}@example.com"),
+            new Claim("cpf", user.Cpf),
+            new Claim(ClaimTypes.Role, user.Role),
+            new Claim("role", user.Role) // redundância útil para front e Supabase
         };
 
         var token = new JwtSecurityToken(
             issuer: $"https://{projectRef}.supabase.co/auth/v1",
             audience: "authenticated",
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(2),
+            expires: DateTime.UtcNow.AddHours(12),
             signingCredentials: credentials
         );
 

@@ -22,33 +22,225 @@ namespace SindautoHub.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Cargo", b =>
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Announcement", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("DescricaoAtribuicoes")
+                    b.Property<Guid>("AuthorId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Nome")
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ExpiresAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("PostedById")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("announcements", (string)null);
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Chat", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Chats");
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.ChatMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ChatId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("MessageText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("SenderId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("SentAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChatId");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("chat_messages", (string)null);
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.ChatUser", b =>
+                {
+                    b.Property<Guid>("ChatId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("ChatId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ChatUsers", (string)null);
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Position", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("DescriptionDuties")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("positions", (string)null);
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Sector", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("NameSector")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("OpeningsHours")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("cargos", (string)null);
+                    b.ToTable("sectors", (string)null);
                 });
 
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Funcionario", b =>
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Ticket", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("CargoId")
+                    b.Property<Guid?>("AgenteId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ClienteId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Priority")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Priority");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AgenteId");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("tickets", (string)null);
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.TicketMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("MessageText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("SenderId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SenderType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("SentAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("TicketId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SenderId");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("ticket_messages", (string)null);
+                });
+
+            modelBuilder.Entity("User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
                     b.Property<string>("Cpf")
@@ -56,195 +248,204 @@ namespace SindautoHub.Infrastructure.Migrations
                         .HasMaxLength(14)
                         .HasColumnType("character varying(14)");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp")
+                        .HasDefaultValueSql("now()");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("FotoUrl")
-                        .HasColumnType("text");
-
-                    b.Property<TimeOnly?>("HorarioFim")
-                        .HasColumnType("time without time zone");
-
-                    b.Property<TimeOnly?>("HorarioInicio")
-                        .HasColumnType("time without time zone");
-
-                    b.Property<string>("Nome")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<Guid>("SetorId")
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid?>("PositionId")
                         .HasColumnType("uuid");
 
-                    b.Property<int>("TipoContratacao")
-                        .HasColumnType("integer");
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid?>("SectorId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("WhatsappNumber")
+                        .HasMaxLength(15)
+                        .HasColumnType("character varying(15)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CargoId");
 
                     b.HasIndex("Cpf")
                         .IsUnique();
 
-                    b.HasIndex("SetorId");
+                    b.HasIndex("Email")
+                        .IsUnique();
 
-                    b.ToTable("funcionarios", (string)null);
+                    b.HasIndex("PositionId");
+
+                    b.HasIndex("SectorId");
+
+                    b.HasIndex("UserName")
+                        .IsUnique();
+
+                    b.HasIndex("WhatsappNumber")
+                        .IsUnique();
+
+                    b.ToTable("users", (string)null);
                 });
 
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Notificacao", b =>
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Announcement", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<TimeOnly>("DataCriacao")
-                        .HasColumnType("time without time zone");
-
-                    b.Property<bool>("Lida")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("LinkDestino")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Mensagem")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
-
-                    b.Property<Guid?>("NotificacaoId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("UsuarioId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NotificacaoId");
-
-                    b.HasIndex("UsuarioId");
-
-                    b.ToTable("notificacoes", (string)null);
-                });
-
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Postagem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(100)
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("AutorId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Conteudo")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<TimeOnly>("DataPublicacao")
-                        .HasColumnType("time without time zone");
-
-                    b.Property<string>("Titulo")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AutorId");
-
-                    b.ToTable("postagens", (string)null);
-                });
-
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Setor", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("HorarioFuncionamento")
-                        .IsRequired()
-                        .HasMaxLength(120)
-                        .HasColumnType("character varying(120)");
-
-                    b.Property<string>("NomeSetor")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("setores", (string)null);
-                });
-
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Funcionario", b =>
-                {
-                    b.HasOne("SindautoHub.Domain.Entities.Models.Cargo", "cargo")
-                        .WithMany("Funcionarios")
-                        .HasForeignKey("CargoId")
+                    b.HasOne("User", "Author")
+                        .WithMany("Announcements")
+                        .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SindautoHub.Domain.Entities.Models.Setor", "setor")
-                        .WithMany("Funcionarios")
-                        .HasForeignKey("SetorId")
+                    b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.ChatMessage", b =>
+                {
+                    b.HasOne("SindautoHub.Domain.Entities.Chat", "Chat")
+                        .WithMany("Messages")
+                        .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("cargo");
+                    b.HasOne("User", "Sender")
+                        .WithMany("ChatMessages")
+                        .HasForeignKey("SenderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
-                    b.Navigation("setor");
+                    b.Navigation("Chat");
+
+                    b.Navigation("Sender");
                 });
 
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Notificacao", b =>
+            modelBuilder.Entity("SindautoHub.Domain.Entities.ChatUser", b =>
                 {
-                    b.HasOne("SindautoHub.Domain.Entities.Models.Notificacao", null)
-                        .WithMany("Notificacoes")
-                        .HasForeignKey("NotificacaoId");
-
-                    b.HasOne("SindautoHub.Domain.Entities.Models.Funcionario", "Usuario")
-                        .WithMany("Notificacoes")
-                        .HasForeignKey("UsuarioId")
+                    b.HasOne("SindautoHub.Domain.Entities.Chat", "Chat")
+                        .WithMany("ChatUsers")
+                        .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Postagem", b =>
-                {
-                    b.HasOne("SindautoHub.Domain.Entities.Models.Funcionario", "Autor")
-                        .WithMany("Postagens")
-                        .HasForeignKey("AutorId")
+                    b.HasOne("User", "User")
+                        .WithMany("ChatUsers")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Autor");
+                    b.Navigation("Chat");
+
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Cargo", b =>
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Ticket", b =>
                 {
-                    b.Navigation("Funcionarios");
+                    b.HasOne("User", "Agent")
+                        .WithMany("TicketsAsAgente")
+                        .HasForeignKey("AgenteId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("User", "Cliente")
+                        .WithMany("TicketsAsCliente")
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Agent");
+
+                    b.Navigation("Cliente");
                 });
 
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Funcionario", b =>
+            modelBuilder.Entity("SindautoHub.Domain.Entities.TicketMessage", b =>
                 {
-                    b.Navigation("Notificacoes");
+                    b.HasOne("User", "Sender")
+                        .WithMany("TicketMessages")
+                        .HasForeignKey("SenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Postagens");
+                    b.HasOne("SindautoHub.Domain.Entities.Ticket", "Ticket")
+                        .WithMany("Messages")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Sender");
+
+                    b.Navigation("Ticket");
                 });
 
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Notificacao", b =>
+            modelBuilder.Entity("User", b =>
                 {
-                    b.Navigation("Notificacoes");
+                    b.HasOne("SindautoHub.Domain.Entities.Models.Position", "Position")
+                        .WithMany("Users")
+                        .HasForeignKey("PositionId");
+
+                    b.HasOne("SindautoHub.Domain.Entities.Models.Sector", "Sector")
+                        .WithMany("Users")
+                        .HasForeignKey("SectorId");
+
+                    b.Navigation("Position");
+
+                    b.Navigation("Sector");
                 });
 
-            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Setor", b =>
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Chat", b =>
                 {
-                    b.Navigation("Funcionarios");
+                    b.Navigation("ChatUsers");
+
+                    b.Navigation("Messages");
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Position", b =>
+                {
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Sector", b =>
+                {
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("SindautoHub.Domain.Entities.Ticket", b =>
+                {
+                    b.Navigation("Messages");
+                });
+
+            modelBuilder.Entity("User", b =>
+                {
+                    b.Navigation("Announcements");
+
+                    b.Navigation("ChatMessages");
+
+                    b.Navigation("ChatUsers");
+
+                    b.Navigation("TicketMessages");
+
+                    b.Navigation("TicketsAsAgente");
+
+                    b.Navigation("TicketsAsCliente");
                 });
 #pragma warning restore 612, 618
         }
