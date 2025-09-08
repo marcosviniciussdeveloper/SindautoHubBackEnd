@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SindautoHub.Application.Dtos;
 using SindautoHub.Application.Interface;
+using SindautoHub.Domain.Interface;
 
 namespace SindautoHub.Api.Controllers
 {
@@ -9,10 +10,13 @@ namespace SindautoHub.Api.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
+        private readonly IUserServices _userServices;
 
-        public AuthController(IAuthService authService)
+
+        public AuthController(IUserServices userServices, IAuthService authService)
         {
             _authService = authService;
+            _userServices = userServices;
         }
 
         [HttpPost("login")]
@@ -20,21 +24,12 @@ namespace SindautoHub.Api.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             if (!ModelState.IsValid)
+            { 
                 return BadRequest(ModelState);
+            }
+            var result = await _authService.LoginAsync(request);
+            return Ok(result);
 
-            try
-            {
-                var result = await _authService.LoginAsync(request);
-                return Ok(result);
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                return Unauthorized(new { message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { message = "Erro interno", error = ex.Message });
-            }
         }
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SindautoHub.Application.Interface
 {
-    public interface ITicketMessage
+    public interface IPasswordHasher
     {
-        
-        
+        string HashPassword(string password);
+        bool VerifyPassword(string password, string hashedPassword);
     }
 }

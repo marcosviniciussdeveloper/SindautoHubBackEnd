@@ -3,47 +3,38 @@ using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Entities;
 using SindautoHub.Domain.Entities.Enums;
 using SindautoHub.Domain.Interfaces;
+using System.Security.Authentication;
 
 public class AuthService : IAuthService
 {
-
     private readonly IUserRepository _userRepository;
     private readonly IunitOfwork _unitOfWork;
     private readonly ITokenService _tokenService;
+    private readonly IPasswordHasher _passwordHasher;
 
-    public AuthService(ITokenService tokenService, IUserRepository userRepository, IunitOfwork iunitOfwork)
+    public AuthService(
+        IPasswordHasher passwordHasher,
+        ITokenService tokenService,
+        IUserRepository userRepository,
+        IunitOfwork iunitOfwork)
     {
         _tokenService = tokenService;
         _unitOfWork = iunitOfwork;
+        _passwordHasher = passwordHasher;
         _userRepository = userRepository;
-
-    }
-
-    private string HashPassword(string password)
-    {
-        using var sha = System.Security.Cryptography.SHA256.Create();
-        var bytes = System.Text.Encoding.UTF8.GetBytes(password);
-        var hash = sha.ComputeHash(bytes);
-        return Convert.ToBase64String(hash);
     }
 
     public async Task<LoginResponse> LoginAsync(LoginRequest request)
     {
         var user = await _userRepository.GetByNameAsync(request.UserName);
         if (user == null)
-        {
-            throw new Exception("Usuario não encontrado");
-        }
+            throw new UnauthorizedAccessException("Usuário não encontrado.");
 
-        var inputPasswordHash = HashPassword(request.Password);
-        if (inputPasswordHash == null)
-        {
-            throw new Exception("Senha incorreta");
-        }
-
+        if (!_passwordHasher.VerifyPassword(request.Password, user.Password))
+            throw new UnauthorizedAccessException("Senha incorreta.");
 
         var permissions = RolePermissions.GetPermissions(user.Role)
-            .Select(x => x.ToString())
+            .Select(p => p.ToString())
             .ToList();
 
         var token = _tokenService.GenerateToken(user);
@@ -51,12 +42,13 @@ public class AuthService : IAuthService
         return new LoginResponse
         {
             Token = token,
-            Permissions = permissions
-
+            Permissions = permissions,
+            user = new AuthuserDTO
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Role = user.Role
+            }
         };
-
-
-
-
     }
 }

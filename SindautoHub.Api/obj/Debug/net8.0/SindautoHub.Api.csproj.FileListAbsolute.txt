@@ -434,3 +434,4 @@ C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\StackExchange.Redis.dll
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll

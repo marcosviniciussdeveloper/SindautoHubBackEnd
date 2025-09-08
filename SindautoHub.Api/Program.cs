@@ -32,12 +32,18 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
     {
-        policy.WithOrigins( "http://localhost:5173" ,"https://sind-hub.vercel.app" ,"https://sindautohubbackend.onrender.com/")
+        policy.WithOrigins(
+            "http://192.168.15.85:5065",
+            "http://localhost:5173",
+            "https://sind-hub.vercel.app",
+            "https://sindautohubbackend.onrender.com"
+        )
         .AllowAnyHeader()
-        .AllowCredentials()
-        .AllowAnyMethod();
+        .AllowAnyMethod()
+        .AllowCredentials();
     });
 });
+
 
 // Configuração do Banco de Dados
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -53,6 +59,7 @@ builder.Services.AddValidatorsFromAssembly(typeof(AssemblyReference).Assembly);
 
 
 // --- REGISTRO DAS SUAS INTERFACES E CLASSES ---
+builder.Services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
 builder.Services.AddScoped<IunitOfwork, UnitOfWork>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -72,6 +79,8 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.Configuration = builder.Configuration.GetConnectionString("RedisConnection");
     options.InstanceName = "SindautoHub_";
 });
+
+builder.Services.AddScoped<ICacheService, RedisCacheService>();
 
 // --- CONFIGURAÇÃO DA AUTENTICAÇÃO JWT ---
 var jwtKey = builder.Configuration["Jwt:Key"];
@@ -104,9 +113,9 @@ app.UseSwaggerUI(c =>
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "SindautoHub API V1");
     c.RoutePrefix = ""; // <- Deixa o Swagger acessível na raiz "/"
 });
-
-app.UseHttpsRedirection();
 app.UseCors(MyAllowSpecificOrigins);
+app.UseHttpsRedirection();
+
 
 app.UseAuthentication();
 app.UseAuthorization();
