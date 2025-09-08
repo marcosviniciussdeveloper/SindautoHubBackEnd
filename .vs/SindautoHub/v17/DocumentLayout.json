@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|solutionrelative:sindautohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|solutionrelative:sindautohub.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93652C79-5887-4DF2-B1D9-749FA112E4C8}|SindautoHub.Api\\SindautoHub.Api.csproj|solutionrelative:sindautohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0DD895AF-0D12-4C35-820B-FC1A7947935D}|SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj|c:\\users\\sindauto\\desktop\\sindautohub\\sindautohub\\sindautohub.infrastructure\\token\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 539,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "SindautoHub.Api\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\Properties\\launchSettings.json",
               "RelativeToolTip": "SindautoHub.Api\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-09-08T20:04:53.409Z",
               "EditorCaption": ""
@@ -111,8 +111,7 @@
               "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Configuration\\UserConfiguration.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:55:34.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:55:34.959Z"
             },
             {
               "$type": "Document",
@@ -124,8 +123,7 @@
               "RelativeToolTip": "SindautoHub.Infrastructure\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:55:16.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:55:16.892Z"
             },
             {
               "$type": "Document",
@@ -137,8 +135,7 @@
               "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Repository\\Unit0fworkRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:54:34.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:54:34.878Z"
             },
             {
               "$type": "Document",
@@ -150,8 +147,7 @@
               "RelativeToolTip": "SindautoHub.Infrastructure\\Persistance\\Repository\\UsersRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:54:22.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:54:22.998Z"
             },
             {
               "$type": "Document",
@@ -163,8 +159,7 @@
               "RelativeToolTip": "SindautoHub.Application\\Dtos\\AuthDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:52:01.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:52:01.424Z"
             },
             {
               "$type": "Document",
@@ -176,8 +171,7 @@
               "RelativeToolTip": "SindautoHub.Api\\Middleware\\GlobalExceptionsHandlerMiddleware.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAowEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:30:58.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:30:58.788Z"
             },
             {
               "$type": "Document",
@@ -189,18 +183,17 @@
               "RelativeToolTip": "SindautoHub.Api\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:29:46.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:29:46.272Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\Program.cs",
               "RelativeDocumentMoniker": "SindautoHub.Api\\Program.cs",
               "ToolTip": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\Program.cs",
               "RelativeToolTip": "SindautoHub.Api\\Program.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAHMAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-08T19:22:01.911Z",
               "EditorCaption": ""
@@ -215,8 +208,7 @@
               "RelativeToolTip": "SindautoHub.Infrastructure\\Service\\BCryptPasswordHasher.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:18:51.727Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:18:51.727Z"
             },
             {
               "$type": "Document",
@@ -228,8 +220,7 @@
               "RelativeToolTip": "SindautoHub.Infrastructure\\Token\\TokenService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:17:08.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:17:08.5Z"
             },
             {
               "$type": "Document",
@@ -241,8 +232,7 @@
               "RelativeToolTip": "SindautoHub.Application\\Interface\\IPasswordHascher.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:16:35.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:16:35.603Z"
             },
             {
               "$type": "Document",
@@ -254,8 +244,7 @@
               "RelativeToolTip": "SindautoHub.Application\\Dtos\\UserDto.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:11:10.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:11:10.612Z"
             },
             {
               "$type": "Document",
@@ -267,8 +256,7 @@
               "RelativeToolTip": "SindautoHub.Application\\Service\\UserService.cs",
               "ViewState": "AgIAAIUAAAAAAAAAAAAcwBUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:04:59.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:04:59.253Z"
             },
             {
               "$type": "Document",
@@ -280,8 +268,7 @@
               "RelativeToolTip": "SindautoHub.Application\\Service\\AuthService.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAowDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:03:54.98Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:03:54.98Z"
             },
             {
               "$type": "Document",
@@ -293,8 +280,7 @@
               "RelativeToolTip": "SindautoHub.Application\\Service\\PositionService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:02:27.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:02:27.876Z"
             }
           ]
         },

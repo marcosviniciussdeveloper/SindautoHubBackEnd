@@ -33,7 +33,6 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
     {
         policy.WithOrigins(
-            "http://192.168.15.85:5065",
             "http://localhost:5173",
             "https://sind-hub.vercel.app",
             "https://sindautohubbackend.onrender.com"
