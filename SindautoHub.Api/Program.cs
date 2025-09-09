@@ -1,19 +1,19 @@
-using System.Text;
-using System.Text.Json.Serialization;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using SindautoHub.Application;
 using SindautoHub.Application.Interface;
 using SindautoHub.Application.Service;
 using SindautoHub.Domain.Interface;
-using Microsoft.Extensions.Caching.StackExchangeRedis;
 using SindautoHub.Domain.Interfaces;
-
 using SindautoHub.Infrastructure.Persistance.Database;
 using SindautoHub.Infrastructure.Persistance.Repository;
 using SindautoHub.Infrastructure.Persistence.Repository;
+using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -27,7 +27,37 @@ builder.Services.AddControllers()
     });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SindautoHub.Api", Version = "v1" });
+    
+    // Adiciona o esquema de segurança para o Bearer Token
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Insira o token JWT no formato: Bearer {token}",
+    });
+
+    // Adiciona o requisito de segurança
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
 
 
 builder.Services.AddCors(options =>
@@ -107,6 +137,7 @@ builder.Services
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
             ValidateIssuer = true,
+            
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidateAudience = true,
             ValidAudience = builder.Configuration["Jwt:Audience"],

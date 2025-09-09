@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "SindautoHub.Api",
-    "version": "1.0"
+    "version": "v1"
   },
   "paths": {
     "/api/Auth/login": {
@@ -628,6 +628,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Insira o token JWT no formato: Bearer {token}",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }
