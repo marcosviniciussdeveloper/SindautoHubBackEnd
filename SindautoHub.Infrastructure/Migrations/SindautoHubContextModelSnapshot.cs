@@ -250,8 +250,8 @@ namespace SindautoHub.Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("timestampz")
-                        .HasDefaultValueSql("now()");
+                        .HasColumnType("timestamptz")
+                        .HasDefaultValueSql("timezone('utc', now())");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -278,7 +278,8 @@ namespace SindautoHub.Infrastructure.Migrations
 
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("timestampz");
+                        .HasColumnType("timestamptz")
+                        .HasDefaultValueSql("timezone('utc', now())");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -290,12 +291,6 @@ namespace SindautoHub.Infrastructure.Migrations
                         .HasColumnType("character varying(15)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Cpf")
-                        .IsUnique();
-
-                    b.HasIndex("Email")
-                        .IsUnique();
 
                     b.HasIndex("PositionId");
 

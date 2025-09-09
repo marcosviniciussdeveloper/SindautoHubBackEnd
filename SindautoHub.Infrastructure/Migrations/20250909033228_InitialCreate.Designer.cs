@@ -12,7 +12,7 @@ using SindautoHub.Infrastructure.Persistance.Database;
 namespace SindautoHub.Infrastructure.Migrations
 {
     [DbContext(typeof(SindautoHubContext))]
-    [Migration("20250908235743_InitialCreate")]
+    [Migration("20250909033228_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -253,8 +253,8 @@ namespace SindautoHub.Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("timestampz")
-                        .HasDefaultValueSql("now()");
+                        .HasColumnType("timestamptz")
+                        .HasDefaultValueSql("timezone('utc', now())");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -281,7 +281,8 @@ namespace SindautoHub.Infrastructure.Migrations
 
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("timestampz");
+                        .HasColumnType("timestamptz")
+                        .HasDefaultValueSql("timezone('utc', now())");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -293,12 +294,6 @@ namespace SindautoHub.Infrastructure.Migrations
                         .HasColumnType("character varying(15)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Cpf")
-                        .IsUnique();
-
-                    b.HasIndex("Email")
-                        .IsUnique();
 
                     b.HasIndex("PositionId");
 

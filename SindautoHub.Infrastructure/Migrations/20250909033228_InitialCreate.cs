@@ -62,8 +62,8 @@ namespace SindautoHub.Infrastructure.Migrations
                     Cpf = table.Column<string>(type: "character varying(14)", maxLength: 14, nullable: false),
                     Password = table.Column<string>(type: "text", nullable: false),
                     Role = table.Column<string>(type: "text", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "now()"),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamptz", nullable: false, defaultValueSql: "timezone('utc', now())"),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamptz", nullable: false, defaultValueSql: "timezone('utc', now())"),
                     PositionId = table.Column<Guid>(type: "uuid", nullable: true),
                     SectorId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
@@ -255,18 +255,6 @@ namespace SindautoHub.Infrastructure.Migrations
                 name: "IX_tickets_ClienteId",
                 table: "tickets",
                 column: "ClienteId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_users_Cpf",
-                table: "users",
-                column: "Cpf",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_users_Email",
-                table: "users",
-                column: "Email",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_users_PositionId",

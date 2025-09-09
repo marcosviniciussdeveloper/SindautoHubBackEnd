@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using SindautoHub.Application.Dtos.SectorDtos;
 using SindautoHub.Domain.Entities.Models;
 
@@ -9,7 +8,10 @@ public class SectorProfile : Profile
     {
         CreateMap<CreateSectorRequest, Sector>();
         CreateMap<UpdateSectorRequest, Sector>();
+
+        // Se os nomes batem (NameSector, Description, OpeningsHours), não precisa custom map
         CreateMap<Sector, SectorResponse>()
-            .ForMember(dest => dest.MembersCount, opt => opt.MapFrom(src => src.Users.Count)); // assumindo rel.
+            .ForMember(d => d.MembersCount,
+                       o => o.MapFrom(s => s.Users == null ? 0 : s.Users.Count));
     }
 }

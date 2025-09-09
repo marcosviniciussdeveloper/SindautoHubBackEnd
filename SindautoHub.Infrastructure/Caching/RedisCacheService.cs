@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Distributed;
 using SindautoHub.Application.Interface;
 
@@ -34,4 +33,10 @@ public class RedisCacheService : ICacheService
     {
         await _cache.SetStringAsync(key, value , _options);
     }
-}
+
+    public Task SetAsync(string key, string value, DistributedCacheEntryOptions options, CancellationToken ct = default)
+    
+       => _cache.SetStringAsync(key, value, options ?? _options, ct);
+    }
+
+

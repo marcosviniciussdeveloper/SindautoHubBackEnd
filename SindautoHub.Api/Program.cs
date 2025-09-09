@@ -8,6 +8,7 @@ using SindautoHub.Application;
 using SindautoHub.Application.Interface;
 using SindautoHub.Application.Service;
 using SindautoHub.Domain.Interface;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 using SindautoHub.Domain.Interfaces;
 
 using SindautoHub.Infrastructure.Persistance.Database;
@@ -84,6 +85,7 @@ builder.Services.AddControllers()
 builder.Services.AddStackExchangeRedisCache(options =>
 {
     
+
 
     options.Configuration = builder.Configuration.GetConnectionString("RedisConnection");
     options.InstanceName = "SindautoHub_";

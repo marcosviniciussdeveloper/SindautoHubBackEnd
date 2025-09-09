@@ -33,9 +33,11 @@ public class SectorRepository : ISectorRepository
     public async Task<IEnumerable<Sector>> GetAllAsync()
     {
         return await _context.Sectors
-                             .Include(s => s.Users)
-                             .ToListAsync();
+            .AsNoTracking()
+            .Include(s => s.Users)
+            .ToListAsync();
     }
+
 
     public async Task<Sector?> GetByIdAsync(Guid sectorId)
     {

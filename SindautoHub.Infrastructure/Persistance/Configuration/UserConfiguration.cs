@@ -28,8 +28,8 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
 
 
 
-             builder.Property(u => u.Cpf)
-              .HasMaxLength(14); // 000.000.000-00
+            builder.Property(u => u.Cpf)
+             .HasMaxLength(14); // 000.000.000-00
 
             builder.Property(u => u.WhatsappNumber)
                  .HasMaxLength(15); // (00) 00000-0000
@@ -48,20 +48,19 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
                 .IsRequired(false);
 
             builder.HasIndex(u => u.WhatsappNumber).IsUnique();
-
-            builder.HasIndex(u => u.Cpf).IsUnique();
-            builder.HasIndex(u => u.Email).IsUnique();
-            builder.Property(u => u.CreatedAt)
-                 .HasColumnType("timestampz")
-                    .HasDefaultValueSql("now()");
+                   builder.Property(u => u.CreatedAt)
+                    .HasColumnType("timestamptz")
+                     .HasDefaultValueSql("timezone('utc', now())")
+                        .ValueGeneratedOnAdd();
 
             builder.Property(u => u.UpdatedAt)
-                   .HasColumnType("timestampz")
-                   .ValueGeneratedOnAddOrUpdate();
+                .HasColumnType("timestamptz")
+                .HasDefaultValueSql("timezone('utc', now())")
+                .ValueGeneratedOnAddOrUpdate();
 
             builder
                 .Property(u => u.UserName)
-                .HasMaxLength (50)
+                .HasMaxLength(50)
                 .IsRequired();
 
             builder.HasIndex(u => u.UserName).IsUnique();

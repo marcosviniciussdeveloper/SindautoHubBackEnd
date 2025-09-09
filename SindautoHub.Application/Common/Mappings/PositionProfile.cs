@@ -6,13 +6,13 @@ public class PositionProfile : Profile
 {
     public PositionProfile()
     {
-        CreateMap<CreatePositionRequest,Position >();
+        CreateMap<CreatePositionRequest, Position>();
         CreateMap<UpdatePositionRequest, Position>();
-        CreateMap<Position, PositionResponse>();
 
         CreateMap<Position, PositionResponse>()
-    .ForMember(dest => dest.DescriptionDuties, opt => opt.MapFrom(src => src.DescriptionDuties ?? "Descrição não disponível"));
-
+            .ForMember(d => d.DescriptionDuties,
+                       o => o.MapFrom(s => string.IsNullOrWhiteSpace(s.DescriptionDuties)
+                            ? "Descrição não disponível"
+                            : s.DescriptionDuties));
     }
-
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using SindautoHub.Application.Dtos.SectorDtos;
 using SindautoHub.Application.Interface;
 using System.Text.Json;
@@ -22,29 +23,33 @@ public class SectorController : ControllerBase
 
     // GET: api/sector
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+ 
+    public async Task<IActionResult> GetAll(CancellationToken ct)
     {
+        // tenta pegar do cache
         var cached = await _cache.GetAsync(CacheKey);
         if (!string.IsNullOrWhiteSpace(cached))
         {
             var sectors = JsonSerializer.Deserialize<List<SectorResponse>>(cached, JsonOpts) ?? new();
-            return Ok(new
-            {
-                message = $"Total de setores encontrados (cache): {sectors.Count}",
-                data = sectors
-            });
+            return Ok(new { message = "ok (cache)", data = sectors });
         }
 
+        // se não tem no cache → busca do serviço
         var result = await _sectorService.GetAllAsync();
-        var json = JsonSerializer.Serialize(result, JsonOpts);
-        await _cache.SetAsync(CacheKey, json);
 
-        return Ok(new
-        {
-            message = $"Total de setores encontrados (db): {result.Count}",
-            data = result
-        });
+        var json = JsonSerializer.Serialize(result, JsonOpts);
+        await _cache.SetAsync(
+            CacheKey,
+            json,
+            new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
+            },
+            ct);
+
+        return Ok(new { message = "ok", data = result });
     }
+
 
     // GET: api/sector/{id}
     [HttpGet("{id}")]
