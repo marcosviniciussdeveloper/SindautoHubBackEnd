@@ -2,6 +2,7 @@
 using SindautoHub.Domain.Entities;
 using SindautoHub.Domain.Entities.Models;
 using SindautoHub.Infrastructure.Persistance.Configuration;
+using SindautoHub.Infrastructure.Persistence.Configuration;
 
 namespace SindautoHub.Infrastructure.Persistance.Database
 {
@@ -12,6 +13,7 @@ namespace SindautoHub.Infrastructure.Persistance.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
 
         {
+            modelBuilder.ApplyConfiguration(new TicketConfiguration());
             modelBuilder.ApplyConfiguration(new ChatUserConfiguration());
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SindautoHubContext).Assembly);
 

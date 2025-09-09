@@ -39,7 +39,4 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
-  <ItemGroup>
-  </ItemGroup>
-
 </Project>

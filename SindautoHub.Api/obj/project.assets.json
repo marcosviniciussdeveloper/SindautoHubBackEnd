@@ -1538,7 +1538,8 @@
           "AutoMapper": "13.0.1",
           "FluentValidation.DependencyInjectionExtensions": "12.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
-          "SindautoHub.Domain": "1.0.0"
+          "SindautoHub.Domain": "1.0.0",
+          "StackExchange.Redis": "2.7.27"
         },
         "compile": {
           "bin/placeholder/SindautoHub.Application.dll": {}

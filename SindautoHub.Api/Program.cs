@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Json.Serialization;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,8 @@ builder.Services.AddCors(options =>
         .AllowAnyMethod()
         .AllowCredentials();
     });
+
+
 });
 
 
@@ -56,8 +59,7 @@ builder.Services.AddAutoMapper(typeof(AssemblyReference).Assembly);
 // Configuração do FluentValidation (lê todos os Validators do projeto Application)
 builder.Services.AddValidatorsFromAssembly(typeof(AssemblyReference).Assembly);
 
-
-// --- REGISTRO DAS SUAS INTERFACES E CLASSES ---
+//Injeção de depedencias 
 builder.Services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
 builder.Services.AddScoped<IunitOfwork, UnitOfWork>();
 builder.Services.AddScoped<ITokenService, TokenService>();
@@ -69,12 +71,20 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserServices, UserService>();
 builder.Services.AddScoped<IPositionServices, PositionServices>();builder.Services.AddScoped<ISectorService, SectorService>();
 builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
-// Em Api/Program.cs
+
+
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 // Configuração do Cache Distribuído (Redis)
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    // A Connection String do seu serviço de Redis (pode vir do appsettings ou Render)
+    
+
     options.Configuration = builder.Configuration.GetConnectionString("RedisConnection");
     options.InstanceName = "SindautoHub_";
 });

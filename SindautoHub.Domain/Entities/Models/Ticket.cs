@@ -13,7 +13,9 @@ public class Ticket
     public DateTime? UpdatedAt { get; set; }
     public PriorityLevel Priority { get; set; }
     public Guid ClienteId { get; set; } 
-    public User Cliente { get; set; }       
+    public User Cliente { get; set; }
+
+    public bool IsInternal { get; set; }
 
     public Guid? AgenteId { get; set; }      
     public User? Agent { get; set; }       

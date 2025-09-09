@@ -1,31 +1,71 @@
-﻿using SindautoHub.Application.Dtos.SectorDtos;
+﻿using AutoMapper;
+using SindautoHub.Application.Dtos.SectorDtos;
 using SindautoHub.Application.Interface;
+using SindautoHub.Domain.Entities.Models;
+using SindautoHub.Domain.Interfaces;
 
 namespace SindautoHub.Application.Service;
+
 public class SectorService : ISectorService
 {
-    public Task<SectorResponse> CreateAsync(CreateSectorRequest request)
+    private readonly ISectorRepository _sectorRepository;
+    private readonly IMapper _mapper;
+    private readonly IunitOfwork _unitOfWork;
+
+    public SectorService(
+        ISectorRepository sectorRepository,
+        IMapper mapper,
+        IunitOfwork unitOfWork)
     {
-        throw new NotImplementedException();
+        _sectorRepository = sectorRepository;
+        _mapper = mapper;
+        _unitOfWork = unitOfWork;
     }
 
-    public Task<bool> DeleteAsync(Guid id)
+    public async Task<SectorResponse> CreateAsync(CreateSectorRequest request)
     {
-        throw new NotImplementedException();
+        var entity = _mapper.Map<Sector>(request);
+        await _sectorRepository.CreateAsync(entity);
+        await _unitOfWork.SaveChangesAsync();
+
+        return _mapper.Map<SectorResponse>(entity);
     }
 
-    public Task<List<SectorResponse>> GetAllAsync()
+    public async Task<List<SectorResponse>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var sectors = await _sectorRepository.GetAllAsync();
+        return _mapper.Map<List<SectorResponse>>(sectors);
     }
 
-    public Task<SectorResponse> GetByIdAsync(Guid id)
+    public async Task<SectorResponse> GetByIdAsync(Guid id)
     {
-        throw new NotImplementedException();
+        var sector = await _sectorRepository.GetByIdAsync(id);
+        if (sector == null) return null!;
+        return _mapper.Map<SectorResponse>(sector);
     }
 
-    public Task<SectorResponse> UpdateAsync(Guid id, UpdateSectorRequest request)
+    public async Task<SectorResponse> UpdateAsync(Guid id, UpdateSectorRequest request)
     {
-        throw new NotImplementedException();
+        var sector = await _sectorRepository.GetByIdAsync(id);
+        if (sector == null) return null!;
+
+        if (!string.IsNullOrWhiteSpace(request.Name)) sector.NameSector = request.Name;
+        if (!string.IsNullOrWhiteSpace(request.Description)) sector.Description = request.Description;
+        if (!string.IsNullOrWhiteSpace(request.OpeningsHours)) sector.OpeningsHours = request.OpeningsHours;
+
+        await _sectorRepository.UpdateAsync(sector);
+        await _unitOfWork.SaveChangesAsync();
+
+        return _mapper.Map<SectorResponse>(sector);
+    }
+
+    public async Task<bool> DeleteAsync(Guid id)
+    {
+        var sector = await _sectorRepository.GetByIdAsync(id);
+        if (sector == null) return false;
+
+        await _sectorRepository.DeleteAsync(sector);
+        await _unitOfWork.SaveChangesAsync();
+        return true;
     }
 }

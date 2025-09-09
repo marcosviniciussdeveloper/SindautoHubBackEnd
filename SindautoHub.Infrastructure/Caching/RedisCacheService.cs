@@ -1,30 +1,37 @@
-﻿using System.Text.Json;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Distributed;
 using SindautoHub.Application.Interface;
 
-// Esta seria a implementação da nossa própria interface ICacheService
 public class RedisCacheService : ICacheService
 {
     private readonly IDistributedCache _cache;
+    private readonly DistributedCacheEntryOptions _options;
 
     public RedisCacheService(IDistributedCache cache)
     {
         _cache = cache;
-    }
-
-    public async Task<T?> GetAsync<T>(string key)
-    {
-        var value = await _cache.GetStringAsync(key);
-        return value is null ? default : JsonSerializer.Deserialize<T>(value);
-    }
-
-    public async Task SetAsync<T>(string key, T value, TimeSpan? absoluteExpireTime = null)
-    {
-        var options = new DistributedCacheEntryOptions
+        _options = new DistributedCacheEntryOptions
         {
-            AbsoluteExpirationRelativeToNow = absoluteExpireTime ?? TimeSpan.FromMinutes(60)
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(3600),
+            SlidingExpiration = TimeSpan.FromSeconds(1600)
         };
-        var jsonValue = JsonSerializer.Serialize(value);
-        await _cache.SetStringAsync(key, jsonValue, options);
+    }
+
+
+
+    public async Task<string> GetAsync(string key)
+    {
+       return await _cache.GetStringAsync(key);
+    }
+
+    public async Task RemoveAsync(string key)
+    {
+         await  _cache.RemoveAsync(key);
+    }
+
+    public async Task SetAsync(string key, string value)
+    {
+        await _cache.SetStringAsync(key, value , _options);
     }
 }

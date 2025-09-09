@@ -20,7 +20,7 @@ public class UpdateUserRequest
 
     public string? Password { get; set; }
 
-    public string? Username { get; set; }
+    public string? UserName { get; set; }
     public string? Role { get; set; }
 }
 
@@ -30,6 +30,9 @@ public class UserResponse
     public Guid Id { get; set; }
     public string Name { get; set; }
 
+    public Guid? SectoId { get; set; }
+
+    public Guid? PositionId { get; set; } 
     public string PositionName { get; set; }
     public string SectorName {get;set;}
     public string UserName { get; set; }

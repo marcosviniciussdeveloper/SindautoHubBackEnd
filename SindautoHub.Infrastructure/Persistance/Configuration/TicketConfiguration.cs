@@ -17,6 +17,9 @@ public class TicketConfiguration : IEntityTypeConfiguration<Ticket>
         builder.Property(t => t.Priority).HasConversion<string>()
                .HasColumnName("Priority").IsRequired();
 
+        builder.Property(t => t.IsInternal).IsRequired();
+
+
         builder.HasOne(t => t.Cliente)
                .WithMany(u => u.TicketsAsCliente)
                .HasForeignKey(t => t.ClienteId)

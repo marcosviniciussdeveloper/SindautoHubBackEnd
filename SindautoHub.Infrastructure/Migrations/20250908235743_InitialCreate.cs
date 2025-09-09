@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SindautoHub.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitChatWithChatUser : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -29,8 +29,7 @@ namespace SindautoHub.Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    DescriptionDuties = table.Column<string>(type: "text", nullable: false),
-                    UserId = table.Column<Guid>(type: "uuid", nullable: false)
+                    DescriptionDuties = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,8 +62,8 @@ namespace SindautoHub.Infrastructure.Migrations
                     Cpf = table.Column<string>(type: "character varying(14)", maxLength: 14, nullable: false),
                     Password = table.Column<string>(type: "text", nullable: false),
                     Role = table.Column<string>(type: "text", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "now()"),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "now()"),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     PositionId = table.Column<Guid>(type: "uuid", nullable: true),
                     SectorId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
@@ -169,6 +168,7 @@ namespace SindautoHub.Infrastructure.Migrations
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     Priority = table.Column<string>(type: "text", nullable: false),
                     ClienteId = table.Column<Guid>(type: "uuid", nullable: false),
+                    IsInternal = table.Column<bool>(type: "boolean", nullable: false),
                     AgenteId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>

@@ -5,6 +5,7 @@ using SindautoHub.Domain.Entities;
 
 using SindautoHub.Domain.Interface;
 using SindautoHub.Domain.Interfaces;
+using StackExchange.Redis;
 
 public class UserService : IUserServices
 {
@@ -13,6 +14,7 @@ public class UserService : IUserServices
     private readonly IMapper _mapper;
     private readonly IPasswordHasher _passwordHasher;
     private readonly ICacheService _cache;
+    private static readonly object builder;
 
     public UserService(
         IUserRepository useRepository,
@@ -73,21 +75,19 @@ public class UserService : IUserServices
 
     public async Task<UserResponse> GetByIdAsync(Guid id)
     {
-        var cacheKey = $"sindauto:user:{id}";
-
-        var cached = await _cache.GetAsync<UserResponse>(cacheKey);
-        if (cached != null)
-            return cached;
-
+       
         var user = await _useRepository.GetByIdWithDetailsAsync(id);
         if (user == null)
             throw new Exception("Usuário não encontrado.");
 
+       
         var response = _mapper.Map<UserResponse>(user);
-        await _cache.SetAsync(cacheKey, response);
+
 
         return response;
     }
+
+
 
     public async Task<List<UserResponse>> GetAllAsync()
     {
@@ -116,8 +116,8 @@ public class UserService : IUserServices
         if (!string.IsNullOrWhiteSpace(request.Name))
             user.Name = request.Name;
 
-        if (!string.IsNullOrWhiteSpace(request.Username))
-            user.UserName = request.Username;
+        if (!string.IsNullOrWhiteSpace(request.UserName))
+            user.UserName = request.UserName;
 
         if (!string.IsNullOrWhiteSpace(request.Email))
             user.Email = request.Email;

@@ -12,8 +12,8 @@ using SindautoHub.Infrastructure.Persistance.Database;
 namespace SindautoHub.Infrastructure.Migrations
 {
     [DbContext(typeof(SindautoHubContext))]
-    [Migration("20250907211612_InitChatWithChatUser")]
-    partial class InitChatWithChatUser
+    [Migration("20250908235743_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,7 +121,7 @@ namespace SindautoHub.Infrastructure.Migrations
 
             modelBuilder.Entity("SindautoHub.Domain.Entities.Models.Position", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
@@ -133,9 +133,6 @@ namespace SindautoHub.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
@@ -181,6 +178,9 @@ namespace SindautoHub.Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsInternal")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("Priority")
                         .IsRequired()
@@ -253,7 +253,7 @@ namespace SindautoHub.Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("timestamp")
+                        .HasColumnType("timestampz")
                         .HasDefaultValueSql("now()");
 
                     b.Property<string>("Email")
@@ -281,7 +281,7 @@ namespace SindautoHub.Infrastructure.Migrations
 
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("timestamp");
+                        .HasColumnType("timestampz");
 
                     b.Property<string>("UserName")
                         .IsRequired()
