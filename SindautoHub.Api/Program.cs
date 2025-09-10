@@ -21,6 +21,9 @@ using StackExchange.Redis;
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
+
+
+
 // Controllers + JSON
 builder.Services.AddControllers()
     .AddJsonOptions(o =>
@@ -70,6 +73,8 @@ builder.Services.AddCors(options =>
         .AllowCredentials();
     });
 });
+
+
 
 // Banco de dados
 builder.Services.AddDbContext<SindautoHubContext>(options =>

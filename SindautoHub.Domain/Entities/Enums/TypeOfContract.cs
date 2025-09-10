@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace SindautoHub.Domain.Entities.Enums
 {
      public enum  TypeOfContract
-    {
-        Estagio = 1, 
-        Clt=  2 , 
-        Pj = 3 
-
+    {//*
+       // Estagio = 1, 
+      //  Clt=  2 , //
+//Pj = 3 //
+          
     };
 }

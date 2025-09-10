@@ -11,6 +11,16 @@ public class AuthService : IAuthService
     private readonly IunitOfwork _unitOfWork;
     private readonly ITokenService _tokenService;
     private readonly IPasswordHasher _passwordHasher;
+    private IUserRepository object1;
+    private IPasswordHasher passwordHasher;
+    private ITokenService object2;
+
+    public AuthService(IUserRepository object1, IPasswordHasher passwordHasher, ITokenService object2)
+    {
+        this.object1 = object1;
+        this.passwordHasher = passwordHasher;
+        this.object2 = object2;
+    }
 
     public AuthService(
         IPasswordHasher passwordHasher,

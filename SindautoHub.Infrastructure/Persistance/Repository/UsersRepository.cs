@@ -61,7 +61,7 @@ public class UserRepository : IUserRepository
 
     public async Task<User?> GetByNameAsync(string UserName)
     {
-        return await _context.Users.FirstOrDefaultAsync(u =>  u.UserName == u.UserName);
+        return await _context.Users.FirstOrDefaultAsync(u =>  u.UserName == UserName);
     }
 
     public async Task<User?> GetByWhatsappNumberAsync(string whatsappNumber)
