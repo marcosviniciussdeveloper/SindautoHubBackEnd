@@ -35,7 +35,7 @@ public class TicketService : ITicketService
         {
             Id = Guid.NewGuid(),
             Subject = request.Subject,
-            Status = "Open",
+            StatusTicket = "Open",
             Priority = request.Priority,
             IsInternal = request.IsInternal,
             ClienteId = clienteId,
@@ -95,7 +95,7 @@ public class TicketService : ITicketService
         if (ticket == null) return null;
 
         ticket.AgenteId = agentId;
-        ticket.Status = "InProgress";
+        ticket.StatusTicket = "InProgress";
         ticket.UpdatedAt = DateTime.UtcNow;
 
         await _ticketRepo.UpdateAsAsync(ticket);
@@ -110,7 +110,7 @@ public class TicketService : ITicketService
         var ticket = await _ticketRepo.GetByIdAsnyc(ticketId);
         if (ticket == null) return null;
 
-        ticket.Status = newStatus;
+        ticket.StatusTicket = newStatus;
         ticket.UpdatedAt = DateTime.UtcNow;
 
         await _ticketRepo.UpdateAsAsync(ticket);

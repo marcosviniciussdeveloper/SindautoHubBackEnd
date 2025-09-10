@@ -8,7 +8,7 @@ public class Ticket
 {
     public Guid Id { get; set; }
     public string Subject { get; set; }
-    public string Status { get; set; }
+    public string StatusTicket { get; set; } 
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
     public PriorityLevel Priority { get; set; }

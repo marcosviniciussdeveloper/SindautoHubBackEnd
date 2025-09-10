@@ -1,4 +1,6 @@
-﻿namespace SindautoHub.Application.Dtos.UserDtos;
+﻿using SindautoHub.Domain.Entities.Enums;
+
+namespace SindautoHub.Application.Dtos.UserDtos;
 
 public class CreateUserRequest
 {
@@ -17,7 +19,7 @@ public class UpdateUserRequest
 {
     public string? Name { get; set; }
     public string? Email { get; set; }
-
+    public string Status { get; set; }
     public string? Password { get; set; }
 
     public string? UserName { get; set; }
@@ -27,17 +29,14 @@ public class UpdateUserRequest
 public class UserResponse
 {
   
-    public Guid Id { get; set; }
+   public Guid Id { get; set; }
     public string Name { get; set; }
 
-    public Guid? SectoId { get; set; }
-
-    public Guid? PositionId { get; set; } 
+    public Status Status { get; set; }
+ 
     public string PositionName { get; set; }
     public string SectorName {get;set;}
-    public string UserName { get; set; }
     public string Email { get; set; }
-    public string Cpf { get; set; }
     public string Role { get; set; }
     public DateTime CreatedAt { get; set; }
 }

@@ -9,6 +9,7 @@ public class TicketMessage
     public DateTime SentAt { get; set; }
     public string SenderType { get; set; } // "Client" ou "Agent"
 
+
     public Guid TicketId { get; set; }
     public Ticket Ticket { get; set; }
 

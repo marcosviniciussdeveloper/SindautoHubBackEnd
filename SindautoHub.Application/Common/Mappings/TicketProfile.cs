@@ -8,7 +8,7 @@ public class TicketProfile : Profile
     {
         CreateMap<CreateTicketRequest, Ticket>()
             .ForMember(dest => dest.Subject, opt => opt.MapFrom(src => src.Subject))
-            .ForMember(dest => dest.Status, opt => opt.MapFrom(_ => "Open"))
+            .ForMember(dest => dest.StatusTicket, opt => opt.MapFrom(_ => "Open"))
             .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow));
 
         CreateMap<Ticket, TicketResponse>()

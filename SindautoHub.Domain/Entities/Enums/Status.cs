@@ -13,6 +13,13 @@ namespace SindautoHub.Domain.Entities.Enums
         Pendente = 3
     }
 
+    public enum StatusChat
+    {
+        Ativo = 1,
+        Encerrado = 2
+
+    }
+
     public enum StatusTicket
     {
         Aberto = 1,
@@ -28,5 +35,24 @@ namespace SindautoHub.Domain.Entities.Enums
         Media = 2,
         Alta = 3,
         Urgente = 4
+
+    }
+
+
+
+    public enum DeliveryStatus
+    {
+        Enviado = 0,
+        Lida = 1,
+        Entregue = 2
+    }
+
+    public enum PresenceStatus
+    {
+        Online = 1,
+        Offline = 2, 
+        Ausente = 3 
+
+
     }
 }

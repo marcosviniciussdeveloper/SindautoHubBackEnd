@@ -1,4 +1,5 @@
 ﻿using SindautoHub.Domain.Entities;
+using SindautoHub.Domain.Entities.Enums;
 using SindautoHub.Domain.Entities.Models;
 
 public class User
@@ -8,6 +9,10 @@ public class User
     public string UserName { get; set; }
     public string Email { get; set; }
     public string? WhatsappNumber { get; set; }
+
+    public Status Status { get; set; } = Status.Ativo;
+
+    public  PresenceStatus PresenceStatus { get; set; } = PresenceStatus.Online;
     public string Cpf { get; set; }
     public string Password { get; set; } // Guardará o Hash da senha
     public string Role { get; set; }     // "Admin", "Agent", "Client", etc.

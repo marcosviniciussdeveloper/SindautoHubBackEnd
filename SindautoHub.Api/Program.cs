@@ -1,9 +1,12 @@
+using System.Text;
+using System.Text.Json.Serialization;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.StackExchangeRedis;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SindautoHub.Api.Hubs;
 using SindautoHub.Application;
 using SindautoHub.Application.Interface;
 using SindautoHub.Application.Service;
@@ -12,26 +15,25 @@ using SindautoHub.Domain.Interfaces;
 using SindautoHub.Infrastructure.Persistance.Database;
 using SindautoHub.Infrastructure.Persistance.Repository;
 using SindautoHub.Infrastructure.Persistence.Repository;
-using System.Text;
-using System.Text.Json.Serialization;
+using SindautoHub.Infrastructure.Services;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
-// --- Adicionar serviços ao container ---
-
+// Controllers + JSON
 builder.Services.AddControllers()
-    .AddJsonOptions(options =>
+    .AddJsonOptions(o =>
     {
-        options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
+        o.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
+        o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
+// Swagger + JWT bearer auth
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "SindautoHub.Api", Version = "v1" });
-    
-    // Adiciona o esquema de segurança para o Bearer Token
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -41,25 +43,19 @@ builder.Services.AddSwaggerGen(c =>
         In = ParameterLocation.Header,
         Description = "Insira o token JWT no formato: Bearer {token}",
     });
-
-    // Adiciona o requisito de segurança
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
             new OpenApiSecurityScheme
             {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
             },
-            new string[] {}
+            Array.Empty<string>()
         }
     });
 });
 
-
+// CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
@@ -73,24 +69,17 @@ builder.Services.AddCors(options =>
         .AllowAnyMethod()
         .AllowCredentials();
     });
-
-
 });
 
-
-// Configuração do Banco de Dados
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+// Banco de dados
 builder.Services.AddDbContext<SindautoHubContext>(options =>
-    options.UseNpgsql(connectionString)
-);
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configuração do AutoMapper (lê todos os Profiles do projeto Application)
+// AutoMapper + FluentValidation
 builder.Services.AddAutoMapper(typeof(AssemblyReference).Assembly);
-
-// Configuração do FluentValidation (lê todos os Validators do projeto Application)
 builder.Services.AddValidatorsFromAssembly(typeof(AssemblyReference).Assembly);
 
-//Injeção de depedencias 
+// Injeção de dependências
 builder.Services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
 builder.Services.AddScoped<IunitOfwork, UnitOfWork>();
 builder.Services.AddScoped<ITokenService, TokenService>();
@@ -100,33 +89,44 @@ builder.Services.AddScoped<ISectorRepository, SectorRepository>();
 builder.Services.AddScoped<IAnnouncementsRepository, AnnouncementsRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserServices, UserService>();
-builder.Services.AddScoped<IPositionServices, PositionServices>();builder.Services.AddScoped<ISectorService, SectorService>();
+builder.Services.AddScoped<IPositionServices, PositionServices>();
+builder.Services.AddScoped<ISectorService, SectorService>();
+builder.Services.AddScoped<IChatRepository , ChatRepository>();
+builder.Services.AddScoped<IChatServices, ChatService>();
+builder.Services.AddScoped<IChatNotifier, SignalRChatNotifier>();
+
+builder.Services.AddScoped<IChatMessageRepository, ChatMessageRepository>();
+builder.Services.AddScoped<IChatMessageService, ChatMessageService>();
 builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
+builder.Services.AddScoped<IPresenceService, RedisPresenceService>();
 
-
-
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-    });
-
-// Configuração do Cache Distribuído (Redis)
+// Redis: cache distribuído
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    
-
-
     options.Configuration = builder.Configuration.GetConnectionString("RedisConnection");
     options.InstanceName = "SindautoHub_";
 });
 
-builder.Services.AddScoped<ICacheService, RedisCacheService>();
+// Redis: conexão baixa nível + PresenceService
+builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
+{
+    var cs = builder.Configuration.GetConnectionString("RedisConnection")!.Trim();
+    return ConnectionMultiplexer.Connect(cs);
+});
 
-// --- CONFIGURAÇÃO DA AUTENTICAÇÃO JWT ---
+builder.Services.AddScoped<
+    SindautoHub.Application.Interface.ICacheService,
+    SindautoHub.Infrastructure.Services.RedisCacheService>();
+
+
+// SignalR + backplane Redis
+builder.Services.AddSignalR()
+    .AddStackExchangeRedis(builder.Configuration.GetConnectionString("RedisConnection"));
+
+// JWT
 var jwtKey = builder.Configuration["Jwt:Key"];
 if (string.IsNullOrWhiteSpace(jwtKey))
-    throw new InvalidOperationException("Chave JWT (Jwt:Key) não configurada.");
+    throw new InvalidOperationException("Chave JWT não configurada.");
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -137,31 +137,29 @@ builder.Services
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
             ValidateIssuer = true,
-            
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidateAudience = true,
             ValidAudience = builder.Configuration["Jwt:Audience"],
             ClockSkew = TimeSpan.Zero
         };
     });
-// ======================================================
 
 var app = builder.Build();
 
-
+// Middleware
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "SindautoHub API V1");
-    c.RoutePrefix = ""; // <- Deixa o Swagger acessível na raiz "/"
+    c.RoutePrefix = "";
 });
+
 app.UseCors(MyAllowSpecificOrigins);
 app.UseHttpsRedirection();
-
-
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<PresenceHub>("/hubs/presence");
 
 app.Run();

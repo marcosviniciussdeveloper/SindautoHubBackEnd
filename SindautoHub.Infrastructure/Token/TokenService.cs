@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Entities;
+using SindautoHub.Domain.Entities.Enums; // Permission
+// using SindautoHub.Domain.Entities; // RolePermissions (onde você definiu)
 
 public class TokenService : ITokenService
 {
@@ -19,8 +21,7 @@ public class TokenService : ITokenService
     {
         var jwtSecret = _configuration["Supabase:JwtSecret"];
         var projectRef = _configuration["Supabase:ProjectRef"];
-
-        if (string.IsNullOrEmpty(jwtSecret) || string.IsNullOrEmpty(projectRef))
+        if (string.IsNullOrWhiteSpace(jwtSecret) || string.IsNullOrWhiteSpace(projectRef))
             throw new InvalidOperationException("Configure Supabase:JwtSecret e Supabase:ProjectRef no appsettings.json");
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret));
@@ -28,12 +29,18 @@ public class TokenService : ITokenService
 
         var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-            new Claim(JwtRegisteredClaimNames.Email, user.Email ?? $"{user.Cpf}@example.com"),
-            new Claim("cpf", user.Cpf),
-            new Claim(ClaimTypes.Role, user.Role),
-            new Claim("role", user.Role) // redundância útil para front e Supabase
+            new(JwtRegisteredClaimNames.Sub,   user.Id.ToString()),
+            new(JwtRegisteredClaimNames.Email, string.IsNullOrWhiteSpace(user.Email) ? $"{user.Cpf}@example.com" : user.Email),
+            new("cpf",                         user.Cpf),
+            new(ClaimTypes.Name,               user.UserName ?? user.Email ?? user.Cpf),
+            new(ClaimTypes.Role,               user.Role),
+            new("role",                        user.Role),                          // útil para front/Supabase
+            new("sector_id",                   user.SectorId?.ToString() ?? Guid.Empty.ToString()) // presença/escopo
         };
+
+        // Adiciona permissões como múltiplas claims "perm"
+        foreach (var perm in RolePermissions.GetPermissions(user.Role))
+            claims.Add(new Claim("perm", perm.ToString()));
 
         var token = new JwtSecurityToken(
             issuer: $"https://{projectRef}.supabase.co/auth/v1",

@@ -13,7 +13,7 @@ public class TicketConfiguration : IEntityTypeConfiguration<Ticket>
         builder.HasKey(t => t.Id);
 
         builder.Property(t => t.Subject).IsRequired().HasMaxLength(200);
-        builder.Property(t => t.Status).IsRequired();
+        builder.Property(t => t.StatusTicket).IsRequired();
         builder.Property(t => t.Priority).HasConversion<string>()
                .HasColumnName("Priority").IsRequired();
 

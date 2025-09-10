@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj": {}
+    "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\SindautoHub.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj": {
+    "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\SindautoHub.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\SindautoHub.Api.csproj",
         "projectName": "SindautoHub.Api",
-        "projectPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Api\\SindautoHub.Api.csproj",
-        "packagesPath": "C:\\Users\\mv834\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Api\\obj\\",
+        "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\SindautoHub.Api.csproj",
+        "packagesPath": "C:\\Users\\Sindauto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\NuGet.Config",
-          "C:\\Users\\mv834\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\NuGet.Config",
+          "C:\\Users\\Sindauto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj": {
-                "projectPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj"
+              "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj": {
+                "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj"
               },
-              "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj"
+              "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj"
               }
             }
           }
@@ -64,6 +64,18 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Core": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -99,21 +111,21 @@
         }
       }
     },
-    "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj": {
+    "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj",
         "projectName": "SindautoHub.Application",
-        "projectPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj",
-        "packagesPath": "C:\\Users\\mv834\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Application\\obj\\",
+        "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj",
+        "packagesPath": "C:\\Users\\Sindauto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\NuGet.Config",
-          "C:\\Users\\mv834\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\NuGet.Config",
+          "C:\\Users\\Sindauto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -128,8 +140,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Domain\\SindautoHub.Domain.csproj": {
-                "projectPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Domain\\SindautoHub.Domain.csproj"
+              "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\SindautoHub.Domain.csproj": {
+                "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\SindautoHub.Domain.csproj"
               }
             }
           }
@@ -156,6 +168,10 @@
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
               "version": "[12.0.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Core": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             },
             "Microsoft.Extensions.Caching.Abstractions": {
               "target": "Package",
@@ -190,21 +206,21 @@
         }
       }
     },
-    "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Domain\\SindautoHub.Domain.csproj": {
+    "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\SindautoHub.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Domain\\SindautoHub.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\SindautoHub.Domain.csproj",
         "projectName": "SindautoHub.Domain",
-        "projectPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Domain\\SindautoHub.Domain.csproj",
-        "packagesPath": "C:\\Users\\mv834\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\SindautoHub.Domain.csproj",
+        "packagesPath": "C:\\Users\\Sindauto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\NuGet.Config",
-          "C:\\Users\\mv834\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\NuGet.Config",
+          "C:\\Users\\Sindauto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -255,21 +271,21 @@
         }
       }
     },
-    "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj": {
+    "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
         "projectName": "SindautoHub.Infrastructure",
-        "projectPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\mv834\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\SindautoHub.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Sindauto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\NuGet.Config",
-          "C:\\Users\\mv834\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\NuGet.Config",
+          "C:\\Users\\Sindauto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -284,8 +300,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj": {
-                "projectPath": "C:\\Users\\mv834\\Desktop\\SindHub\\SindautoHubBackEnd\\SindautoHub.Application\\SindautoHub.Application.csproj"
+              "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj": {
+                "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Application\\SindautoHub.Application.csproj"
+              },
+              "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\SindautoHub.Domain.csproj": {
+                "projectPath": "C:\\Users\\Sindauto\\Desktop\\SindautoHub\\SindautoHub\\SindautoHub.Domain\\SindautoHub.Domain.csproj"
               }
             }
           }
@@ -331,7 +350,7 @@
             },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
-              "version": "[9.0.8, )"
+              "version": "[9.0.9, )"
             },
             "Microsoft.Extensions.Configuration.EnvironmentVariables": {
               "target": "Package",
@@ -352,6 +371,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.9.11, )"
             },
             "Supabase": {
               "target": "Package",

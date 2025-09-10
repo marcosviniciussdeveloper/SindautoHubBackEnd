@@ -92,19 +92,18 @@ public class UserService : IUserServices
     public async Task<List<UserResponse>> GetAllAsync()
     {
         var users = await _useRepository.GetAllAsync();
-
         return users.Select(u => new UserResponse
         {
             Id = u.Id,
             Name = u.Name,
-            UserName = u.UserName,
             Email = u.Email,
-            Cpf = u.Cpf,
             Role = u.Role,
+            Status = u.Status,
             CreatedAt = u.CreatedAt,
-            PositionName = u.Position?.Name,
-            SectorName = u.Sector?.NameSector
+            PositionName = u.Position.Name,
+            SectorName = u.Sector.NameSector
         }).ToList();
+
     }
 
     public async Task<UserResponse> UpdateAsync(Guid id, UpdateUserRequest request)

@@ -22,9 +22,11 @@ public class ChatRepository : IChatRepository
         return await _context.Chats
                              .Include(c => c.ChatUsers)
                                 .ThenInclude(cu => cu.User)
-                             .Include(c => c.Messages) 
+                             .Include(c => c.Messages)
+                                .ThenInclude(m => m.Sender) 
                              .FirstOrDefaultAsync(c => c.Id == chatId);
     }
+
 
     public async Task<IEnumerable<Chat>> GetChatsByUserIdAsync(Guid userId)
     {

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Caching.Distributed;
 
 namespace SindautoHub.Application.Interface;
-public interface ICacheService
+public interface ICacheService 
 {
     Task SetAsync (string key, string value);
 

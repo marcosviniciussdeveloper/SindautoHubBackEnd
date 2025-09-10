@@ -28,7 +28,10 @@ public class UserRepository : IUserRepository
 
     public async Task<IEnumerable<User>> GetAllAsync()
     {
-        return await _context.Users.ToListAsync();
+        return await _context.Users
+            .Include(u => u.Position)
+            .Include(u => u.Sector)
+            .ToListAsync();
     }
 
     public async Task<User?> GetByCpfAsync(string cpf)

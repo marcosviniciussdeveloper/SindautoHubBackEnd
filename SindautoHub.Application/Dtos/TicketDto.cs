@@ -28,7 +28,7 @@ public class TicketResponse
 {
     public Guid Id { get; set; }
     public string Subject { get; set; }
-    public string Status { get; set; } // Open, InProgress, Resolved
+    public string StatusTicket { get; set; } // Open, InProgress, Resolved
 
     public string Priority { get; set; }
     public bool IsInternal { get; set; }

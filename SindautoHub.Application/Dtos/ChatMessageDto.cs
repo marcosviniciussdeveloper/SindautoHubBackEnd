@@ -13,4 +13,5 @@ public class ChatMessageResponse
     public DateTime SentAt { get; set; }
     public Guid SenderId { get; set; }
     public string SenderName { get; set; }
+    public Guid UserId { get; internal set; }
 }
