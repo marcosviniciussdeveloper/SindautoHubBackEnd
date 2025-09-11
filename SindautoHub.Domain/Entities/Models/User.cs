@@ -19,6 +19,7 @@ public class User
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
     public Guid? PositionId { get; set; }
+
     public Position? Position { get; set; }
 
     public Guid? SectorId { get; set; }

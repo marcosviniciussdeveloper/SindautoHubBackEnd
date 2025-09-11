@@ -29,9 +29,9 @@ namespace SindautoHub.Application.Dtos
     public Guid? SectorId { get; set; }
     public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
-    public string UserName { get; set; } = string.Empty;
+    public string ?SectorName { get; set; }
 
-    public string SectorName { get; set; }
+    public string PositionName {  get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Role { get; set; } = string.Empty;
     }

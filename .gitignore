@@ -18,6 +18,8 @@ project.lock.json
 project.assets.json
 *.csproj.nuget.*
 
+
+
 # Arquivos de segredos do usuário (USER SECRETS)
 # ESSENCIAL PARA ESCONDER SUAS SENHAS E CHAVES SECRETAS
 secrets.json
