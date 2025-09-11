@@ -2,14 +2,14 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copia os arquivos de projeto e restaura dependências
-COPY *.sln .
+# Copia apenas os csproj necessários (sem os testes)
 COPY SindautoHub.Api/*.csproj SindautoHub.Api/
 COPY SindautoHub.Application/*.csproj SindautoHub.Application/
 COPY SindautoHub.Infrastructure/*.csproj SindautoHub.Infrastructure/
 COPY SindautoHub.Domain/*.csproj SindautoHub.Domain/
 
-RUN dotnet restore
+# Restaura dependências baseado no projeto principal (API)
+RUN dotnet restore SindautoHub.Api/SindautoHub.Api.csproj
 
 # Copia o restante do código
 COPY . .
