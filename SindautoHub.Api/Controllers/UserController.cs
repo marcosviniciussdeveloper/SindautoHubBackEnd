@@ -41,23 +41,11 @@ namespace SindautoHub.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var cached = await _cache.GetAsync(UserListCacheKey);
-            if (!string.IsNullOrWhiteSpace(cached))
-            {
-                var usersFromCache = JsonSerializer.Deserialize<List<UserResponse>>(cached!, JsonOpts)
-                                     ?? new List<UserResponse>();
-
-                return Ok(new
-                {
-                    message = $"Total de usuários encontrados (cache): {usersFromCache.Count}",
-                    data = usersFromCache
-                });
-            }
-
             var users = (await _userService.GetAllAsync()).ToList();
             var json = JsonSerializer.Serialize(users, JsonOpts);
 
-            await _cache.SetAsync(UserListCacheKey, json);
+            // Define TTL de 5 minutos
+            await _cache.SetAsync(UserListCacheKey, json, TimeSpan.FromMinutes(5));
 
             return Ok(new
             {

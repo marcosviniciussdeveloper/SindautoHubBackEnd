@@ -54,8 +54,10 @@ namespace SindautoHub.Api.Controllers
             }
 
             var result = (await _ticketService.GetAllAsync()).ToList();
+
+           
             var json = JsonSerializer.Serialize(result, JsonOpts);
-            await _cacheService.SetAsync(cacheKey, json);
+            await _cacheService.SetAsync(cacheKey, json, TimeSpan.FromMinutes(5));
 
             return Ok(new
             {
@@ -85,8 +87,9 @@ namespace SindautoHub.Api.Controllers
             if (result == null)
                 return NotFound(new { message = "Ticket não encontrado." });
 
+            // Salvar no cache
             var json = JsonSerializer.Serialize(result, JsonOpts);
-            await _cacheService.SetAsync(cacheKey, json);
+            await _cacheService.SetAsync(cacheKey, json, TimeSpan.FromMinutes(5));
 
             return Ok(new
             {
