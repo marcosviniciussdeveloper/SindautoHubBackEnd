@@ -21,6 +21,7 @@ public class ChatService : IChatServices
         _chatRepository = chatRepository;
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
+        _chatMessageRepository = chatMessageRepository;
     }
 
     public async Task<ChatResponse> CreateChatAsync(CreateChatRequest request)

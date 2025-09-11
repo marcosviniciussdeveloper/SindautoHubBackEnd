@@ -61,7 +61,15 @@ public class UserRepository : IUserRepository
 
     public async Task<User?> GetByNameAsync(string UserName)
     {
-        return await _context.Users.FirstOrDefaultAsync(u =>  u.UserName == UserName);
+        return await _context.Users.FirstOrDefaultAsync(u => u.UserName == UserName);
+    }
+
+    public async Task<IEnumerable<User>> GetBySectorIdWithDetailsAsync(Guid sectorId)
+    {
+        return await _context.Users
+            .Include(u => u.Position)
+            .Where(u => u.SectorId == sectorId)
+            .ToListAsync();
     }
 
     public async Task<User?> GetByWhatsappNumberAsync(string whatsappNumber)

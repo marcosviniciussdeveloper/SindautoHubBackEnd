@@ -15,7 +15,7 @@ public class User
     public  PresenceStatus PresenceStatus { get; set; } = PresenceStatus.Online;
     public string Cpf { get; set; }
     public string Password { get; set; } // Guardará o Hash da senha
-    public string Role { get; set; }     // "Admin", "Agent", "Client", etc.
+    public string Role { get; set; }     // "Master", "Admin", "Client", etc.
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
     public Guid? PositionId { get; set; }

@@ -2,37 +2,29 @@
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Entities;
 using SindautoHub.Domain.Entities.Enums;
+using SindautoHub.Domain.Entities.Models;
 using SindautoHub.Domain.Interfaces;
 using System.Security.Authentication;
 
 public class AuthService : IAuthService
 {
     private readonly IUserRepository _userRepository;
-    private readonly IunitOfwork _unitOfWork;
-    private readonly ITokenService _tokenService;
     private readonly IPasswordHasher _passwordHasher;
-    private IUserRepository object1;
-    private IPasswordHasher passwordHasher;
-    private ITokenService object2;
-
-    public AuthService(IUserRepository object1, IPasswordHasher passwordHasher, ITokenService object2)
-    {
-        this.object1 = object1;
-        this.passwordHasher = passwordHasher;
-        this.object2 = object2;
-    }
+    private readonly ITokenService _tokenService;
+    private readonly IunitOfwork _unitOfWork;
 
     public AuthService(
+        IUserRepository userRepository,
         IPasswordHasher passwordHasher,
         ITokenService tokenService,
-        IUserRepository userRepository,
-        IunitOfwork iunitOfwork)
+        IunitOfwork unitOfWork)
     {
-        _tokenService = tokenService;
-        _unitOfWork = iunitOfwork;
-        _passwordHasher = passwordHasher;
-        _userRepository = userRepository;
+        _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+        _passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher));
+        _tokenService = tokenService ?? throw new ArgumentNullException(nameof(tokenService));
+        _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
     }
+
 
     public async Task<LoginResponse> LoginAsync(LoginRequest request)
     {
@@ -43,9 +35,9 @@ public class AuthService : IAuthService
         if (!_passwordHasher.VerifyPassword(request.Password, user.Password))
             throw new UnauthorizedAccessException("Senha incorreta.");
 
-        var permissions = RolePermissions.GetPermissions(user.Role)
-            .Select(p => p.ToString())
-            .ToList();
+        var permissions = (RolePermissions.GetPermissions(user.Role) ?? Enumerable.Empty<Permission>())
+     .Select(p => p.ToString())
+     .ToList();
 
         var token = _tokenService.GenerateToken(user);
 
@@ -56,6 +48,7 @@ public class AuthService : IAuthService
             user = new AuthuserDTO
             {
                 Id = user.Id,
+                SectorId = user.SectorId,
                 UserName = user.UserName,
                 Role = user.Role
             }

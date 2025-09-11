@@ -2,7 +2,7 @@
 using SindautoHub.Application.Dtos.UserDtos;
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Entities;
-
+using SindautoHub.Domain.Entities.Enums;
 using SindautoHub.Domain.Interface;
 using SindautoHub.Domain.Interfaces;
 using StackExchange.Redis;
@@ -85,6 +85,19 @@ public class UserService : IUserServices
 
 
         return response;
+    }
+
+    public async Task<List<UserBySectorResponse>> GetUsersBySectorAsync(Guid sectorId)
+    {
+        var users = await _useRepository.GetBySectorIdWithDetailsAsync(sectorId);
+
+        return users.Select(u => new UserBySectorResponse
+        {
+            Id = u.Id,
+            Name = u.Name,
+            Position = u.Position?.Name ?? "Sem cargo",
+            IsOnline = u.PresenceStatus == PresenceStatus.Online
+        }).ToList();
     }
 
 

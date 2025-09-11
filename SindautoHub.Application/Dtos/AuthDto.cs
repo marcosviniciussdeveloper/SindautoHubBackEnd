@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SindautoHub.Domain.Entities.Models;
 
 namespace SindautoHub.Application.Dtos
 {
@@ -25,9 +26,12 @@ namespace SindautoHub.Application.Dtos
 
     public class AuthuserDTO
     {
+    public Guid? SectorId { get; set; }
     public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string UserName { get; set; } = string.Empty;
+
+    public string SectorName { get; set; }
     public string Email { get; set; } = string.Empty;
     public string Role { get; set; } = string.Empty;
     }

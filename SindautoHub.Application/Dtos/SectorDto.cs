@@ -23,4 +23,6 @@ public class SectorResponse
     public string Description { get; set; }
     public string OpeningsHours { get; set; }
     public int MembersCount { get; set; } 
+
     }
+

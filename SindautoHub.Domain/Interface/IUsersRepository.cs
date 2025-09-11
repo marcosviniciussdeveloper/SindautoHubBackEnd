@@ -16,7 +16,10 @@ public interface IUserRepository
     Task<User?> GetByNameAsync(string UserName);
     Task<User?> GetByEmailAsync(string email);
 
-    Task<User?> GetByWhatsappNumberAsync(string whatsappNumber);
+    Task<IEnumerable<User>> GetBySectorIdWithDetailsAsync(Guid sectorId);
+    
+
+        Task<User?> GetByWhatsappNumberAsync(string whatsappNumber);
 
     Task CreateAsync(User user);
 

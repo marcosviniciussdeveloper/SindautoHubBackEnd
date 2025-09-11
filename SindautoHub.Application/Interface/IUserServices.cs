@@ -15,6 +15,9 @@ namespace SindautoHub.Domain.Interface
 
        Task<List<UserResponse>> GetAllAsync();
 
+        Task<List<UserBySectorResponse>> GetUsersBySectorAsync(Guid sectorId);
+
         Task<bool> DeleteAsync(Guid Id);
+
     }
 }

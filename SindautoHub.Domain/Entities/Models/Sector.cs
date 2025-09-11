@@ -16,6 +16,8 @@ namespace SindautoHub.Domain.Entities.Models
 
         public DateTime? StatusChangedAt { get; set; }
 
+
+
          public ICollection<User> Users { get; set; } = new List<User>();
     }
 }

@@ -34,8 +34,8 @@ public class TokenService : ITokenService
             new("cpf",                         user.Cpf),
             new(ClaimTypes.Name,               user.UserName ?? user.Email ?? user.Cpf),
             new(ClaimTypes.Role,               user.Role),
-            new("role",                        user.Role),                          // útil para front/Supabase
-            new("sector_id",                   user.SectorId?.ToString() ?? Guid.Empty.ToString()) // presença/escopo
+            new("role",                        user.Role),                          
+            new("sector_id",                   user.SectorId?.ToString() ?? Guid.Empty.ToString()) 
         };
 
         // Adiciona permissões como múltiplas claims "perm"
@@ -46,7 +46,7 @@ public class TokenService : ITokenService
             issuer: $"https://{projectRef}.supabase.co/auth/v1",
             audience: "authenticated",
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(12),
+            expires: DateTime.UtcNow.AddHours(2),
             signingCredentials: credentials
         );
 

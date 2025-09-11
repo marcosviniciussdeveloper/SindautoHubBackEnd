@@ -1,36 +1,38 @@
-﻿
-using Moq;
+﻿using Moq;
+using Xunit;
 using SindautoHub.Application.Dtos;
 using SindautoHub.Application.Interface;
+using SindautoHub.Application.Service;
+using SindautoHub.Domain.Entities;
 using SindautoHub.Domain.Interfaces;
 
 namespace SindautoHubTestes.Entities.Services
 {
-
     public class AuthServiceTests
     {
         private readonly Mock<IUserRepository> _userRepoMock;
         private readonly Mock<ITokenService> _tokenServiceMock;
+        private readonly Mock<IunitOfwork> _unitOfWorkMock;
         private readonly IPasswordHasher _passwordHasher;
         private readonly AuthService _authService;
-        private readonly IunitOfwork _iunitOfwork;
 
         public AuthServiceTests()
         {
             _userRepoMock = new Mock<IUserRepository>();
             _tokenServiceMock = new Mock<ITokenService>();
+            _unitOfWorkMock = new Mock<IunitOfwork>();
             _passwordHasher = new BCryptPasswordHasher();
 
+            // Aqui instanciamos o AuthService real
             _authService = new AuthService(
                 _userRepoMock.Object,
                 _passwordHasher,
-                _tokenServiceMock.Object
+                _tokenServiceMock.Object,
+                _unitOfWorkMock.Object
             );
         }
 
         [Fact]
-
-
         public async Task LoginAsync_ShouldReturnToken_WhenPasswordIsCorrect()
         {
             // Arrange
@@ -45,7 +47,7 @@ namespace SindautoHubTestes.Entities.Services
                 Role = "Admin"
             };
 
-            _userRepoMock.Setup(r => r.GetByNameAsync("admin"))
+            _userRepoMock.Setup(r => r.GetByNameAsync(It.IsAny<string>()))
                          .ReturnsAsync(user);
 
             _tokenServiceMock.Setup(t => t.GenerateToken(It.IsAny<User>()))
@@ -68,7 +70,6 @@ namespace SindautoHubTestes.Entities.Services
         }
 
         [Fact]
-
         public async Task LoginAsync_ShouldThrow_WhenPasswordIsIncorrect()
         {
             // Arrange
@@ -80,11 +81,8 @@ namespace SindautoHubTestes.Entities.Services
                 Role = "Admin"
             };
 
-            _userRepoMock.Setup(r => r.GetByNameAsync(It.IsAny<string>()))
+            _userRepoMock.Setup(r => r.GetByNameAsync("admin"))
                          .ReturnsAsync(user);
-
-            _tokenServiceMock.Setup(t => t.GenerateToken(It.IsAny<User>()))
-                             .Returns("fake-jwt-token");
 
             var request = new LoginRequest
             {
@@ -92,11 +90,11 @@ namespace SindautoHubTestes.Entities.Services
                 Password = "wrongpassword"
             };
 
+
             // Act & Assert
             await Assert.ThrowsAsync<UnauthorizedAccessException>(
                 async () => await _authService.LoginAsync(request)
             );
         }
-
     }
 }

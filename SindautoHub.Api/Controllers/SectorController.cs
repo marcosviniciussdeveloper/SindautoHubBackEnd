@@ -110,4 +110,7 @@ public class SectorController : ControllerBase
             message = "Setor excluído com sucesso."
         });
     }
+
+
+
 }

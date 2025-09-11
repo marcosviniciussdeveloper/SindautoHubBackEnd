@@ -66,6 +66,21 @@ namespace SindautoHub.Api.Controllers
             });
         }
 
+
+        [HttpGet("sector/{sectorId}")]
+        public async Task<IActionResult> GetUsersBySector(Guid sectorId)
+        {
+            var result = await _userService.GetUsersBySectorAsync(sectorId);
+
+            return Ok(new
+            {
+                message = $"Total de usuários encontrados no setor {sectorId}: {result.Count}",
+                data = result
+            });
+        }
+
+
+
         // GET: api/User/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)

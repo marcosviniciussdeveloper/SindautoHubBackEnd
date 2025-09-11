@@ -1,5 +1,7 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using SindautoHub.Application.Dtos.SectorDtos;
+using SindautoHub.Application.Dtos.UserDtos;
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Entities.Models;
 using SindautoHub.Domain.Interfaces;
@@ -11,8 +13,10 @@ public class SectorService : ISectorService
     private readonly ISectorRepository _sectorRepository;
     private readonly IMapper _mapper;
     private readonly IunitOfwork _unitOfWork;
+    private readonly IUserRepository _userRepository;
 
     public SectorService(
+        IUserRepository userRepository,
         ISectorRepository sectorRepository,
         IMapper mapper,
         IunitOfwork unitOfWork)
@@ -68,4 +72,7 @@ public class SectorService : ISectorService
         await _unitOfWork.SaveChangesAsync();
         return true;
     }
+
+
 }
+

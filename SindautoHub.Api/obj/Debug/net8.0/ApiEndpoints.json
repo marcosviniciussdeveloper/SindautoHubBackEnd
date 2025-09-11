@@ -330,5 +330,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.UserController",
+    "Method": "GetUsersBySector",
+    "RelativePath": "api/User/sector/{sectorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sectorId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

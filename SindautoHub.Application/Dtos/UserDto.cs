@@ -1,4 +1,5 @@
 ﻿using SindautoHub.Domain.Entities.Enums;
+using SindautoHub.Domain.Entities.Models;
 
 namespace SindautoHub.Application.Dtos.UserDtos;
 
@@ -33,6 +34,8 @@ public class UserResponse
     public string Name { get; set; }
 
     public Status Status { get; set; }
+
+    public Sector SectorId { get; set; }
  
     public string PositionName { get; set; }
     public string SectorName {get;set;}
@@ -40,3 +43,14 @@ public class UserResponse
     public string Role { get; set; }
     public DateTime CreatedAt { get; set; }
 }
+
+public class UserBySectorResponse
+{
+    public Guid Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Position { get; set; } = string.Empty;
+    public bool IsOnline { get; set; } 
+}
+
+
+
