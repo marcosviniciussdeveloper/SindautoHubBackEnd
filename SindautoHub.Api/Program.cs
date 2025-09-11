@@ -156,7 +156,7 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "SindautoHub API V1");
-    c.RoutePrefix = "";
+    c.RoutePrefix = "swagger";
 });
 
 app.UseCors(MyAllowSpecificOrigins);
