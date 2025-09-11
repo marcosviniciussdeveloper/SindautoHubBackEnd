@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SindautoHub.Application.Dtos.UserDtos;
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Interface;
@@ -12,14 +10,10 @@ namespace SindautoHub.Api.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserServices _userService;
-        private readonly ICacheService _cache;
-        private static readonly JsonSerializerOptions JsonOpts = new(JsonSerializerDefaults.Web);
-        private const string UserListCacheKey = "users_all";
 
-        public UserController(ICacheService cache, IUserServices userService)
+        public UserController(IUserServices userService)
         {
             _userService = userService;
-            _cache = cache;
         }
 
         // POST: api/User
@@ -27,8 +21,6 @@ namespace SindautoHub.Api.Controllers
         public async Task<IActionResult> Create([FromBody] CreateUserRequest request)
         {
             var user = await _userService.CreateAsync(request);
-
-            await _cache.RemoveAsync(UserListCacheKey);
 
             return CreatedAtAction(nameof(GetById), new { id = user.Id }, new
             {
@@ -41,20 +33,16 @@ namespace SindautoHub.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var users = (await _userService.GetAllAsync()).ToList();
-            var json = JsonSerializer.Serialize(users, JsonOpts);
-
-            // Define TTL de 5 minutos
-            await _cache.SetAsync(UserListCacheKey, json, TimeSpan.FromMinutes(5));
+            var users = await _userService.GetAllAsync();
 
             return Ok(new
             {
-                message = $"Total de usuários encontrados (db): {users.Count}",
+                message = $"Total de usuários encontrados: {users.Count}",
                 data = users
             });
         }
 
-
+        // GET: api/User/sector/{sectorId}
         [HttpGet("sector/{sectorId}")]
         public async Task<IActionResult> GetUsersBySector(Guid sectorId)
         {
@@ -66,8 +54,6 @@ namespace SindautoHub.Api.Controllers
                 data = result
             });
         }
-
-
 
         // GET: api/User/{id}
         [HttpGet("{id}")]
@@ -87,8 +73,6 @@ namespace SindautoHub.Api.Controllers
         {
             var updatedUser = await _userService.UpdateAsync(id, request);
 
-            await _cache.RemoveAsync(UserListCacheKey);
-
             return Ok(new
             {
                 message = "Usuário atualizado com sucesso!",
@@ -101,8 +85,6 @@ namespace SindautoHub.Api.Controllers
         public async Task<IActionResult> Delete(Guid id)
         {
             await _userService.DeleteAsync(id);
-
-            await _cache.RemoveAsync(UserListCacheKey);
 
             return Ok(new
             {

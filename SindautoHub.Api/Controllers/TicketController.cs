@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using SindautoHub.Application.Dtos.TicketDtos;
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Interface;
-using System.Text.Json;
 
 namespace SindautoHub.Api.Controllers
 {
@@ -55,9 +56,16 @@ namespace SindautoHub.Api.Controllers
 
             var result = (await _ticketService.GetAllAsync()).ToList();
 
-           
+
             var json = JsonSerializer.Serialize(result, JsonOpts);
-            await _cacheService.SetAsync(cacheKey, json, TimeSpan.FromMinutes(5));
+            await _cacheService.SetAsync(
+             cacheKey,
+                 json,
+             new DistributedCacheEntryOptions
+                 {
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
+     }
+ );
 
             return Ok(new
             {
@@ -89,7 +97,14 @@ namespace SindautoHub.Api.Controllers
 
             // Salvar no cache
             var json = JsonSerializer.Serialize(result, JsonOpts);
-            await _cacheService.SetAsync(cacheKey, json, TimeSpan.FromMinutes(5));
+            await _cacheService.SetAsync(
+            cacheKey,
+                json,
+             new DistributedCacheEntryOptions
+                {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
+             }
+            );
 
             return Ok(new
             {
