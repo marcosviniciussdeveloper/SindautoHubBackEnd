@@ -7,10 +7,10 @@ primary_region = "gru"
 
 [env]
   ASPNETCORE_ENVIRONMENT = "Production"
-  ASPNETCORE_URLS = "http://+:5000"
+  ASPNETCORE_URLS = "http://+:8080"
 
 [[services]]
-  internal_port = 5000
+  internal_port = 8080
   protocol = "tcp"
 
   [[services.ports]]
