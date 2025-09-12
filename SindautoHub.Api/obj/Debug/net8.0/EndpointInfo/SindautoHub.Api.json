@@ -777,6 +777,11 @@
             "type": "string",
             "nullable": true
           },
+          "positionId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
           "photoPath": {
             "type": "string",
             "nullable": true

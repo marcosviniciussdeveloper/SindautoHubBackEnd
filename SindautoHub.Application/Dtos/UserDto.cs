@@ -28,7 +28,7 @@ public class UpdateUserRequest
     public string? UserName { get; set; }
     public string? Role { get; set; }
 
-    // opcional: trocar a foto
+    public Guid? PositionId { get; set; } 
     public string? PhotoPath { get; set; }
 }
 
@@ -36,6 +36,8 @@ public class UserResponse
 {
     public Guid Id { get; set; }
     public Guid? SectorId { get; set; }
+
+    public Guid PositionId { get; set; }
     public string? Name { get; set; }
     public  Status Status { get; set;  } 
     public string Email { get; set; }
