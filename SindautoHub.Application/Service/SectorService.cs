@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Text.Json;
 using AutoMapper;
 using SindautoHub.Application.Dtos.SectorDtos;
-using SindautoHub.Application.Dtos.UserDtos;
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Entities.Models;
 using SindautoHub.Domain.Interfaces;
@@ -13,17 +12,20 @@ public class SectorService : ISectorService
     private readonly ISectorRepository _sectorRepository;
     private readonly IMapper _mapper;
     private readonly IunitOfwork _unitOfWork;
-    private readonly IUserRepository _userRepository;
+    private readonly ICacheService _cache;
+
+    private const string CacheKey = "sectors_all";
 
     public SectorService(
-        IUserRepository userRepository,
         ISectorRepository sectorRepository,
         IMapper mapper,
-        IunitOfwork unitOfWork)
+        IunitOfwork unitOfWork,
+        ICacheService cache)
     {
         _sectorRepository = sectorRepository;
         _mapper = mapper;
         _unitOfWork = unitOfWork;
+        _cache = cache;
     }
 
     public async Task<SectorResponse> CreateAsync(CreateSectorRequest request)
@@ -32,13 +34,28 @@ public class SectorService : ISectorService
         await _sectorRepository.CreateAsync(entity);
         await _unitOfWork.SaveChangesAsync();
 
+        // invalida cache
+        await _cache.RemoveAsync(CacheKey);
+
         return _mapper.Map<SectorResponse>(entity);
     }
 
     public async Task<List<SectorResponse>> GetAllAsync()
     {
+        var cached = await _cache.GetAsync(CacheKey);
+        if (!string.IsNullOrEmpty(cached))
+        {
+            return JsonSerializer.Deserialize<List<SectorResponse>>(cached)
+                   ?? new List<SectorResponse>();
+        }
+
         var sectors = await _sectorRepository.GetAllAsync();
-        return _mapper.Map<List<SectorResponse>>(sectors);
+        var response = _mapper.Map<List<SectorResponse>>(sectors);
+
+        var json = JsonSerializer.Serialize(response);
+        await _cache.SetAsync(CacheKey, json, TimeSpan.FromMinutes(5));
+
+        return response;
     }
 
     public async Task<SectorResponse> GetByIdAsync(Guid id)
@@ -53,12 +70,19 @@ public class SectorService : ISectorService
         var sector = await _sectorRepository.GetByIdAsync(id);
         if (sector == null) return null!;
 
-        if (!string.IsNullOrWhiteSpace(request.Name)) sector.NameSector = request.Name;
-        if (!string.IsNullOrWhiteSpace(request.Description)) sector.Description = request.Description;
-        if (!string.IsNullOrWhiteSpace(request.OpeningsHours)) sector.OpeningsHours = request.OpeningsHours;
+        if (!string.IsNullOrWhiteSpace(request.Name))
+            sector.NameSector = request.Name;
+
+        if (!string.IsNullOrWhiteSpace(request.Description))
+            sector.Description = request.Description;
+
+        if (!string.IsNullOrWhiteSpace(request.OpeningsHours))
+            sector.OpeningsHours = request.OpeningsHours;
 
         await _sectorRepository.UpdateAsync(sector);
         await _unitOfWork.SaveChangesAsync();
+
+        await _cache.RemoveAsync(CacheKey);
 
         return _mapper.Map<SectorResponse>(sector);
     }
@@ -70,9 +94,10 @@ public class SectorService : ISectorService
 
         await _sectorRepository.DeleteAsync(sector);
         await _unitOfWork.SaveChangesAsync();
+
+        // invalida cache
+        await _cache.RemoveAsync(CacheKey);
+
         return true;
     }
-
-
 }
-

@@ -666,6 +666,10 @@
             "type": "string",
             "nullable": true
           },
+          "photoPath": {
+            "type": "string",
+            "nullable": true
+          },
           "positionId": {
             "type": "string",
             "format": "uuid",
@@ -712,6 +716,13 @@
         },
         "additionalProperties": false
       },
+      "Status": {
+        "enum": [
+          "Inativo",
+          "Ativo"
+        ],
+        "type": "string"
+      },
       "UpdateSectorRequest": {
         "type": "object",
         "properties": {
@@ -752,8 +763,7 @@
             "nullable": true
           },
           "status": {
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/Status"
           },
           "password": {
             "type": "string",
@@ -764,6 +774,10 @@
             "nullable": true
           },
           "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "photoPath": {
             "type": "string",
             "nullable": true
           }

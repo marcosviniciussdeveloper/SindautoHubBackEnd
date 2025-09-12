@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace SindautoHub.Domain.Entities.Enums
 {
-    public enum  Status
+    public enum Status
     {
-        Ativo = 1,
-        Inativo = 2,
-        Pendente = 3
+        Inativo = 0,
+        Ativo = 1
     }
 
     public enum StatusChat

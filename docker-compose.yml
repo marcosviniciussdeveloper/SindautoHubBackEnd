@@ -1,0 +1,26 @@
+﻿version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: SindautoHub.Api/Dockerfile
+    container_name: sindautohub-api
+    ports:
+      - "5000:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__DefaultConnection: ${DEFAULT_CONNECTION}
+      ConnectionStrings__RedisConnection: ${REDIS_CONNECTION}
+      Jwt__Key: ${JWT_KEY}
+
+  ngrok:
+    image: ngrok/ngrok:latest   # ✅ troquei para imagem oficial do ngrok
+    container_name: sindautohub-ngrok
+    depends_on:
+      - api
+    command: http api:8080
+    environment:
+      NGROK_AUTHTOKEN: ${NGROK_TOKEN}
+    ports:
+      - "4040:4040" # painel web do ngrok

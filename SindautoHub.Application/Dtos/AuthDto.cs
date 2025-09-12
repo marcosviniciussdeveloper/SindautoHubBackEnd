@@ -26,6 +26,8 @@ namespace SindautoHub.Application.Dtos
 
     public class AuthuserDTO
     {
+
+    public string PhotoUrl { get; set; }
     public Guid? SectorId { get; set; }
     public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;

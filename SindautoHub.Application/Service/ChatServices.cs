@@ -81,20 +81,20 @@ public class ChatService : IChatServices
         {
             Id = chat.Id,
             CreatedAt = chat.CreatedAt,
-            Participants = chat.ChatUsers.Select(cu => new UserSummaryResponse
+            Participants = chat.ChatUsers?.Select(cu => new UserSummaryResponse
             {
-                Id = cu.User.Id,
-                Name = cu.User.Name
-            }).ToList(),
+                Id = cu.User?.Id ?? Guid.Empty,
+                Name = cu.User?.Name ?? "Desconhecido"
+            }).ToList() ?? new List<UserSummaryResponse>(),
+
             Messages = chat.Messages?.Select(m => new ChatMessageResponse
             {
-               
-                MessageText = m.MessageText,  
+                Id = m.Id,
+                MessageText = m.MessageText,
                 SentAt = m.SentAt,
                 SenderId = m.SenderId,
-                SenderName = m.Sender?.Name
+                SenderName = m.Sender?.Name ?? "Usuário desconhecido"
             }).ToList() ?? new List<ChatMessageResponse>()
-
         };
     }
 

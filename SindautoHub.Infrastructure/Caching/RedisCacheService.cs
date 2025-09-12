@@ -25,8 +25,15 @@ namespace SindautoHub.Infrastructure.Services
         public Task RemoveAsync(string key) =>
             _cache.RemoveAsync(key);
 
-        public Task SetAsync(string key, string value) =>
-            _cache.SetStringAsync(key, value, _options);
+        public Task SetAsync(string key, string value, TimeSpan timeSpan) =>
+      _cache.SetStringAsync(
+          key,
+          value,
+          new DistributedCacheEntryOptions
+          {
+              AbsoluteExpirationRelativeToNow = timeSpan
+          }
+      );
 
         public Task SetAsync(string key, string value,
             DistributedCacheEntryOptions options, CancellationToken ct = default) =>

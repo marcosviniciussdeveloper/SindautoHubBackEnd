@@ -18,6 +18,7 @@ public class UpdateSectorRequest
 
 public class SectorResponse
 {
+
     public Guid Id { get; set; }
     public string NameSector { get; set; }
     public string Description { get; set; }

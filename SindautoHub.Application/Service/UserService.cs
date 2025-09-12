@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json;
+using AutoMapper;
 using SindautoHub.Application.Dtos.UserDtos;
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Entities;
@@ -14,7 +15,10 @@ public class UserService : IUserServices
     private readonly IMapper _mapper;
     private readonly IPasswordHasher _passwordHasher;
     private readonly ICacheService _cache;
-    private static readonly object builder;
+
+    // Base pública do Supabase Storage (ajuste se o bucket tiver outro nome)
+    private const string StorageBaseUrl =
+        "https://xitvsgswawdtiynzcupb.supabase.co/storage/v1/object/public/avatars/";
 
     public UserService(
         IUserRepository useRepository,
@@ -48,8 +52,14 @@ public class UserService : IUserServices
         newUser.CreatedAt = DateTime.UtcNow;
         newUser.UpdatedAt = DateTime.UtcNow;
 
+        // salva PhotoPath se enviado no request
+        if (!string.IsNullOrWhiteSpace(request.PhotoPath))
+            newUser.PhotoPath = request.PhotoPath;
+
         await _useRepository.CreateAsync(newUser);
         await _iunitOfwork.SaveChangesAsync();
+
+        await _cache.RemoveAsync("user.list");
 
         string? positionName = null;
         string? sectorName = null;
@@ -69,23 +79,24 @@ public class UserService : IUserServices
         var response = _mapper.Map<UserResponse>(newUser);
         response.PositionName = positionName ?? string.Empty;
         response.SectorName = sectorName ?? string.Empty;
+        response.PhotoUrl = string.IsNullOrEmpty(newUser.PhotoPath) ? null : $"{StorageBaseUrl}{newUser.PhotoPath}";
 
         return response;
     }
 
     public async Task<UserResponse> GetByIdAsync(Guid id)
     {
-       
         var user = await _useRepository.GetByIdWithDetailsAsync(id);
-        if (user == null)
-            throw new Exception("Usuário não encontrado.");
 
-       
+        if (user == null || user.Status != Status.Ativo)
+            throw new Exception("Usuário não encontrado ou inativo.");
+
         var response = _mapper.Map<UserResponse>(user);
-
-
+        response.PhotoUrl = string.IsNullOrEmpty(user.PhotoPath) ? null : $"{StorageBaseUrl}{user.PhotoPath}";
         return response;
     }
+
+    
 
     public async Task<List<UserBySectorResponse>> GetUsersBySectorAsync(Guid sectorId)
     {
@@ -95,28 +106,44 @@ public class UserService : IUserServices
         {
             Id = u.Id,
             Name = u.Name,
+            Status = u.Status,
             Position = u.Position?.Name ?? "Sem cargo",
-            IsOnline = u.PresenceStatus == PresenceStatus.Online
+            IsOnline = u.PresenceStatus == PresenceStatus.Online,
+            PhotoUrl = string.IsNullOrEmpty(u.PhotoPath) ? null : $"{StorageBaseUrl}{u.PhotoPath}"
         }).ToList();
     }
 
-
-
     public async Task<List<UserResponse>> GetAllAsync()
     {
+        const string cacheKey = "user.list";
+
+        var cached = await _cache.GetAsync(cacheKey);
+        if (!string.IsNullOrEmpty(cached))
+        {
+            return JsonSerializer.Deserialize<List<UserResponse>>(cached)
+                   ?? new List<UserResponse>();
+        }
+
         var users = await _useRepository.GetAllAsync();
-        return users.Select(u => new UserResponse
+
+        var response = users.Select(u => new UserResponse
         {
             Id = u.Id,
             Name = u.Name,
             Email = u.Email,
             Role = u.Role,
             Status = u.Status,
+            SectorId = u.SectorId,
             CreatedAt = u.CreatedAt,
-            PositionName = u.Position.Name,
-            SectorName = u.Sector.NameSector
+            PositionName = u.Position?.Name ?? string.Empty,
+            SectorName = u.Sector?.NameSector ?? string.Empty,
+            PhotoUrl = string.IsNullOrEmpty(u.PhotoPath) ? null : $"{StorageBaseUrl}{u.PhotoPath}"
         }).ToList();
 
+        var json = JsonSerializer.Serialize(response);
+        await _cache.SetAsync(cacheKey, json, TimeSpan.FromMinutes(5));
+
+        return response;
     }
 
     public async Task<UserResponse> UpdateAsync(Guid id, UpdateUserRequest request)
@@ -140,13 +167,23 @@ public class UserService : IUserServices
         if (!string.IsNullOrWhiteSpace(request.Password))
             user.Password = _passwordHasher.HashPassword(request.Password);
 
+        if (!string.IsNullOrWhiteSpace(request.PhotoPath))
+            user.PhotoPath = request.PhotoPath;
+
+        if (request.Status.HasValue) 
+            user.Status = request.Status.Value;
+
         user.UpdatedAt = DateTime.UtcNow;
 
         await _useRepository.UpdateAsync(user);
         await _iunitOfwork.SaveChangesAsync();
+        await _cache.RemoveAsync("user.list");
 
-        return _mapper.Map<UserResponse>(user);
+        var response = _mapper.Map<UserResponse>(user);
+        response.PhotoUrl = string.IsNullOrEmpty(user.PhotoPath) ? null : $"{StorageBaseUrl}{user.PhotoPath}";
+        return response;
     }
+
 
     public async Task<bool> DeleteAsync(Guid id)
     {
@@ -154,7 +191,11 @@ public class UserService : IUserServices
         if (user == null)
             throw new Exception("Usuário não encontrado.");
 
-        await _useRepository.DeleteAsync(user);
+        user.Status = Status.Inativo;
+        user.UpdatedAt = DateTime.UtcNow;
+
+        await _useRepository.UpdateAsync(user);
+        await _cache.RemoveAsync("user.list");
         await _iunitOfwork.SaveChangesAsync();
         return true;
     }

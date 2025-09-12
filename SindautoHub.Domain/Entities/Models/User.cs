@@ -10,6 +10,8 @@ public class User
     public string Email { get; set; }
     public string? WhatsappNumber { get; set; }
 
+    public string? PhotoPath { get; set; }
+
     public Status Status { get; set; } = Status.Ativo;
 
     public  PresenceStatus PresenceStatus { get; set; } = PresenceStatus.Online;
@@ -23,7 +25,7 @@ public class User
     public Position? Position { get; set; }
 
     public Guid? SectorId { get; set; }
-    public Sector? Sector { get; set; }
+    public Sector ?Sector { get; set; }
 
     public ICollection<Announcement> Announcements { get; set; } = new List<Announcement>();
     public ICollection<Ticket> TicketsAsCliente { get; set; } = new List<Ticket>();
