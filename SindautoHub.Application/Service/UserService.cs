@@ -133,6 +133,7 @@ public class UserService : IUserServices
             Email = u.Email,
             Role = u.Role,
             Status = u.Status,
+            PositionId = u.PositionId,
             SectorId = u.SectorId,
             CreatedAt = u.CreatedAt,
             PositionName = u.Position?.Name ?? string.Empty,

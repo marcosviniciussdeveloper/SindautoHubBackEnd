@@ -37,7 +37,7 @@ public class UserResponse
     public Guid Id { get; set; }
     public Guid? SectorId { get; set; }
 
-    public Guid PositionId { get; set; }
+    public Guid ?PositionId { get; set; }
     public string? Name { get; set; }
     public  Status Status { get; set;  } 
     public string Email { get; set; }
