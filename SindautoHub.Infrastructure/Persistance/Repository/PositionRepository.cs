@@ -32,6 +32,7 @@ public class PositionRepository : IPositionRepository
     public async Task<Position?> GetByIdAsync(Guid positionId)
     {
         return await _context.Positions.FindAsync(positionId);
+        
     }
 
 

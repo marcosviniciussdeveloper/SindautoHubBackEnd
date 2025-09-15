@@ -67,7 +67,7 @@ public class UserService : IUserServices
         if (newUser.PositionId.HasValue)
         {
             var position = await _iunitOfwork.PositionRepository.GetByIdAsync(newUser.PositionId.Value);
-            positionName = position?.Name;
+            positionName = position?.PositionName;
         }
 
         if (newUser.SectorId.HasValue)
@@ -107,7 +107,7 @@ public class UserService : IUserServices
             Id = u.Id,
             Name = u.Name,
             Status = u.Status,
-            Position = u.Position?.Name ?? "Sem cargo",
+            Position = u.Position?.PositionName ?? "Sem cargo",
             IsOnline = u.PresenceStatus == PresenceStatus.Online,
             PhotoUrl = string.IsNullOrEmpty(u.PhotoPath) ? null : $"{StorageBaseUrl}{u.PhotoPath}"
         }).ToList();
@@ -136,7 +136,7 @@ public class UserService : IUserServices
             PositionId = u.PositionId,
             SectorId = u.SectorId,
             CreatedAt = u.CreatedAt,
-            PositionName = u.Position?.Name ?? string.Empty,
+            PositionName = u.Position?.PositionName ?? string.Empty,
             SectorName = u.Sector?.NameSector ?? string.Empty,
             PhotoUrl = string.IsNullOrEmpty(u.PhotoPath) ? null : $"{StorageBaseUrl}{u.PhotoPath}"
         }).ToList();

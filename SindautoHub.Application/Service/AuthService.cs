@@ -50,7 +50,7 @@ public class AuthService : IAuthService
                 Id = user.Id,
                 SectorId = user.SectorId,
                 SectorName = user.Sector != null ? user.Sector.NameSector : string.Empty,
-                PositionName = user.Position != null ? user.Position.Name : string.Empty,
+                PositionName = user.Position != null ? user.Position.PositionName : string.Empty,
                 Name = user.Name,
                  Email = user.Email,
                 Role = user.Role

@@ -10,7 +10,7 @@ public class PositionConfiguration : IEntityTypeConfiguration<Position>
         builder.HasKey(p => p.Id);
         builder.Property(p => p.Id).ValueGeneratedOnAdd(); 
 
-        builder.Property(p => p.Name).HasMaxLength(100).IsRequired();
+        builder.Property(p => p.PositionName).HasMaxLength(100).IsRequired();
         builder.Property(p => p.DescriptionDuties).IsRequired(); 
     }
 }

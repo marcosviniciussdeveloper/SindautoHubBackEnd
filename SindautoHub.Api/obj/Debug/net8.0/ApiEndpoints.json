@@ -74,6 +74,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SindautoHub.Api.Controllers.PositionController",
+    "Method": "Create",
+    "RelativePath": "api/Position",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SindautoHub.Application.Dtos.PositionDtos.CreatePositionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.PositionController",
+    "Method": "Update",
+    "RelativePath": "api/Position",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "request",
+        "Type": "SindautoHub.Application.Dtos.PositionDtos.UpdatePositionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.PositionController",
+    "Method": "GetAll",
+    "RelativePath": "api/Position",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.PositionController",
+    "Method": "Delete",
+    "RelativePath": "api/Position",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SindautoHub.Api.Controllers.PositionController",
+    "Method": "GetbyId",
+    "RelativePath": "api/Position/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SindautoHub.Api.Controllers.SectorController",
     "Method": "GetAll",
     "RelativePath": "api/Sector",

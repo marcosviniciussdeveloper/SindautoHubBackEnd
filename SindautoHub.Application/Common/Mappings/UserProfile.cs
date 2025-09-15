@@ -24,7 +24,7 @@ public class UserProfile : Profile
             .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role))
             .ForMember(dest => dest.SectorId, opt => opt.MapFrom(src => src.SectorId))
             .ForMember(dest => dest.SectorName, opt => opt.MapFrom(src => src.Sector != null ? src.Sector.NameSector : null))
-            .ForMember(dest => dest.PositionName, opt => opt.MapFrom(src => src.Position != null ? src.Position.Name : null))
+            .ForMember(dest => dest.PositionName, opt => opt.MapFrom(src => src.Position != null ? src.Position.PositionName : null))
             .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src =>
                 string.IsNullOrEmpty(src.PhotoPath) ? null : $"{StorageBaseUrl}{src.PhotoPath}"
             ));
@@ -39,7 +39,7 @@ public class UserProfile : Profile
             .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt))
             .ForMember(dest => dest.SectorId, opt => opt.MapFrom(src => src.SectorId))
             .ForMember(dest => dest.SectorName, opt => opt.MapFrom(src => src.Sector != null ? src.Sector.NameSector : null))
-            .ForMember(dest => dest.PositionName, opt => opt.MapFrom(src => src.Position != null ? src.Position.Name : null))
+            .ForMember(dest => dest.PositionName, opt => opt.MapFrom(src => src.Position != null ? src.Position.PositionName : null))
             .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src =>
                 string.IsNullOrEmpty(src.PhotoPath) ? null : $"{StorageBaseUrl}{src.PhotoPath}"
             ));

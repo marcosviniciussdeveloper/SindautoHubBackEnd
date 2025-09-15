@@ -8,6 +8,7 @@ public class PositionProfile : Profile
     {
         CreateMap<CreatePositionRequest, Position>();
         CreateMap<UpdatePositionRequest, Position>();
+     
 
         CreateMap<Position, PositionResponse>()
             .ForMember(d => d.DescriptionDuties,
