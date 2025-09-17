@@ -26,10 +26,17 @@ public class ChatService : IChatServices
 
     public async Task<ChatResponse> CreateChatAsync(CreateChatRequest request)
     {
+
         if (request.ParticipantIds == null || !request.ParticipantIds.Any())
             throw new ArgumentException("É necessário pelo menos um participante para criar o chat.");
 
-       
+        var existingChat = await _chatRepository.GetChatByParticipantsAsync(request.ParticipantIds);
+
+        if (existingChat != null)
+        {
+            return MapToChatResponse(existingChat); 
+        }
+
         var chat = new Chat
         {
             Id = Guid.NewGuid(),
@@ -48,7 +55,7 @@ public class ChatService : IChatServices
             chat.ChatUsers.Add(new ChatUser
             {
                 ChatId = chat.Id,
-                UserId = user.Id
+                UserId = participantId
             });
         }
 

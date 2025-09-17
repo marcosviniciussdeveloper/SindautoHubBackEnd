@@ -2,6 +2,7 @@
 using Moq;
 using SindautoHub.Application.Dtos.UserDtos;
 using SindautoHub.Application.Interface;
+using SindautoHub.Domain.Entities.Models;
 using SindautoHub.Domain.Interfaces;
 using Xunit;
 
@@ -46,6 +47,7 @@ public class UserServiceTests
             Name = "Marcos",
             Email = "Marcos@test.com",
             Password = "987654321",
+         
             Cpf = "123.456.789-10"
         };
 

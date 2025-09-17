@@ -2,7 +2,7 @@
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Entities.Enums;
 
-namespace SindautoHub.Infrastructure.Services
+namespace SindautoHub.Infrastructure.Service.RedisService
 {
     public class RedisPresenceService : IPresenceService
     {

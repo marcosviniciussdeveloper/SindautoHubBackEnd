@@ -13,6 +13,15 @@ namespace SindautoHub.Application.Dtos
         public string UserName { get; set; }
         public string Password { get; set; }
 
+        public LoginRequest() { }
+
+
+        public LoginRequest(string username, string password)
+        {
+            UserName = username;
+            Password = password;
+        }
+
     }
 }
     public class LoginResponse
@@ -30,9 +39,12 @@ namespace SindautoHub.Application.Dtos
     public string PhotoUrl { get; set; }
     public Guid? SectorId { get; set; }
     public Guid Id { get; set; }
+
+    
     public string Name { get; set; } = string.Empty;
     public string ?SectorName { get; set; }
 
+    public string UserName { get; set; }
     public string PositionName {  get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Role { get; set; } = string.Empty;

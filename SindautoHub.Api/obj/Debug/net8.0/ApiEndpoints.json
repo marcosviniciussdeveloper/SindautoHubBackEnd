@@ -425,5 +425,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WhatsappController",
+    "Method": "Send",
+    "RelativePath": "api/Whatsapp/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SindautoHub.Application.Dtos.WhatsappMessageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

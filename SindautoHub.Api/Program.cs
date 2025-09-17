@@ -15,7 +15,7 @@ using SindautoHub.Domain.Interfaces;
 using SindautoHub.Infrastructure.Persistance.Database;
 using SindautoHub.Infrastructure.Persistance.Repository;
 using SindautoHub.Infrastructure.Persistence.Repository;
-using SindautoHub.Infrastructure.Services;
+using SindautoHub.Infrastructure.Service.RedisService;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -65,6 +65,7 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
             "http://localhost:5173",
+            "http://localhost:71" ,
             "https://sind-hub.vercel.app",
             "https://sindautohubbackend.onrender.com"
         )
@@ -98,6 +99,7 @@ builder.Services.AddScoped<IPositionServices, PositionServices>();
 builder.Services.AddScoped<ISectorService, SectorService>();
 builder.Services.AddScoped<IChatRepository , ChatRepository>();
 builder.Services.AddScoped<IChatServices, ChatService>();
+//builder.Services.AddScoped<IWhatsappService , TwilioWhatsappService>();
 builder.Services.AddScoped<IChatNotifier, SignalRChatNotifier>();
 
 builder.Services.AddScoped<IChatMessageRepository, ChatMessageRepository>();

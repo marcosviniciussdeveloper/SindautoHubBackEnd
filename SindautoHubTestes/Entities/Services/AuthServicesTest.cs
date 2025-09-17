@@ -1,10 +1,8 @@
 ﻿using Moq;
-using Xunit;
 using SindautoHub.Application.Dtos;
 using SindautoHub.Application.Interface;
-using SindautoHub.Application.Service;
-using SindautoHub.Domain.Entities;
 using SindautoHub.Domain.Interfaces;
+
 
 namespace SindautoHubTestes.Entities.Services
 {
@@ -35,13 +33,17 @@ namespace SindautoHubTestes.Entities.Services
         [Fact]
         public async Task LoginAsync_ShouldReturnToken_WhenPasswordIsCorrect()
         {
+
+
             // Arrange
             var plainPassword = "admin1234";
+            var expectedName = "admin";
             var hashedPassword = _passwordHasher.HashPassword(plainPassword);
 
             var user = new User
             {
                 Id = Guid.NewGuid(),
+
                 UserName = "admin",
                 Password = hashedPassword,
                 Role = "Admin"
@@ -53,19 +55,19 @@ namespace SindautoHubTestes.Entities.Services
             _tokenServiceMock.Setup(t => t.GenerateToken(It.IsAny<User>()))
                              .Returns("fake-jwt-token");
 
-            var request = new LoginRequest
-            {
-                UserName = "admin",
+            var request = new LoginRequest(expectedName   , plainPassword)
+            {     
+                UserName = expectedName,
                 Password = plainPassword
             };
 
             // Act
             var result = await _authService.LoginAsync(request);
-
+           
             // Assert
             Assert.NotNull(result);
             Assert.Equal("fake-jwt-token", result.Token);
-            Assert.Equal("admin", result.user.UserName);
+            Assert.Equal(expectedName, result.user.UserName);
             Assert.Equal("Admin", result.user.Role);
         }
 
@@ -84,8 +86,12 @@ namespace SindautoHubTestes.Entities.Services
             _userRepoMock.Setup(r => r.GetByNameAsync("admin"))
                          .ReturnsAsync(user);
 
-            var request = new LoginRequest
-            {
+            var expectedName = user.Name;
+            var plainPassword = user.Password;
+
+            var request = new LoginRequest(expectedName, plainPassword)
+            {   
+               
                 UserName = "admin",
                 Password = "wrongpassword"
             };
