@@ -7,6 +7,7 @@ namespace SindautoHub.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+   
     public class ChatMessageController : ControllerBase
     {
         private readonly IChatMessageService _chatMessageService;
@@ -21,7 +22,7 @@ namespace SindautoHub.Api.Controllers
         {
        
             var senderIdClaim = User.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
-            if (string.IsNullOrEmpty(senderIdClaim))
+           if (string.IsNullOrEmpty(senderIdClaim))
                 return Unauthorized(new { message = "Usuário não autenticado." });
 
             var senderId = Guid.Parse(senderIdClaim);

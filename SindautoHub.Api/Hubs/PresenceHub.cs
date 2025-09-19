@@ -1,42 +1,53 @@
-﻿namespace SindautoHub.Api.Hubs
-{
-    using Microsoft.AspNetCore.SignalR;
-    using SindautoHub.Application.Interface;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
+using SindautoHub.Application.Interface;
 
+namespace SindautoHub.Api.Hubs
+{
+    [Authorize] // só usuários autenticados podem se conectar
     public class PresenceHub : Hub
     {
         private readonly IPresenceService _presence;
-        public PresenceHub(IPresenceService presence) => _presence = presence;
+
+        public PresenceHub(IPresenceService presence)
+        {
+            _presence = presence;
+        }
 
         public override async Task OnConnectedAsync()
         {
-            var userId = Guid.Parse(Context.User!.FindFirst("sub")!.Value);
-            var sectorId = Guid.Parse(Context.GetHttpContext()!.Request.Query["sectorId"]!);
+            var userId = Context.User?.FindFirst("sub")?.Value;
+            var sectorId = Context.GetHttpContext()?.Request.Query["sectorId"].ToString();
 
-            await _presence.SetOnlineAsync(userId, sectorId);
-            await Groups.AddToGroupAsync(Context.ConnectionId, sectorId.ToString());
-            await Clients.Group(sectorId.ToString())
-                .SendAsync("presenceChanged", new { userId, status = "Online" });
+            if (!string.IsNullOrEmpty(userId) && !string.IsNullOrEmpty(sectorId))
+                await _presence.SetOnlineAsync(Guid.Parse(userId), Guid.Parse(sectorId));
 
             await base.OnConnectedAsync();
         }
 
-        public override async Task OnDisconnectedAsync(Exception? ex)
+        public override async Task OnDisconnectedAsync(Exception? exception)
         {
-            var userId = Guid.Parse(Context.User!.FindFirst("sub")!.Value);
-            var sectorId = Guid.Parse(Context.GetHttpContext()!.Request.Query["sectorId"]!);
+            var userId = Context.User?.FindFirst("sub")?.Value;
+            var sectorId = Context.GetHttpContext()?.Request.Query["sectorId"].ToString();
 
-            await _presence.SetOfflineAsync(userId, sectorId);
-            await Clients.Group(sectorId.ToString())
-                .SendAsync("presenceChanged", new { userId, status = "Offline" });
+            if (!string.IsNullOrEmpty(userId) && !string.IsNullOrEmpty(sectorId))
+                await _presence.SetOfflineAsync(Guid.Parse(userId), Guid.Parse(sectorId));
 
-            await base.OnDisconnectedAsync(ex);
+            await base.OnDisconnectedAsync(exception);
         }
 
-        public Task Ping()
+        public async Task Ping()
         {
-            var userId = Guid.Parse(Context.User!.FindFirst("sub")!.Value);
-            return _presence.PingAsync(userId);
+            var userId = Context.User?.FindFirst("sub")?.Value;
+            if (!string.IsNullOrEmpty(userId))
+                await _presence.PingAsync(Guid.Parse(userId));
+        }
+
+        public async Task SetAusente()
+        {
+            var userId = Context.User?.FindFirst("sub")?.Value;
+            if (!string.IsNullOrEmpty(userId))
+                await _presence.SetAusenteAsync(Guid.Parse(userId));
         }
     }
 }

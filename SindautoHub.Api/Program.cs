@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SindautoHub.Api.Hubs;
@@ -15,6 +14,7 @@ using SindautoHub.Domain.Interfaces;
 using SindautoHub.Infrastructure.Persistance.Database;
 using SindautoHub.Infrastructure.Persistance.Repository;
 using SindautoHub.Infrastructure.Persistence.Repository;
+using SindautoHub.Infrastructure.Service;
 using SindautoHub.Infrastructure.Service.RedisService;
 using StackExchange.Redis;
 
@@ -110,7 +110,6 @@ builder.Services.AddScoped<IChatMessageRepository, ChatMessageRepository>();
 builder.Services.AddScoped<IChatMessageService, ChatMessageService>();
 builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
 builder.Services.AddScoped<IPresenceService, RedisPresenceService>();
-
 // Redis: cache distribuído
 builder.Services.AddStackExchangeRedisCache(options =>
 {
