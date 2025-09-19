@@ -30,18 +30,17 @@ public class ChatRepository : IChatRepository
     }
     public async Task<Chat?> GetChatByParticipantsAsync(List<Guid> participantIds)
     {
-        var chat = await _context.Chats
+        var chats = await _context.Chats
             .Include(c => c.ChatUsers)
                 .ThenInclude(cu => cu.User)
             .Include(c => c.Messages)
-            .Where(c =>
-                c.ChatUsers.Count == participantIds.Count &&
-                c.ChatUsers.All(cu => participantIds.Contains(cu.UserId)) &&
-                participantIds.All(id => c.ChatUsers.Any(cu => cu.UserId == id))
-            )
-            .FirstOrDefaultAsync();
+            .Where(c => c.ChatUsers.Count == participantIds.Count)
+            .ToListAsync();
 
-        return chat;
+        return chats.FirstOrDefault(c =>
+            c.ChatUsers.Select(cu => cu.UserId).OrderBy(id => id)
+                .SequenceEqual(participantIds.OrderBy(id => id))
+        );
     }
 
 

@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "ChatController",
+    "Method": "CreateChat",
+    "RelativePath": "api/Chat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SindautoHub.Application.Dtos.ChatDtos.CreateChatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChatController",
     "Method": "SendMessage",
     "RelativePath": "api/Chat/{chatId}/messages",
     "HttpMethod": "POST",
@@ -31,6 +47,22 @@
       {
         "Name": "request",
         "Type": "SindautoHub.Application.Dtos.ChatMessageDtos.SendChatMessageRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChatController",
+    "Method": "GetOnlineUsers",
+    "RelativePath": "api/Chat/sector/{sectorId}/online",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sectorId",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -148,6 +180,38 @@
         "Name": "id",
         "Type": "System.Guid",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PresenceController",
+    "Method": "GetUserStatus",
+    "RelativePath": "api/Presence/{userId}/status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PresenceController",
+    "Method": "GetOnlineUsers",
+    "RelativePath": "api/Presence/sector/{sectorId}/online",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sectorId",
+        "Type": "System.Guid",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

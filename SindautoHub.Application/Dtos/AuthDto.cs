@@ -28,26 +28,7 @@ namespace SindautoHub.Application.Dtos
     {
     public string Token { get; set; }
 
-    public List<string> Permissions { get; set; }
-    public AuthuserDTO user { get; set; }
-
     }
 
-    public class AuthuserDTO
-    {
-
-    public string PhotoUrl { get; set; }
-    public Guid? SectorId { get; set; }
-    public Guid Id { get; set; }
-
-    
-    public string Name { get; set; } = string.Empty;
-    public string ?SectorName { get; set; }
-
-    public string UserName { get; set; }
-    public string PositionName {  get; set; } = string.Empty;
-    public string Email { get; set; } = string.Empty;
-    public string Role { get; set; } = string.Empty;
-    }
-
+   
 

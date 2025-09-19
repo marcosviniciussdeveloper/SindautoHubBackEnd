@@ -21,6 +21,14 @@ namespace SindautoHub.Infrastructure.Persistance.Configuration
                 .WithMany(u => u.ChatUsers)
                 .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+          
+            b.Property(x => x.JoinedAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .IsRequired();
+
+            b.Property(x => x.LastReadAt)
+                .IsRequired(false);
         }
     }
 }

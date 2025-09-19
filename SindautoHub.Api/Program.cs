@@ -19,7 +19,7 @@ using SindautoHub.Infrastructure.Service.RedisService;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 
 
 
@@ -59,21 +59,23 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // CORS
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
     {
         policy.WithOrigins(
             "http://localhost:5173",
-            "http://localhost:71" ,
-            "https://sind-hub.vercel.app",
-            "https://sindautohubbackend.onrender.com"
+            "http://localhost:7172",
+            "https://sind-hub.vercel.app"
         )
         .AllowAnyHeader()
         .AllowAnyMethod()
         .AllowCredentials();
     });
 });
+
 
 
 
@@ -98,6 +100,8 @@ builder.Services.AddScoped<IUserServices, UserService>();
 builder.Services.AddScoped<IPositionServices, PositionServices>();
 builder.Services.AddScoped<ISectorService, SectorService>();
 builder.Services.AddScoped<IChatRepository , ChatRepository>();
+//builder.Services.AddSingleton<IMessageBus, RabbitMqService>();
+
 builder.Services.AddScoped<IChatServices, ChatService>();
 //builder.Services.AddScoped<IWhatsappService , TwilioWhatsappService>();
 builder.Services.AddScoped<IChatNotifier, SignalRChatNotifier>();

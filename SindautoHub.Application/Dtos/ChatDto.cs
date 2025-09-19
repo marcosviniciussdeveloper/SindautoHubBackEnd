@@ -21,3 +21,11 @@ public class UserSummaryResponse
     public string Name { get; set; }
 }
 
+
+
+    public class InitiateChatRequest
+    {
+        public Guid RecipientId { get; set; }
+    }
+
+

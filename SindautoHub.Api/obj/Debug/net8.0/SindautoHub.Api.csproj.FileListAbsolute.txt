@@ -439,3 +439,4 @@ C:\Users\mv834\Desktop\SindHub\SindautoHubBackEnd\SindautoHub.Api\bin\Debug\net8
 C:\Users\mv834\Desktop\SindHub\SindautoHubBackEnd\SindautoHub.Api\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
 C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\Twilio.dll
+C:\Users\Sindauto\Desktop\SindautoHub\SindautoHub\SindautoHub.Api\bin\Debug\net8.0\RabbitMQ.Client.dll

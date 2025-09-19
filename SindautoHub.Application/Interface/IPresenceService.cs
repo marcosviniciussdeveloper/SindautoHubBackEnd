@@ -13,7 +13,11 @@ namespace SindautoHub.Application.Interface
         Task SetOfflineAsync(Guid userId, Guid sectorId);
 
         Task PingAsync(Guid userId);         
-        Task SetAusenteAsync(Guid userId);      
+        Task SetAusenteAsync(Guid userId);    
+        
+        Task<List<Guid>>GetOnlineUsersBySectAsync(Guid userId);
+
+        Task<bool> IsUserOnlineAsync(Guid userId);
 
         Task<PresenceStatus?> GetStatusAsync(Guid userId);
         Task<int> GetOnlineCountAsync(Guid sectorId);

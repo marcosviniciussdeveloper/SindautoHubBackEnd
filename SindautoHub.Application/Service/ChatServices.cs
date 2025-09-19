@@ -42,7 +42,8 @@ public class ChatService : IChatServices
             Id = Guid.NewGuid(),
             CreatedAt = DateTime.UtcNow,
             LastMessageAt = DateTime.UtcNow,
-            StatusChat = Status.Ativo
+            StatusChat = StatusChat.Ativo, 
+            ChatUsers = new List<ChatUser>()
         };
 
         
@@ -141,5 +142,4 @@ public class ChatService : IChatServices
         };
     }
 }
-
 

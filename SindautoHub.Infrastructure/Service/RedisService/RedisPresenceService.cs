@@ -1,6 +1,9 @@
 ﻿using StackExchange.Redis;
 using SindautoHub.Application.Interface;
 using SindautoHub.Domain.Entities.Enums;
+using System.ComponentModel.DataAnnotations;
+using Pipelines.Sockets.Unofficial;
+using SindautoHub.Domain.Entities.Models;
 
 namespace SindautoHub.Infrastructure.Service.RedisService
 {
@@ -15,16 +18,20 @@ namespace SindautoHub.Infrastructure.Service.RedisService
         }
 
         private static string UserKey(Guid id) => $"user:presence:{id}";
+
+       private static string SectorUsersKey(Guid id ) => $"sector:onlineUsers:{id}";
         private static string SectorKey(Guid id) => $"sector:onlineCount:{id}";
 
         public async Task SetOnlineAsync(Guid userId, Guid sectorId)
         {
+            await _db.SetAddAsync(SectorUsersKey(sectorId), userId.ToString());
             await _db.StringSetAsync(UserKey(userId), PresenceStatus.Online.ToString(), PresenceTtl);
             await _db.StringIncrementAsync(SectorKey(sectorId));
         }
 
         public async Task SetOfflineAsync(Guid userId, Guid sectorId)
         {
+            await _db.SetRemoveAsync(SectorUsersKey(sectorId), userId.ToString());
             await _db.StringSetAsync(UserKey(userId), PresenceStatus.Offline.ToString(), TimeSpan.FromMinutes(5));
             await _db.StringDecrementAsync(SectorKey(sectorId));
         }
@@ -48,6 +55,33 @@ namespace SindautoHub.Infrastructure.Service.RedisService
             return val.HasValue && int.TryParse(val!, out var count) ? count : 0;
         }
 
-      
+  
+        public async Task<bool> IsUserOnlineAsync(Guid userId)
+        {
+            var status = await _db.StringGetAsync(UserKey(userId));
+            return status.HasValue && status == PresenceStatus.Online.ToString();
+        }
+
+        public async Task<List<Guid>> GetOnlineUsersBySectAsync(Guid sectorId)
+        {
+            var redisValues = await _db.SetMembersAsync(SectorUsersKey(sectorId));
+
+            var userIds = new List<Guid>();
+
+            foreach (var value in redisValues)
+            {
+                if (Guid.TryParse(value, out var userId))
+                {
+                    // Verifica se ainda está online
+                    var status = await _db.StringGetAsync(UserKey(userId));
+                    if (status == PresenceStatus.Online.ToString())
+                    {
+                        userIds.Add(userId);
+                    }
+                }
+            }
+
+            return userIds;
+        }
     }
 }

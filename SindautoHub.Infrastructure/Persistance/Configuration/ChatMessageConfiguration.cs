@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SindautoHub.Domain.Entities;
-
-namespace SindautoHub.Infrastructure.Persistence.Configuration;
+using SindautoHub.Domain.Entities.Enums;
 
 public class ChatMessageConfiguration : IEntityTypeConfiguration<ChatMessage>
 {
@@ -27,5 +26,17 @@ public class ChatMessageConfiguration : IEntityTypeConfiguration<ChatMessage>
                .HasForeignKey(cm => cm.SenderId)
                .IsRequired()
                .OnDelete(DeleteBehavior.Restrict);
-}
+
+
+        builder.Property(cm => cm.DeliveryStatus)
+         .HasConversion<int>()
+         .HasDefaultValue(DeliveryStatus.Enviado)
+         .IsRequired();
+
+
+
+        builder.Property(cm => cm.IsRead)
+               .HasDefaultValue(false)
+               .IsRequired();
+    }
 }

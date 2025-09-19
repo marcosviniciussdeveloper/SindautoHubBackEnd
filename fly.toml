@@ -9,6 +9,27 @@ primary_region = "gru"
   ASPNETCORE_ENVIRONMENT = "Production"
   ASPNETCORE_URLS = "http://+:8080"
 
+  ConnectionStrings__DefaultConnection = "Host=aws-1-sa-east-1.pooler.supabase.com;Port=5432;Database=postgres;Username=postgres.xitvsgswawdtiynzcupb;Password=Suporte1020;Ssl Mode=Require;Trust Server Certificate=True"
+
+
+  ConnectionStrings__RedisConnection = "bursting-husky-20005.upstash.io:6379,password=AU4lAAIncDE5ZDRhZGM1ZTE2YjI0YmE4OGUwODcxMjFmODQ0ZTU0MXAxMjAwMDU,ssl=True,abortConnect=False"
+
+ 
+  Supabase__ProjectRef = "xitvsgswawdtiynzcupb"
+  Supabase__JwtSecret = "/vWlbjHE5TPWJjvIc5A7bCQPaEx6n2LC5aTUk4kLvc+9yLcEsyUgMjW3p2ibR9iRUDXfxUJq2E2ytBBaDvjPGw=="
+
+  Jwt__Issuer = "SindautoHubAPI"
+  Jwt__Audience = "SindautoHubApp"
+  Jwt__Key = "5Y1n6bky29Vh3sFRzn43RnZmBfwGbgypgnr5yeXBnR266ekeZMGrBFhuXkVfA2ubNytiifjrFeK"
+
+ 
+  RabbitMq__HostName = "localhost"   
+  RabbitMq__UserName = "guest"
+  RabbitMq__Password = "guest"
+
+
+  Backend__BaseUrl = "https://sindautohubbackend.fly.dev"
+
 [[services]]
   internal_port = 8080
   protocol = "tcp"
@@ -26,3 +47,4 @@ primary_region = "gru"
     timeout = "10s"
     grace_period = "60s"
     restart_limit = 0
+
